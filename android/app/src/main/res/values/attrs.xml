@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DonutChartView">
+        <attr name="donutStrokeWidth" format="dimension" />
+        <attr name="donutGap" format="dimension" />
+        <attr name="donutTrackColor" format="color" />
+        <attr name="donutCenterTextColor" format="color" />
+        <attr name="donutCaptionTextColor" format="color" />
+        <attr name="donutCenterTextSize" format="dimension" />
+        <attr name="donutCaptionTextSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="BarChartView">
+        <attr name="barHeight" format="dimension" />
+        <attr name="barRowSpacing" format="dimension" />
+        <attr name="barLabelWidth" format="dimension" />
+        <attr name="barValueWidth" format="dimension" />
+        <attr name="barTrackColor" format="color" />
+        <attr name="barLabelColor" format="color" />
+        <attr name="barTextSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ScoreRingView">
+        <attr name="ringStrokeWidth" format="dimension" />
+        <attr name="ringTrackColor" format="color" />
+        <attr name="ringTextColor" format="color" />
+        <attr name="ringTextSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ShimmerLayout">
+        <attr name="shimmerHighlightColor" format="color" />
+        <attr name="shimmerAutoStart" format="boolean" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cards -->
+    <style name="Widget.Sift.Card" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@color/sift_surface</item>
+        <item name="cardCornerRadius">@dimen/radius_lg</item>
+        <item name="cardElevation">@dimen/elevation_0</item>
+        <item name="strokeColor">@color/sift_outline</item>
+        <item name="strokeWidth">@dimen/stroke_hairline</item>
+        <item name="rippleColor">@color/ripple_primary</item>
+    </style>
+
+    <style name="Widget.Sift.Card.Raised">
+        <item name="cardBackgroundColor">@color/sift_surface_raised</item>
+        <item name="strokeWidth">@dimen/elevation_0</item>
+    </style>
+
+    <style name="Widget.Sift.Card.Overlay">
+        <item name="cardBackgroundColor">@color/sift_surface_overlay</item>
+        <item name="cardCornerRadius">@dimen/radius_xl</item>
+        <item name="cardElevation">@dimen/elevation_4</item>
+        <item name="strokeWidth">@dimen/elevation_0</item>
+    </style>
+
+    <!-- Buttons -->
+    <style name="Widget.Sift.Button" parent="Widget.Material3.Button">
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:textAppearance">@style/TextAppearance.Sift.Button</item>
+        <item name="cornerRadius">@dimen/radius_md</item>
+        <item name="backgroundTint">@color/sift_primary</item>
+        <item name="android:textColor">@color/sift_on_primary</item>
+        <item name="iconTint">@color/sift_on_primary</item>
+        <item name="rippleColor">@color/sift_on_primary</item>
+        <item name="android:paddingStart">@dimen/space_6</item>
+        <item name="android:paddingEnd">@dimen/space_6</item>
+    </style>
+
+    <style name="Widget.Sift.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:textAppearance">@style/TextAppearance.Sift.Button</item>
+        <item name="cornerRadius">@dimen/radius_md</item>
+        <item name="strokeColor">@color/button_outline_stroke</item>
+        <item name="android:textColor">@color/sift_text_primary</item>
+        <item name="iconTint">@color/sift_primary_text</item>
+        <item name="rippleColor">@color/ripple_primary</item>
+    </style>
+
+    <style name="Widget.Sift.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:minHeight">@dimen/touch_target</item>
+        <item name="android:textAppearance">@style/TextAppearance.Sift.Button</item>
+        <item name="android:textColor">@color/sift_primary_text</item>
+        <item name="iconTint">@color/sift_primary_text</item>
+        <item name="rippleColor">@color/ripple_primary</item>
+    </style>
+
+    <style name="Widget.Sift.Button.Tonal" parent="Widget.Material3.Button.TonalButton">
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:textAppearance">@style/TextAppearance.Sift.Button</item>
+        <item name="cornerRadius">@dimen/radius_md</item>
+        <item name="backgroundTint">@color/sift_surface_raised</item>
+        <item name="android:textColor">@color/sift_text_primary</item>
+        <item name="iconTint">@color/sift_primary_text</item>
+        <item name="rippleColor">@color/ripple_primary</item>
+    </style>
+
+    <style name="Widget.Sift.Button.Icon" parent="Widget.Material3.Button.IconButton">
+        <item name="android:minWidth">@dimen/touch_target</item>
+        <item name="android:minHeight">@dimen/touch_target</item>
+        <item name="iconTint">@color/sift_text_primary</item>
+        <item name="iconSize">@dimen/icon_md</item>
+        <item name="rippleColor">@color/ripple_primary</item>
+    </style>
+
+    <!-- Chips -->
+    <style name="Widget.Sift.Chip.Filter" parent="Widget.Material3.Chip.Filter">
+        <item name="chipBackgroundColor">@color/chip_background</item>
+        <item name="chipStrokeColor">@color/chip_stroke</item>
+        <item name="chipStrokeWidth">@dimen/stroke_hairline</item>
+        <item name="android:textColor">@color/chip_text</item>
+        <item name="checkedIconTint">@color/sift_primary_text</item>
+        <item name="chipMinTouchTargetSize">@dimen/touch_target</item>
+        <item name="ensureMinTouchTargetSize">true</item>
+        <item name="rippleColor">@color/ripple_primary</item>
+        <item name="android:textAppearance">@style/TextAppearance.Sift.Tab</item>
+    </style>
+
+    <style name="Widget.Sift.Chip.Input" parent="Widget.Material3.Chip.Input">
+        <item name="chipBackgroundColor">@color/sift_surface_raised</item>
+        <item name="chipStrokeWidth">@dimen/elevation_0</item>
+        <item name="android:textColor">@color/sift_text_primary</item>
+        <item name="closeIconTint">@color/sift_text_secondary</item>
+        <item name="chipMinTouchTargetSize">@dimen/touch_target</item>
+        <item name="ensureMinTouchTargetSize">true</item>
+        <item name="android:textAppearance">@style/TextAppearance.Sift.Tab</item>
+    </style>
+
+    <!-- Inputs -->
+    <style name="Widget.Sift.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">@dimen/radius_md</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/radius_md</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/radius_md</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/radius_md</item>
+        <item name="boxStrokeColor">@color/sift_primary</item>
+        <item name="boxBackgroundColor">@color/sift_surface</item>
+        <item name="hintTextColor">@color/sift_primary_text</item>
+        <item name="android:textColorHint">@color/sift_text_tertiary</item>
+        <item name="startIconTint">@color/sift_text_secondary</item>
+        <item name="endIconTint">@color/sift_text_secondary</item>
+    </style>
+
+    <style name="Widget.Sift.TextInputLayout.Search">
+        <item name="boxCornerRadiusTopStart">@dimen/radius_xl</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/radius_xl</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/radius_xl</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/radius_xl</item>
+        <item name="boxStrokeWidth">@dimen/stroke_hairline</item>
+        <item name="boxStrokeWidthFocused">@dimen/stroke_thin</item>
+        <item name="startIconTint">@color/sift_primary_text</item>
+    </style>
+
+    <!-- App bars and tabs -->
+    <style name="Widget.Sift.Toolbar" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Sift.Title</item>
+        <item name="subtitleTextAppearance">@style/TextAppearance.Sift.Caption</item>
+        <item name="navigationIconTint">@color/sift_text_primary</item>
+        <item name="android:minHeight">@dimen/toolbar_height</item>
+    </style>
+
+    <style name="Widget.Sift.TabLayout" parent="Widget.Material3.TabLayout">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="tabIndicatorColor">@color/sift_primary</item>
+        <item name="tabIndicatorHeight">@dimen/stroke_thin</item>
+        <item name="tabIndicatorFullWidth">false</item>
+        <item name="tabTextColor">@color/tab_text</item>
+        <item name="tabTextAppearance">@style/TextAppearance.Sift.Tab</item>
+        <item name="tabRippleColor">@color/ripple_primary</item>
+        <item name="tabMode">auto</item>
+        <item name="tabGravity">start</item>
+        <item name="tabMinWidth">@dimen/space_16</item>
+    </style>
+
+    <!-- Snackbar -->
+    <style name="Widget.Sift.Snackbar" parent="Widget.Material3.Snackbar">
+        <item name="backgroundTint">@color/sift_surface_overlay</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Sift.Medium</item>
+    </style>
+
+    <style name="Widget.Sift.Snackbar.Text" parent="Widget.Material3.Snackbar.TextView">
+        <item name="android:textColor">@color/sift_text_primary</item>
+    </style>
+
+    <style name="Widget.Sift.Snackbar.Button" parent="Widget.Material3.Button.TextButton.Snackbar">
+        <item name="android:textColor">@color/sift_primary_text</item>
+    </style>
+
+    <!-- Progress -->
+    <style name="Widget.Sift.LinearProgress" parent="Widget.Material3.LinearProgressIndicator">
+        <item name="indicatorColor">@color/sift_primary</item>
+        <item name="trackColor">@color/sift_chart_track</item>
+        <item name="trackCornerRadius">@dimen/radius_pill</item>
+        <item name="trackThickness">@dimen/share_bar_height</item>
+    </style>
+
+    <!-- Base Sift namespace style -->
+    <style name="Sift" />
+
+    <!-- Reusable text roles -->
+    <style name="Sift.SectionLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/TextAppearance.Sift.Label</item>
+        <item name="android:accessibilityHeading">true</item>
+    </style>
+
+    <!-- Small rounded badge used for type, effort and sentiment labels -->
+    <style name="Sift.Badge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/space_2</item>
+        <item name="android:paddingEnd">@dimen/space_2</item>
+        <item name="android:paddingTop">@dimen/space_0_5</item>
+        <item name="android:paddingBottom">@dimen/space_0_5</item>
+        <item name="android:background">@drawable/bg_badge</item>
+        <item name="android:textAppearance">@style/TextAppearance.Sift.Caption</item>
+        <item name="android:textColor">@color/sift_text_secondary</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!-- Placeholder blocks inside shimmer skeletons -->
+    <style name="Sift.Skeleton">
+        <item name="android:background">@drawable/bg_skeleton</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+</resources>

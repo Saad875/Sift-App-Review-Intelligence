@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Designed empty state with an optional action. -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/space_6"
+    android:paddingTop="@dimen/space_8"
+    android:paddingEnd="@dimen/space_6"
+    android:paddingBottom="@dimen/space_8">
+
+    <ImageView
+        android:id="@+id/emptyIcon"
+        android:layout_width="@dimen/icon_hero"
+        android:layout_height="@dimen/icon_hero"
+        android:background="@drawable/bg_circle"
+        android:backgroundTint="@color/sift_primary_container"
+        android:importantForAccessibility="no"
+        android:padding="@dimen/space_6"
+        android:src="@drawable/ic_inbox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/sift_primary_text" />
+
+    <TextView
+        android:id="@+id/emptyTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_6"
+        android:accessibilityHeading="true"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.Sift.Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emptyIcon"
+        tools:text="@string/empty_recent_title" />
+
+    <TextView
+        android:id="@+id/emptyMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_2"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.Sift.Body.Secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emptyTitle"
+        tools:text="@string/empty_recent_message" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/emptyAction"
+        style="@style/Widget.Sift.Button.Tonal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_6"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emptyMessage"
+        tools:text="@string/home_try_demo"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

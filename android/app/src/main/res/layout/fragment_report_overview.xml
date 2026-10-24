@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/screen_margin"
+            android:paddingTop="@dimen/space_4"
+            android:paddingEnd="@dimen/screen_margin"
+            android:paddingBottom="@dimen/space_8">
+
+            <include
+                android:id="@+id/metricReviews"
+                layout="@layout/item_metric"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space_1"
+                app:layout_constraintEnd_toStartOf="@id/metricRating"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/metricRating"
+                layout="@layout/item_metric"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_1"
+                android:layout_marginEnd="@dimen/space_1"
+                app:layout_constraintEnd_toStartOf="@id/metricNegative"
+                app:layout_constraintStart_toEndOf="@id/metricReviews"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/metricNegative"
+                layout="@layout/item_metric"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/metricRating"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/metricsBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="metricReviews,metricRating,metricNegative" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/sentimentCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/metricsBottom">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_4">
+
+                    <TextView
+                        android:id="@+id/sentimentLabel"
+                        style="@style/Sift.SectionLabel"
+                        android:text="@string/report_sentiment"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.sift.app.presentation.widget.DonutChartView
+                        android:id="@+id/donut"
+                        android:layout_width="@dimen/donut_size"
+                        android:layout_height="@dimen/donut_size"
+                        android:layout_marginTop="@dimen/space_4"
+                        app:layout_constraintEnd_toStartOf="@id/legend"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sentimentLabel" />
+
+                    <LinearLayout
+                        android:id="@+id/legend"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_6"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@id/donut"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/donut"
+                        app:layout_constraintTop_toTopOf="@id/donut">
+
+                        <include
+                            android:id="@+id/legendPositive"
+                            layout="@layout/item_legend" />
+
+                        <include
+                            android:id="@+id/legendNeutral"
+                            layout="@layout/item_legend" />
+
+                        <include
+                            android:id="@+id/legendNegative"
+                            layout="@layout/item_legend" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/ratingsCard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sentimentCard">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_4">
+
+                    <TextView
+                        android:id="@+id/ratingsLabel"
+                        style="@style/Sift.SectionLabel"
+                        android:text="@string/report_rating_distribution"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.sift.app.presentation.widget.BarChartView
+                        android:id="@+id/ratingBars"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ratingsLabel" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/themesLabel"
+                style="@style/Sift.SectionLabel"
+                android:layout_marginTop="@dimen/space_6"
+                android:text="@string/report_top_themes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ratingsCard" />
+
+            <LinearLayout
+                android:id="@+id/themeContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_3"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/themesLabel" />
+
+            <include
+                android:id="@+id/themesEmpty"
+                layout="@layout/view_state_empty"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/themeContainer" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/warningsCard"
+                style="@style/Widget.Sift.Card.Raised"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_4"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/themesEmpty"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/warningsText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/space_2"
+                    android:padding="@dimen/space_4"
+                    android:textAppearance="@style/TextAppearance.Sift.BodySmall"
+                    app:drawableStartCompat="@drawable/ic_info"
+                    app:drawableTint="@color/sift_neutral"
+                    tools:text="3 of 284 reviews could not be classified and were skipped." />
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

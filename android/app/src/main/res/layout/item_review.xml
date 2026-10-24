@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_3"
+    android:clickable="true"
+    android:focusable="true"
+    android:stateListAnimator="@animator/press_scale">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_4">
+
+        <TextView
+            android:id="@+id/stars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Sift.Label"
+            android:textColor="@color/sift_neutral"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="★★☆☆☆" />
+
+        <TextView
+            android:id="@+id/sentimentBadge"
+            style="@style/Sift.Badge"
+            android:layout_marginStart="@dimen/space_2"
+            app:layout_constraintBottom_toBottomOf="@id/stars"
+            app:layout_constraintStart_toEndOf="@id/stars"
+            app:layout_constraintTop_toTopOf="@id/stars"
+            tools:text="@string/sentiment_negative" />
+
+        <TextView
+            android:id="@+id/categoryBadge"
+            style="@style/Sift.Badge"
+            android:layout_marginStart="@dimen/space_2"
+            app:layout_constraintBottom_toBottomOf="@id/stars"
+            app:layout_constraintStart_toEndOf="@id/sentimentBadge"
+            app:layout_constraintTop_toTopOf="@id/stars"
+            tools:text="@string/category_bug" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_2"
+            android:ellipsize="end"
+            android:gravity="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Sift.Caption"
+            app:layout_constraintBottom_toBottomOf="@id/stars"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/categoryBadge"
+            app:layout_constraintTop_toTopOf="@id/stars"
+            tools:text="12 Mar 2026" />
+
+        <TextView
+            android:id="@+id/reviewTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_3"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.Sift.Subtitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/stars"
+            tools:text="Lost my notes" />
+
+        <TextView
+            android:id="@+id/reviewText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_1"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:textAppearance="@style/TextAppearance.Sift.BodySmall"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reviewTitle"
+            tools:text="After the update my edits from the tablet disappeared when I opened the phone." />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_2"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Sift.Caption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reviewText"
+            tools:text="maria_k · v4.2.1" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

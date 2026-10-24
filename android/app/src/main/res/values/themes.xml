@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Splash screen (AndroidX SplashScreen API) -->
+    <style name="Theme.Sift.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/brand_navy</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
+        <item name="windowSplashScreenAnimationDuration">@integer/motion_long</item>
+        <item name="postSplashScreenTheme">@style/Theme.Sift</item>
+    </style>
+
+    <style name="Base.Theme.Sift" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Color roles -->
+        <item name="colorPrimary">@color/sift_primary</item>
+        <item name="colorOnPrimary">@color/sift_on_primary</item>
+        <item name="colorPrimaryContainer">@color/sift_primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/sift_primary_text</item>
+        <item name="colorPrimaryInverse">@color/sift_primary_text</item>
+        <item name="colorSecondary">@color/sift_primary_text</item>
+        <item name="colorOnSecondary">@color/sift_on_primary</item>
+        <item name="colorSecondaryContainer">@color/sift_primary_container</item>
+        <item name="colorOnSecondaryContainer">@color/sift_primary_text</item>
+        <item name="colorTertiary">@color/sift_info</item>
+        <item name="colorError">@color/sift_negative</item>
+        <item name="colorOnError">@color/brand_white</item>
+        <item name="android:colorBackground">@color/sift_background</item>
+        <item name="colorOnBackground">@color/sift_text_primary</item>
+        <item name="colorSurface">@color/sift_surface</item>
+        <item name="colorOnSurface">@color/sift_text_primary</item>
+        <item name="colorSurfaceVariant">@color/sift_surface_raised</item>
+        <item name="colorOnSurfaceVariant">@color/sift_text_secondary</item>
+        <item name="colorSurfaceContainerLowest">@color/sift_background</item>
+        <item name="colorSurfaceContainerLow">@color/sift_surface</item>
+        <item name="colorSurfaceContainer">@color/sift_surface</item>
+        <item name="colorSurfaceContainerHigh">@color/sift_surface_raised</item>
+        <item name="colorSurfaceContainerHighest">@color/sift_surface_overlay</item>
+        <item name="colorSurfaceInverse">@color/sift_text_primary</item>
+        <item name="colorOnSurfaceInverse">@color/sift_background</item>
+        <item name="colorOutline">@color/sift_outline</item>
+        <item name="colorOutlineVariant">@color/sift_divider</item>
+        <item name="colorControlHighlight">@color/ripple_primary</item>
+
+        <!-- Shapes -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Sift.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Sift.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Sift.Large</item>
+
+        <!-- Component defaults -->
+        <item name="materialCardViewStyle">@style/Widget.Sift.Card</item>
+        <item name="materialButtonStyle">@style/Widget.Sift.Button</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.Sift.Button.Outlined</item>
+        <item name="borderlessButtonStyle">@style/Widget.Sift.Button.Text</item>
+        <item name="chipStyle">@style/Widget.Sift.Chip.Filter</item>
+        <item name="textInputStyle">@style/Widget.Sift.TextInputLayout</item>
+        <item name="toolbarStyle">@style/Widget.Sift.Toolbar</item>
+        <item name="tabStyle">@style/Widget.Sift.TabLayout</item>
+        <item name="snackbarStyle">@style/Widget.Sift.Snackbar</item>
+        <item name="snackbarButtonStyle">@style/Widget.Sift.Snackbar.Button</item>
+        <item name="snackbarTextViewStyle">@style/Widget.Sift.Snackbar.Text</item>
+        <item name="linearProgressIndicatorStyle">@style/Widget.Sift.LinearProgress</item>
+
+        <!-- Edge to edge: the app draws behind transparent system bars and applies insets itself. -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">@color/sift_background</item>
+    </style>
+
+    <style name="Theme.Sift" parent="Base.Theme.Sift" />
+</resources>

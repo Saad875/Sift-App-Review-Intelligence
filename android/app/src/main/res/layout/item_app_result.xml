@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_3"
+    android:clickable="true"
+    android:focusable="true"
+    android:stateListAnimator="@animator/press_scale">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_4">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/appIcon"
+            android:layout_width="@dimen/app_icon_md"
+            android:layout_height="@dimen/app_icon_md"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Sift.AppIcon" />
+
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_4"
+            android:layout_marginEnd="@dimen/space_2"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.Sift.Subtitle"
+            app:layout_constraintEnd_toStartOf="@id/chevron"
+            app:layout_constraintStart_toEndOf="@id/appIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Notion: Notes, Docs, Tasks" />
+
+        <TextView
+            android:id="@+id/developer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_0_5"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Sift.BodySmall"
+            app:layout_constraintEnd_toEndOf="@id/appName"
+            app:layout_constraintStart_toStartOf="@id/appName"
+            app:layout_constraintTop_toBottomOf="@id/appName"
+            tools:text="Notion Labs, Incorporated" />
+
+        <ImageView
+            android:id="@+id/ratingStar"
+            android:layout_width="@dimen/icon_xs"
+            android:layout_height="@dimen/icon_xs"
+            android:layout_marginTop="@dimen/space_1"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_star"
+            app:layout_constraintStart_toStartOf="@id/appName"
+            app:layout_constraintTop_toBottomOf="@id/developer"
+            app:tint="@color/sift_neutral" />
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Sift.Caption"
+            app:layout_constraintBottom_toBottomOf="@id/ratingStar"
+            app:layout_constraintEnd_toEndOf="@id/appName"
+            app:layout_constraintStart_toEndOf="@id/ratingStar"
+            app:layout_constraintTop_toTopOf="@id/ratingStar"
+            tools:text="4.8 · 12,340 ratings · Productivity" />
+
+        <ImageView
+            android:id="@+id/chevron"
+            android:layout_width="@dimen/icon_md"
+            android:layout_height="@dimen/icon_md"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_chevron_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/sift_text_tertiary" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

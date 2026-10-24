@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="review_count">
+        <item quantity="one">%1$s review</item>
+        <item quantity="other">%1$s reviews</item>
+    </plurals>
+    <plurals name="rating_count">
+        <item quantity="one">%1$s rating</item>
+        <item quantity="other">%1$s ratings</item>
+    </plurals>
+    <plurals name="step_fetching_done">
+        <item quantity="one">%1$s unique review collected</item>
+        <item quantity="other">%1$s unique reviews collected</item>
+    </plurals>
+    <plurals name="step_classifying_done">
+        <item quantity="one">%1$s review classified</item>
+        <item quantity="other">%1$s reviews classified</item>
+    </plurals>
+    <plurals name="step_clustering_done">
+        <item quantity="one">%1$d theme found</item>
+        <item quantity="other">%1$d themes found</item>
+    </plurals>
+    <plurals name="step_prioritizing_done">
+        <item quantity="one">%1$d backlog item ranked</item>
+        <item quantity="other">%1$d backlog items ranked</item>
+    </plurals>
+    <plurals name="step_researching_done">
+        <item quantity="one">%1$d competitor researched</item>
+        <item quantity="other">%1$d competitors researched</item>
+    </plurals>
+    <plurals name="cd_star_rating">
+        <item quantity="one">%1$d star</item>
+        <item quantity="other">%1$d stars</item>
+    </plurals>
+</resources>

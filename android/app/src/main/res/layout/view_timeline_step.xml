@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <View
+        android:id="@+id/connectorTrack"
+        android:layout_width="@dimen/timeline_connector_width"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/space_1"
+        android:background="@color/sift_divider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/indicator"
+        app:layout_constraintStart_toStartOf="@id/indicator"
+        app:layout_constraintTop_toBottomOf="@id/indicator" />
+
+    <View
+        android:id="@+id/connectorFill"
+        android:layout_width="@dimen/timeline_connector_width"
+        android:layout_height="0dp"
+        android:background="@color/sift_primary"
+        android:scaleY="0"
+        app:layout_constraintBottom_toBottomOf="@id/connectorTrack"
+        app:layout_constraintEnd_toEndOf="@id/connectorTrack"
+        app:layout_constraintStart_toStartOf="@id/connectorTrack"
+        app:layout_constraintTop_toTopOf="@id/connectorTrack" />
+
+    <View
+        android:id="@+id/halo"
+        android:layout_width="@dimen/timeline_indicator"
+        android:layout_height="@dimen/timeline_indicator"
+        android:alpha="0"
+        android:background="@drawable/bg_circle"
+        android:backgroundTint="@color/sift_primary"
+        app:layout_constraintBottom_toBottomOf="@id/indicator"
+        app:layout_constraintEnd_toEndOf="@id/indicator"
+        app:layout_constraintStart_toStartOf="@id/indicator"
+        app:layout_constraintTop_toTopOf="@id/indicator" />
+
+    <ImageView
+        android:id="@+id/indicator"
+        android:layout_width="@dimen/timeline_indicator"
+        android:layout_height="@dimen/timeline_indicator"
+        android:background="@drawable/bg_circle"
+        android:backgroundTint="@color/sift_surface_raised"
+        android:importantForAccessibility="no"
+        android:padding="@dimen/space_1_5"
+        android:src="@drawable/ic_dot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/sift_text_tertiary" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_4"
+        android:layout_marginEnd="@dimen/space_2"
+        android:textAppearance="@style/TextAppearance.Sift.Subtitle"
+        app:layout_constraintBottom_toBottomOf="@id/indicator"
+        app:layout_constraintEnd_toStartOf="@id/stateLabel"
+        app:layout_constraintStart_toEndOf="@id/indicator"
+        app:layout_constraintTop_toTopOf="@id/indicator"
+        tools:text="@string/step_classifying_title" />
+
+    <TextView
+        android:id="@+id/stateLabel"
+        style="@style/Sift.Badge"
+        app:layout_constraintBaseline_toBaselineOf="@id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="@string/step_state_running" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_1"
+        android:paddingBottom="@dimen/space_6"
+        android:textAppearance="@style/TextAppearance.Sift.BodySmall"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:text="@string/step_classifying_running" />
+</merge>

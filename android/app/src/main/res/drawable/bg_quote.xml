@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Quote block: raised surface with an accent bar on the start edge. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/sift_surface_raised" />
+            <corners android:radius="@dimen/radius_sm" />
+        </shape>
+    </item>
+    <item android:width="@dimen/space_1" android:gravity="start|fill_vertical">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/sift_primary" />
+            <corners android:radius="@dimen/radius_xs" />
+        </shape>
+    </item>
+</layer-list>

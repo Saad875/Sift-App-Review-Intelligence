@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:drawablePadding="@dimen/space_2"
+    android:ellipsize="end"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:maxLines="2"
+    android:minHeight="@dimen/touch_target"
+    android:textAppearance="@style/TextAppearance.Sift.BodySmall"
+    android:textColor="@color/sift_primary_text"
+    app:drawableStartCompat="@drawable/ic_open_in_new"
+    app:drawableTint="@color/sift_primary_text"
+    tools:text="Review roundup: best note apps of 2026" />

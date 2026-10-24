@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/space_3"
+    android:paddingBottom="@dimen/space_3">
+
+    <View
+        android:id="@+id/skeletonIcon"
+        style="@style/Sift.Skeleton"
+        android:layout_width="@dimen/app_icon_sm"
+        android:layout_height="@dimen/app_icon_sm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/skeletonTitle"
+        style="@style/Sift.Skeleton"
+        android:layout_width="@dimen/skeleton_line_medium"
+        android:layout_height="@dimen/skeleton_title_height"
+        android:layout_marginStart="@dimen/space_4"
+        app:layout_constraintStart_toEndOf="@id/skeletonIcon"
+        app:layout_constraintTop_toTopOf="@id/skeletonIcon" />
+
+    <View
+        style="@style/Sift.Skeleton"
+        android:layout_width="@dimen/skeleton_line_short"
+        android:layout_height="@dimen/skeleton_line_height"
+        android:layout_marginTop="@dimen/space_2"
+        app:layout_constraintStart_toStartOf="@id/skeletonTitle"
+        app:layout_constraintTop_toBottomOf="@id/skeletonTitle" />
+</androidx.constraintlayout.widget.ConstraintLayout>

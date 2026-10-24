@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Type scale. All sizes are in sp so text follows the system font size. -->
+<resources>
+    <style name="TextAppearance.Sift" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/sift_text_primary</item>
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.Sift.Display">
+        <item name="android:textSize">@dimen/text_display</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="lineHeight">40sp</item>
+    </style>
+
+    <style name="TextAppearance.Sift.Headline">
+        <item name="android:textSize">@dimen/text_headline</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="lineHeight">32sp</item>
+    </style>
+
+    <style name="TextAppearance.Sift.Title">
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="lineHeight">28sp</item>
+    </style>
+
+    <style name="TextAppearance.Sift.Subtitle">
+        <item name="android:textSize">@dimen/text_subtitle</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="lineHeight">24sp</item>
+    </style>
+
+    <style name="TextAppearance.Sift.Body">
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="lineHeight">24sp</item>
+    </style>
+
+    <style name="TextAppearance.Sift.Body.Secondary">
+        <item name="android:textColor">@color/sift_text_secondary</item>
+    </style>
+
+    <style name="TextAppearance.Sift.BodySmall">
+        <item name="android:textSize">@dimen/text_body_small</item>
+        <item name="android:textColor">@color/sift_text_secondary</item>
+        <item name="lineHeight">20sp</item>
+    </style>
+
+    <style name="TextAppearance.Sift.Label">
+        <item name="android:textSize">@dimen/text_label</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/sift_text_secondary</item>
+        <item name="android:letterSpacing">0.06</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="lineHeight">16sp</item>
+    </style>
+
+    <style name="TextAppearance.Sift.Caption">
+        <item name="android:textSize">@dimen/text_caption</item>
+        <item name="android:textColor">@color/sift_text_tertiary</item>
+        <item name="lineHeight">16sp</item>
+    </style>
+
+    <style name="TextAppearance.Sift.Metric">
+        <item name="android:textSize">@dimen/text_metric</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:fontFeatureSettings">tnum</item>
+        <item name="lineHeight">34sp</item>
+    </style>
+
+    <style name="TextAppearance.Sift.Button" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="TextAppearance.Sift.Tab" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:textSize">@dimen/text_body_small</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+</resources>

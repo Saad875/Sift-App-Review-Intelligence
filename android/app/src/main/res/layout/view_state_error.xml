@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Designed error state with a retry action. Included by every screen. -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/space_6"
+    android:paddingTop="@dimen/space_8"
+    android:paddingEnd="@dimen/space_6"
+    android:paddingBottom="@dimen/space_8">
+
+    <ImageView
+        android:id="@+id/errorIcon"
+        android:layout_width="@dimen/icon_hero"
+        android:layout_height="@dimen/icon_hero"
+        android:background="@drawable/bg_circle"
+        android:backgroundTint="@color/sift_negative_container"
+        android:importantForAccessibility="no"
+        android:padding="@dimen/space_6"
+        android:src="@drawable/ic_cloud_off"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/sift_negative" />
+
+    <TextView
+        android:id="@+id/errorTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_6"
+        android:accessibilityHeading="true"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.Sift.Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/errorIcon"
+        tools:text="@string/error_offline_title" />
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_2"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.Sift.Body.Secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/errorTitle"
+        tools:text="@string/error_offline_message" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/errorRetry"
+        style="@style/Widget.Sift.Button.Tonal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_6"
+        android:text="@string/action_retry"
+        app:icon="@drawable/ic_refresh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/errorMessage" />
+</androidx.constraintlayout.widget.ConstraintLayout>

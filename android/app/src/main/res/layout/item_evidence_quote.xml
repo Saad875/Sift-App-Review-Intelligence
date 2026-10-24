@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_2"
+    android:background="@drawable/bg_quote"
+    android:paddingStart="@dimen/space_4"
+    android:paddingTop="@dimen/space_2"
+    android:paddingEnd="@dimen/space_3"
+    android:paddingBottom="@dimen/space_2"
+    android:textAppearance="@style/TextAppearance.Sift.BodySmall"
+    android:textIsSelectable="true"
+    android:textStyle="italic"
+    tools:text="I lost an hour of work when my phone synced." />

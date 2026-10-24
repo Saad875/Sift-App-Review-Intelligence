@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Sift</string>
+    <string name="app_tagline">App Review Intelligence</string>
+
+    <!-- Common -->
+    <string name="action_retry">Try again</string>
+    <string name="action_back">Back</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_close">Close</string>
+    <string name="action_done">Done</string>
+    <string name="action_copy">Copy</string>
+    <string name="action_share">Share</string>
+    <string name="action_settings">Settings</string>
+    <string name="rating_value">%1$.1f</string>
+    <string name="percent_value">%1$d%%</string>
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="sample_data_label">Sample data</string>
+    <string name="sample_data_banner">You are viewing a sample analysis. Numbers and quotes are illustrative, not real reviews.</string>
+
+    <!-- Sentiment -->
+    <string name="sentiment_positive">Positive</string>
+    <string name="sentiment_neutral">Neutral</string>
+    <string name="sentiment_negative">Negative</string>
+
+    <!-- Categories -->
+    <string name="category_bug">Bugs</string>
+    <string name="category_performance">Performance</string>
+    <string name="category_ui_ux">UI and UX</string>
+    <string name="category_feature_request">Feature requests</string>
+    <string name="category_pricing">Pricing</string>
+    <string name="category_ads">Ads</string>
+    <string name="category_account">Account</string>
+    <string name="category_praise">Praise</string>
+    <string name="category_other">Other</string>
+
+    <!-- Backlog -->
+    <string name="backlog_type_bug">Bug</string>
+    <string name="backlog_type_feature">Feature</string>
+    <string name="effort_small">Small effort</string>
+    <string name="effort_medium">Medium effort</string>
+    <string name="effort_large">Large effort</string>
+
+    <!-- Reply tones -->
+    <string name="tone_friendly">Friendly</string>
+    <string name="tone_formal">Formal</string>
+    <string name="tone_apologetic">Apologetic</string>
+
+    <!-- Sources -->
+    <string name="source_app_store">App Store</string>
+    <string name="source_csv">CSV upload</string>
+    <string name="source_demo">Sample</string>
+
+    <!-- Models -->
+    <string name="model_nemotron_nano">NVIDIA Nemotron Nano</string>
+    <string name="model_nemotron_super">NVIDIA Nemotron Super</string>
+    <string name="model_nemotron_ultra">NVIDIA Nemotron Ultra</string>
+    <string name="model_nemotron">NVIDIA Nemotron</string>
+
+    <!-- Pipeline steps -->
+    <string name="step_fetching_title">Collect reviews</string>
+    <string name="step_classifying_title">Classify every review</string>
+    <string name="step_clustering_title">Find themes</string>
+    <string name="step_prioritizing_title">Rank the backlog</string>
+    <string name="step_researching_title">Research competitors</string>
+    <string name="step_fetching_waiting">Up to 300 recent reviews</string>
+    <string name="step_classifying_waiting">Sentiment, category and severity</string>
+    <string name="step_clustering_waiting">Group complaints into themes</string>
+    <string name="step_prioritizing_waiting">What to fix or build next</string>
+    <string name="step_researching_waiting">Strengths, weaknesses and opportunities</string>
+    <string name="step_fetching_running">Downloading and de-duplicating reviews</string>
+    <string name="step_classifying_running">Classifying reviews with %1$s</string>
+    <string name="step_clustering_running">Clustering themes with %1$s</string>
+    <string name="step_prioritizing_running">Ranking the backlog with %1$s</string>
+    <string name="step_researching_running">Researching the web with %1$s and Tavily</string>
+    <string name="step_skipped_message">Skipped because no competitors were added</string>
+    <string name="step_state_waiting">Waiting</string>
+    <string name="step_state_running">Running</string>
+    <string name="step_state_done">Done</string>
+    <string name="step_state_failed">Failed</string>
+    <string name="step_state_skipped">Skipped</string>
+    <string name="cd_timeline_step">%1$s, %2$s. %3$s</string>
+
+    <!-- Errors -->
+    <string name="error_offline_title">You are offline</string>
+    <string name="error_offline_message">Check your connection and try again. Reports you already opened are still available.</string>
+    <string name="error_backend_title">Can\'t reach the Sift server</string>
+    <string name="error_backend_message">The server did not respond. Check the backend URL in Settings or try again in a moment.</string>
+    <string name="error_server_title">The server reported a problem</string>
+    <string name="error_rate_limited_title">Slow down a little</string>
+    <string name="error_rate_limited_message">Too many requests from this device. Please wait a minute and try again.</string>
+    <string name="error_not_found_title">Not found</string>
+    <string name="error_not_found_message">This analysis no longer exists on the server.</string>
+    <string name="error_file_title">Couldn\'t read that file</string>
+    <string name="error_file_message">Pick a CSV file under 5 MB with a review text column.</string>
+    <string name="error_invalid_title">Check your input</string>
+    <string name="error_generic_title">Something went wrong</string>
+    <string name="error_generic_message">An unexpected error occurred. Please try again.</string>
+    <string name="error_query_too_short">Type at least two characters.</string>
+    <string name="error_too_many_competitors">You can compare with up to three competitors.</string>
+    <string name="error_competitor_name">Competitor names must be 1 to 60 characters.</string>
+    <string name="error_backend_url">Enter a full http or https URL, for example https://sift.example.com/</string>
+    <string name="error_reply_sample">Reply drafts need a live analysis. Sample reviews are not stored on the server.</string>
+
+    <!-- Formatting -->
+    <string name="meta_separator">" · "</string>
+    <string name="action_search">Search</string>
+    <string name="powered_by_short">Powered by NVIDIA Nemotron on Nebius Token Factory</string>
+
+    <!-- Intro -->
+    <string name="intro_headline">Turn app reviews into your next roadmap</string>
+    <string name="intro_body">Sift reads every review, groups the complaints into themes and tells you what to fix or build next.</string>
+    <string name="intro_feature_collect_title">Collect</string>
+    <string name="intro_feature_collect_body">Pull the latest App Store reviews for any app, or import a CSV export from Google Play Console.</string>
+    <string name="intro_feature_understand_title">Understand</string>
+    <string name="intro_feature_understand_body">NVIDIA Nemotron classifies sentiment, category and severity in any language, then finds the themes.</string>
+    <string name="intro_feature_act_title">Act</string>
+    <string name="intro_feature_act_body">Get a ranked backlog with evidence, reply drafts and a web-researched competitor comparison.</string>
+    <string name="intro_get_started">Get started</string>
+
+    <!-- Home -->
+    <string name="home_headline">What are your users really saying?</string>
+    <string name="home_subtitle">Search an app to turn its reviews into a ranked backlog.</string>
+    <string name="home_search_hint">Search any app</string>
+    <string name="home_import_csv">Import CSV</string>
+    <string name="home_import_csv_caption">Play Console or any review export</string>
+    <string name="home_import_csv_cd">Import reviews from a CSV file</string>
+    <string name="home_try_demo">Try the demo</string>
+    <string name="home_try_demo_caption">A full sample report, offline</string>
+    <string name="home_try_demo_cd">Open a sample report that works offline</string>
+    <string name="home_recent">Recent analyses</string>
+    <string name="status_failed">Failed</string>
+    <string name="status_in_progress">In progress · %1$d%%</string>
+    <string name="cd_recent_analysis">%1$s. %2$s. %3$s</string>
+
+    <!-- Empty states -->
+    <string name="empty_recent_title">No analyses yet</string>
+    <string name="empty_recent_message">Search for an app above, import a CSV, or open the sample report to see what Sift can do.</string>
+    <string name="empty_search_prompt_title">Find an app</string>
+    <string name="empty_search_prompt_message">Type at least two characters to search the App Store.</string>
+    <string name="empty_search_title">No apps found</string>
+    <string name="empty_search_message">Try a different name or check the spelling.</string>
+    <string name="empty_reviews_title">No reviews yet</string>
+    <string name="empty_reviews_message">This app has no written reviews in the selected country, so there is nothing to analyse.</string>
+    <string name="empty_filtered_title">Nothing matches these filters</string>
+    <string name="empty_filtered_message">Clear a filter to see more reviews.</string>
+    <string name="empty_backlog_title">No backlog items</string>
+    <string name="empty_backlog_message">There was not enough actionable feedback to build a backlog.</string>
+    <string name="empty_competitors_title">No competitor research</string>
+    <string name="empty_competitors_message">Add up to three competitors when you start an analysis to compare against them.</string>
+    <string name="empty_themes_title">No themes found</string>
+    <string name="empty_themes_message">There were not enough classified reviews to group into themes.</string>
+
+    <!-- Search -->
+    <string name="search_store_caption">%1$s App Store · %2$s</string>
+    <string name="cd_app_result">%1$s by %2$s. %3$s</string>
+
+    <!-- Setup -->
+    <string name="setup_title">Set up analysis</string>
+    <string name="setup_country_label">Country</string>
+    <string name="setup_country_caption">App Store storefront to read reviews from</string>
+    <string name="setup_country_panel_title">Choose a country</string>
+    <string name="cd_country_card">Country: %1$s. Double tap to change.</string>
+    <string name="cd_country_selected">%1$s, selected</string>
+    <string name="setup_competitors_label">Competitors</string>
+    <string name="setup_competitors_help">Optional. Add up to three apps and Sift will research them on the web with Tavily.</string>
+    <string name="setup_competitor_hint">Competitor name</string>
+    <string name="setup_add_competitor">Add competitor</string>
+    <string name="setup_competitor_invalid">Use a new name of 1 to 60 characters, up to three in total.</string>
+    <string name="setup_competitor_full">You have added the maximum of three competitors.</string>
+    <string name="setup_competitor_count">%1$d of %2$d</string>
+    <string name="cd_remove_competitor">Remove %1$s</string>
+    <string name="setup_how_title">How it works</string>
+    <string name="setup_how_body">Sift reads up to 300 recent reviews. NVIDIA Nemotron Nano classifies each one, then NVIDIA Nemotron Super finds themes, ranks a backlog and researches competitors. It usually takes one to three minutes.</string>
+    <string name="setup_start">Start analysis</string>
+    <string name="setup_starting">Starting…</string>
+    <string name="setup_csv_default_name">Uploaded reviews</string>
+    <string name="setup_csv_subtitle">CSV file</string>
+    <string name="setup_csv_meta">Text, rating and date columns are detected automatically</string>
+
+    <!-- Progress -->
+    <string name="progress_title">Analysing</string>
+    <string name="progress_pipeline_label">Pipeline</string>
+    <string name="progress_reconnecting">Reconnecting…</string>
+    <string name="progress_reconnecting_detail">Reconnecting. %1$s</string>
+    <string name="progress_failed_title">Analysis failed</string>
+    <string name="progress_start_again">Start again</string>
+    <string name="progress_back_home">Back to home</string>
+    <string name="progress_leave_hint">You can leave this screen. Sift keeps working and the analysis stays in Recent analyses.</string>
+    <string name="step_failed_message">Stopped at this step</string>
+    <string name="cd_progress">%1$d percent complete</string>
+
+    <!-- Shared formatting -->
+    <string name="list_separator">, </string>
+    <string name="quote_format">“%1$s”</string>
+    <string name="bullet_item">• %1$s</string>
+    <string name="value_unavailable">–</string>
+    <string name="star_filled">★</string>
+    <string name="star_empty">☆</string>
+    <string name="star_label">%1$d★</string>
+    <string name="error_no_browser">No app on this device can open web links.</string>
+
+    <!-- Report -->
+    <string name="report_title">Report</string>
+    <string name="report_share">Share report</string>
+    <string name="report_share_title">Share Sift report</string>
+    <string name="report_share_failed">Could not prepare the report for sharing.</string>
+    <string name="report_tab_overview">Overview</string>
+    <string name="report_tab_backlog">Backlog</string>
+    <string name="report_tab_reviews">Reviews</string>
+    <string name="report_tab_competitors">Competitors</string>
+    <string name="report_metric_reviews">Reviews analysed</string>
+    <string name="report_metric_rating">Average rating</string>
+    <string name="report_metric_negative">Negative</string>
+    <string name="report_sentiment">Sentiment</string>
+    <string name="report_donut_caption">classified</string>
+    <string name="report_rating_distribution">Rating distribution</string>
+    <string name="report_top_themes">Top themes</string>
+    <string name="theme_stats">%1$s · %2$s negative</string>
+    <string name="cd_metric">%1$s: %2$s</string>
+    <string name="cd_sentiment_chart">Sentiment chart. %1$s positive, %2$s neutral, %3$s negative.</string>
+    <string name="cd_rating_chart">Rating distribution. %1$s.</string>
+    <string name="cd_rating_bar">%1$s: %2$s</string>
+
+    <!-- Backlog -->
+    <string name="backlog_header">Ranked by Nemotron from frequency, severity and user impact. Tap an item for the full reasoning.</string>
+    <string name="backlog_rank">#%1$d</string>
+    <string name="backlog_effort">Effort: %1$s</string>
+    <string name="backlog_theme">Theme: %1$s</string>
+    <string name="backlog_detail_title">Backlog item</string>
+    <string name="backlog_priority_label">Priority</string>
+    <string name="backlog_section_reasoning">Why it ranks here</string>
+    <string name="backlog_section_impact">User impact</string>
+    <string name="backlog_section_fix">Suggested fix</string>
+    <string name="backlog_evidence">Evidence from reviews</string>
+    <string name="backlog_copy_ticket">Copy as ticket</string>
+    <string name="backlog_ticket_clip_label">Sift ticket</string>
+    <string name="backlog_ticket_copied">Ticket copied as Markdown</string>
+    <string name="cd_backlog_item">Rank %1$d. %2$s. %3$s, priority %4$d out of 100, effort %5$s.</string>
+    <string name="cd_priority_score">Priority score %1$d out of 100</string>
+
+    <!-- Reviews -->
+    <string name="reviews_clear_filters">Clear filters</string>
+    <string name="cd_filter_sentiment">Filter by sentiment</string>
+    <string name="cd_filter_category">Filter by category</string>
+    <string name="review_version">v%1$s</string>
+    <string name="review_severity">Severity %1$d/5</string>
+    <string name="review_detail_title">Review</string>
+    <string name="review_summary_label">Nemotron summary</string>
+    <string name="review_reply_label">Developer reply</string>
+    <string name="review_reply_caption">Pick a tone and Nemotron drafts a public reply you can edit and paste into your store console.</string>
+    <string name="review_draft_reply">Draft reply</string>
+    <string name="review_redraft_reply">Draft again</string>
+    <string name="review_drafting">Drafting reply…</string>
+    <string name="review_reply_hint">Reply</string>
+    <string name="review_reply_clip_label">Sift reply</string>
+    <string name="cd_reply_tone">Reply tone</string>
+
+    <!-- Competitors -->
+    <string name="competitors_header">Researched on the web with Tavily and summarised by Nemotron. Tap a source to open it.</string>
+    <string name="competitor_strengths">Strengths</string>
+    <string name="competitor_weaknesses">Weaknesses</string>
+    <string name="competitor_opportunities">Opportunities for you</string>
+    <string name="competitor_sources">Sources</string>
+    <string name="competitor_research_failed">Research for this competitor failed. Start a new analysis to try again.</string>
+    <string name="cd_open_source">Open source: %1$s</string>
+
+    <!-- Markdown export (templates use String.format) -->
+    <string name="md_report_title">Sift report: %1$s</string>
+    <string name="md_source_line">Source: %1$s</string>
+    <string name="md_country_line">Country: %1$s</string>
+    <string name="md_reviews_analysed">Reviews analysed: %1$d</string>
+    <string name="md_average_rating">Average rating: %1$.2f / 5</string>
+    <string name="md_sentiment_line">Sentiment: %1$s</string>
+    <string name="md_stars_column">Stars</string>
+    <string name="md_reviews_column">Reviews</string>
+    <string name="md_category_column">Category</string>
+    <string name="md_theme_stats">%1$d reviews · %2$d%% negative</string>
+    <string name="md_backlog_heading">Prioritised backlog</string>
+    <string name="md_backlog_item_heading">%1$d. %2$s (%3$s, priority %4$d, effort %5$s)</string>
+    <string name="md_theme_line">Theme: %1$s</string>
+    <string name="md_why_ranks">Why it ranks here:</string>
+    <string name="md_user_impact">User impact:</string>
+    <string name="md_suggested_fix">Suggested fix:</string>
+    <string name="md_footer">Generated by Sift with NVIDIA Nemotron on Nebius Token Factory.</string>
+    <string name="md_ticket_type">Type: %1$s</string>
+    <string name="md_ticket_priority">Priority: %1$d / 100</string>
+    <string name="md_ticket_effort">Effort: %1$s</string>
+
+    <!-- Settings and About -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_backend_label">Backend</string>
+    <string name="settings_backend_caption">Sift sends every AI request through your backend, so no API keys are stored on this device. Use http://10.0.2.2:8000/ for a backend running on the computer that hosts the emulator.</string>
+    <string name="settings_backend_hint">Backend URL</string>
+    <string name="settings_save">Save</string>
+    <string name="settings_reset">Reset to default</string>
+    <string name="settings_test_connection">Test connection</string>
+    <string name="settings_saved">Backend URL saved</string>
+    <string name="settings_reset_done">Backend URL reset to the default</string>
+    <string name="settings_checking">Checking connection…</string>
+    <string name="settings_connected_all">Connected. Nemotron and Tavily are configured.</string>
+    <string name="settings_connected_no_tavily">Connected. Nemotron is configured; competitor research needs a Tavily key on the backend.</string>
+    <string name="settings_connected_no_nebius">Connected, but the backend has no Nebius Token Factory key or model ids, so analyses will fail.</string>
+    <string name="settings_appearance_label">Appearance</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_system">System</string>
+    <string name="settings_data_label">Local data</string>
+    <string name="settings_data_caption">Reports are cached on this device so they open offline. Clearing removes every saved analysis from this device only.</string>
+    <string name="settings_clear_data">Clear local data</string>
+    <string name="settings_clear_confirm_title">Clear local data?</string>
+    <string name="settings_clear_confirm_message">All saved analyses and reports will be removed from this device. This cannot be undone.</string>
+    <string name="settings_clear_confirm">Clear</string>
+    <string name="settings_cleared">Local data cleared</string>
+    <string name="settings_about_label">About</string>
+    <string name="powered_by_title">Powered by NVIDIA Nemotron on Nebius Token Factory</string>
+    <string name="powered_by_body">A fast Nemotron model classifies every review. A larger Nemotron reasoning model groups complaints into themes, ranks the backlog, researches competitors and drafts replies. Both run on Nebius Token Factory through the Sift backend.</string>
+    <string name="powered_by_search">Web research: Tavily search</string>
+    <string name="settings_models_unknown">Test the connection to see which Nemotron models your backend uses.</string>
+    <string name="settings_fast_model">Fast model: %1$s</string>
+    <string name="settings_reasoning_model">Reasoning model: %1$s</string>
+    <string name="settings_model_with_id">%1$s (%2$s)</string>
+    <string name="settings_privacy_note">Reviews come only from the public App Store feed or files you choose. Sift never scrapes Google Play.</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_license">Open source licence (MIT)</string>
+    <string name="cd_license_expand">Show the MIT licence</string>
+    <string name="cd_license_collapse">Hide the MIT licence</string>
+    <string name="license_text">MIT License\n\nCopyright (c) 2026 Muhammad Saad\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</string>
+</resources>

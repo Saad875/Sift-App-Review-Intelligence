@@ -1,0 +1,893 @@
+{
+  "analysis": {
+    "id": "sample-demo-analysis",
+    "app_name": "Tidepool Notes",
+    "app_id": "sample",
+    "developer": "Harbor Labs (sample)",
+    "icon_url": "",
+    "source": "demo",
+    "country": "us",
+    "competitors": [
+      "Lanternbook",
+      "Quillstack"
+    ],
+    "status": "completed",
+    "current_step": "done",
+    "progress": 100,
+    "error": "",
+    "warnings": [],
+    "created_at": "2026-03-12T10:00:00Z",
+    "steps": [
+      {
+        "key": "fetching",
+        "state": "done",
+        "model_role": null,
+        "model": null
+      },
+      {
+        "key": "classifying",
+        "state": "done",
+        "model_role": "fast",
+        "model": "nvidia/NVIDIA-Nemotron-Nano-9B-v2"
+      },
+      {
+        "key": "clustering",
+        "state": "done",
+        "model_role": "reasoning",
+        "model": "nvidia/Llama-3_3-Nemotron-Super-49B-v1_5"
+      },
+      {
+        "key": "prioritizing",
+        "state": "done",
+        "model_role": "reasoning",
+        "model": "nvidia/Llama-3_3-Nemotron-Super-49B-v1_5"
+      },
+      {
+        "key": "researching",
+        "state": "done",
+        "model_role": "reasoning",
+        "model": "nvidia/Llama-3_3-Nemotron-Super-49B-v1_5"
+      }
+    ],
+    "stats": {
+      "total_reviews": 40,
+      "classified_reviews": 40,
+      "average_rating": 2.92,
+      "sentiment": {
+        "positive": 12,
+        "neutral": 11,
+        "negative": 17
+      },
+      "categories": {
+        "bug": 8,
+        "performance": 5,
+        "ui_ux": 3,
+        "feature_request": 5,
+        "pricing": 5,
+        "ads": 1,
+        "account": 2,
+        "praise": 9,
+        "other": 2
+      },
+      "rating_distribution": {
+        "1": 5,
+        "2": 12,
+        "3": 10,
+        "4": 7,
+        "5": 6
+      },
+      "theme_count": 6,
+      "backlog_count": 7,
+      "competitor_count": 2
+    }
+  },
+  "themes": [
+    {
+      "id": 1,
+      "position": 0,
+      "title": "Sync loses recent edits",
+      "description": "Notes edited on one device revert to an older version after syncing to another device.",
+      "review_count": 8,
+      "negative_share": 0.88,
+      "quotes": [
+        "I edited my meeting notes on the iPad, opened the phone and everything I wrote was gone. Sync rolled it back.",
+        "Twice this week my latest edits were replaced by an older copy from my laptop. I no longer trust it.",
+        "Notes revert after syncing. Support told me to reinstall, which did not help."
+      ]
+    },
+    {
+      "id": 2,
+      "position": 1,
+      "title": "Slow start-up on large libraries",
+      "description": "Users with thousands of notes wait several seconds for the app to open or search.",
+      "review_count": 5,
+      "negative_share": 0.6,
+      "quotes": [
+        "With about 6,000 notes the app takes 8 seconds to open. It used to be instant.",
+        "Search across my archive freezes for a few seconds before results show up.",
+        "Scrolling the note list stutters badly on my three year old phone."
+      ]
+    },
+    {
+      "id": 3,
+      "position": 2,
+      "title": "Subscription price increase",
+      "description": "Long-time users are unhappy that features moved behind the new Pro plan.",
+      "review_count": 5,
+      "negative_share": 0.8,
+      "quotes": [
+        "Features I used for years are now Pro only and the price went up. Feels like a bait and switch.",
+        "The new Pro plan costs more than competitors with fewer features.",
+        "Exporting to PDF now needs Pro. That used to be free."
+      ]
+    },
+    {
+      "id": 4,
+      "position": 3,
+      "title": "Requests for handwriting support",
+      "description": "Tablet users ask for pencil input and handwritten note search.",
+      "review_count": 4,
+      "negative_share": 0.0,
+      "quotes": [
+        "Would be perfect on iPad if I could write with the pencil and search my handwriting.",
+        "Everything is great except there is no way to sketch or handwrite.",
+        "Love it. Handwritten notes would make this my only notes app."
+      ]
+    },
+    {
+      "id": 5,
+      "position": 4,
+      "title": "Dark mode contrast",
+      "description": "Grey text on the dark theme is hard to read, especially in code blocks.",
+      "review_count": 3,
+      "negative_share": 0.33,
+      "quotes": [
+        "Grey text on dark grey is very low contrast. Code blocks are almost invisible.",
+        "I have low vision and the dark theme is unreadable for me.",
+        "Please add a high contrast theme or let us pick text colors."
+      ]
+    },
+    {
+      "id": 6,
+      "position": 5,
+      "title": "Clean, focused writing experience",
+      "description": "Many users praise the minimal editor and fast capture widget.",
+      "review_count": 7,
+      "negative_share": 0.0,
+      "quotes": [
+        "Clean, fast and gets out of the way. The quick capture widget is brilliant.",
+        "Markdown shortcuts feel natural and the typography is beautiful.",
+        "No clutter, no distractions. Exactly what I wanted for journaling."
+      ]
+    }
+  ],
+  "backlog": [
+    {
+      "id": 1,
+      "rank": 1,
+      "title": "Fix sync overwriting recent edits",
+      "type": "bug",
+      "priority_score": 94,
+      "reasoning": "The most frequent complaint with the highest severity. Data loss drives one-star reviews and cancellations, and it began with release 4.2.",
+      "user_impact": "Users lose work when switching devices and stop trusting the app with important notes.",
+      "suggested_fix": "Add per-paragraph version vectors, keep both versions on conflict and show a merge prompt. Add an automated multi-device sync test to the release checklist.",
+      "effort": "L",
+      "theme_title": "Sync loses recent edits",
+      "evidence_quotes": [
+        "I edited my meeting notes on the iPad, opened the phone and everything I wrote was gone. Sync rolled it back.",
+        "Twice this week my latest edits were replaced by an older copy from my laptop. I no longer trust it."
+      ]
+    },
+    {
+      "id": 2,
+      "rank": 2,
+      "title": "Speed up start-up and search for large libraries",
+      "type": "bug",
+      "priority_score": 78,
+      "reasoning": "Second largest negative theme. Power users with big libraries are the most likely to pay for Pro.",
+      "user_impact": "Opening the app or searching takes several seconds once a library passes a few thousand notes.",
+      "suggested_fix": "Load the note list lazily, move the search index to a background full-text index and show cached results first.",
+      "effort": "M",
+      "theme_title": "Slow start-up on large libraries",
+      "evidence_quotes": [
+        "With about 6,000 notes the app takes 8 seconds to open. It used to be instant.",
+        "Search across my archive freezes for a few seconds before results show up."
+      ]
+    },
+    {
+      "id": 3,
+      "rank": 3,
+      "title": "Revisit what the Pro plan includes",
+      "type": "feature",
+      "priority_score": 71,
+      "reasoning": "Pricing reviews are almost entirely negative and mention cancelling. Moving export and tags behind the paywall caused most of the anger.",
+      "user_impact": "Long-time users feel features were taken away and are leaving for cheaper alternatives.",
+      "suggested_fix": "Return PDF export and tags to the free tier, and add a student discount and family plan.",
+      "effort": "S",
+      "theme_title": "Subscription price increase",
+      "evidence_quotes": [
+        "Features I used for years are now Pro only and the price went up. Feels like a bait and switch.",
+        "The new Pro plan costs more than competitors with fewer features."
+      ]
+    },
+    {
+      "id": 4,
+      "rank": 4,
+      "title": "Add a high contrast dark theme",
+      "type": "bug",
+      "priority_score": 58,
+      "reasoning": "Accessibility issue affecting readability for low-vision users. Small effort for a clear improvement.",
+      "user_impact": "Some users cannot read notes or code blocks in the dark theme.",
+      "suggested_fix": "Raise body text contrast to at least 4.5:1, restyle code blocks and add a high contrast option in Settings.",
+      "effort": "S",
+      "theme_title": "Dark mode contrast",
+      "evidence_quotes": [
+        "Grey text on dark grey is very low contrast. Code blocks are almost invisible.",
+        "I have low vision and the dark theme is unreadable for me."
+      ]
+    },
+    {
+      "id": 5,
+      "rank": 5,
+      "title": "Support pencil handwriting on tablets",
+      "type": "feature",
+      "priority_score": 52,
+      "reasoning": "Frequent, mostly positive requests from tablet users. It is a growth opportunity rather than a source of churn.",
+      "user_impact": "Tablet users keep a second app for handwritten notes and sketches.",
+      "suggested_fix": "Add an ink canvas block with pencil support, then add handwriting recognition to search.",
+      "effort": "L",
+      "theme_title": "Requests for handwriting support",
+      "evidence_quotes": [
+        "Would be perfect on iPad if I could write with the pencil and search my handwriting.",
+        "Everything is great except there is no way to sketch or handwrite."
+      ]
+    },
+    {
+      "id": 6,
+      "rank": 6,
+      "title": "Allow account deletion in the app",
+      "type": "feature",
+      "priority_score": 44,
+      "reasoning": "Few reviews, but app store policies require in-app account deletion, so the risk is high.",
+      "user_impact": "Users who want to leave cannot remove their data without contacting support.",
+      "suggested_fix": "Add Delete account to Settings with a confirmation step and an export prompt.",
+      "effort": "S",
+      "theme_title": null,
+      "evidence_quotes": [
+        "There is no way to delete my account from inside the app."
+      ]
+    },
+    {
+      "id": 7,
+      "rank": 7,
+      "title": "Reduce upsell banners on the free tier",
+      "type": "feature",
+      "priority_score": 33,
+      "reasoning": "A small but growing complaint that adds to the pricing frustration.",
+      "user_impact": "Free users see a Pro banner on every screen, which makes the app feel cluttered.",
+      "suggested_fix": "Show the upgrade prompt only when a Pro feature is tapped, and at most once a week otherwise.",
+      "effort": "S",
+      "theme_title": null,
+      "evidence_quotes": [
+        "The free tier now shows a Pro banner on every screen."
+      ]
+    }
+  ],
+  "competitors": [
+    {
+      "name": "Lanternbook",
+      "summary": "A fictional cross-platform notes app in this sample, known for reliable sync and a generous free tier.",
+      "strengths": [
+        "Conflict-free sync with visible version history",
+        "Free tier includes export and tags",
+        "Fast search on large libraries"
+      ],
+      "weaknesses": [
+        "Cluttered interface with many toolbars",
+        "No quick capture widget"
+      ],
+      "opportunities": [
+        "Match its sync reliability and keep the cleaner editor as the differentiator",
+        "Market the quick capture widget, which it lacks"
+      ],
+      "sources": [
+        {
+          "title": "Sample source: Lanternbook feature overview",
+          "url": "https://example.com/sample/lanternbook-features"
+        },
+        {
+          "title": "Sample source: notes app comparison",
+          "url": "https://example.com/sample/notes-app-comparison"
+        }
+      ],
+      "error": "",
+      "id": 1
+    },
+    {
+      "name": "Quillstack",
+      "summary": "A fictional tablet-first notes app in this sample, popular for handwriting and sketching.",
+      "strengths": [
+        "Excellent pencil input with handwriting search",
+        "Student pricing"
+      ],
+      "weaknesses": [
+        "Weak Markdown support",
+        "Slow on phones"
+      ],
+      "opportunities": [
+        "Offer a lightweight ink block to win tablet users without losing the writing focus",
+        "Introduce student pricing to answer price complaints"
+      ],
+      "sources": [
+        {
+          "title": "Sample source: Quillstack pricing page",
+          "url": "https://example.com/sample/quillstack-pricing"
+        }
+      ],
+      "error": "",
+      "id": 2
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "author": "maria_k",
+      "title": "Lost an hour of work",
+      "text": "I edited my meeting notes on the iPad, opened the phone and everything I wrote was gone. Sync rolled it back.",
+      "rating": 1,
+      "review_date": "2026-03-11T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "negative",
+      "category": "bug",
+      "severity": 5,
+      "summary": "I edited my meeting notes on the iPad, opened the phone and everything I wrote was gone.",
+      "theme_title": "Sync loses recent edits"
+    },
+    {
+      "id": 2,
+      "author": "devon.r",
+      "title": "Sync overwrites changes",
+      "text": "Twice this week my latest edits were replaced by an older copy from my laptop. I no longer trust it.",
+      "rating": 2,
+      "review_date": "2026-03-10T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "negative",
+      "category": "bug",
+      "severity": 5,
+      "summary": "Twice this week my latest edits were replaced by an older copy from my laptop.",
+      "theme_title": "Sync loses recent edits"
+    },
+    {
+      "id": 3,
+      "author": "anika",
+      "title": "Data loss",
+      "text": "Notes revert after syncing. Support told me to reinstall, which did not help.",
+      "rating": 1,
+      "review_date": "2026-03-08T09:00:00Z",
+      "app_version": "4.2.0",
+      "sentiment": "negative",
+      "category": "bug",
+      "severity": 5,
+      "summary": "Notes revert after syncing.",
+      "theme_title": "Sync loses recent edits"
+    },
+    {
+      "id": 4,
+      "author": "theo_writes",
+      "title": "Conflicts are silent",
+      "text": "When two devices edit the same note there is no conflict warning, one version just disappears.",
+      "rating": 2,
+      "review_date": "2026-03-07T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "negative",
+      "category": "bug",
+      "severity": 4,
+      "summary": "When two devices edit the same note there is no conflict warning, one version just disappears.",
+      "theme_title": "Sync loses recent edits"
+    },
+    {
+      "id": 5,
+      "author": "jules",
+      "title": "Mostly fine but sync is shaky",
+      "text": "Love the editor. Sync between phone and Mac occasionally drops a paragraph though.",
+      "rating": 3,
+      "review_date": "2026-03-05T09:00:00Z",
+      "app_version": "4.2.0",
+      "sentiment": "neutral",
+      "category": "bug",
+      "severity": 3,
+      "summary": "Love the editor.",
+      "theme_title": "Sync loses recent edits"
+    },
+    {
+      "id": 6,
+      "author": "sam_okafor",
+      "title": "Please fix sync",
+      "text": "Lost my grocery list and a draft essay. Rolling back edits is the one thing a notes app cannot do.",
+      "rating": 1,
+      "review_date": "2026-03-04T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "negative",
+      "category": "bug",
+      "severity": 5,
+      "summary": "Lost my grocery list and a draft essay.",
+      "theme_title": "Sync loses recent edits"
+    },
+    {
+      "id": 7,
+      "author": "lena.b",
+      "title": "Edits disappear",
+      "text": "Offline edits on the train vanish once I reconnect.",
+      "rating": 2,
+      "review_date": "2026-02-27T09:00:00Z",
+      "app_version": "4.1.9",
+      "sentiment": "negative",
+      "category": "bug",
+      "severity": 4,
+      "summary": "Offline edits on the train vanish once I reconnect.",
+      "theme_title": "Sync loses recent edits"
+    },
+    {
+      "id": 8,
+      "author": "pkumar",
+      "title": "Sync bug since 4.2",
+      "text": "Ever since the 4.2 update edits from my tablet keep getting reverted.",
+      "rating": 2,
+      "review_date": "2026-02-25T09:00:00Z",
+      "app_version": "4.2.0",
+      "sentiment": "negative",
+      "category": "bug",
+      "severity": 4,
+      "summary": "Ever since the 4.2 update edits from my tablet keep getting reverted.",
+      "theme_title": "Sync loses recent edits"
+    },
+    {
+      "id": 9,
+      "author": "harriet",
+      "title": "Takes forever to open",
+      "text": "With about 6,000 notes the app takes 8 seconds to open. It used to be instant.",
+      "rating": 2,
+      "review_date": "2026-03-09T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "negative",
+      "category": "performance",
+      "severity": 3,
+      "summary": "With about 6,000 notes the app takes 8 seconds to open.",
+      "theme_title": "Slow start-up on large libraries"
+    },
+    {
+      "id": 10,
+      "author": "marco.v",
+      "title": "Search is slow",
+      "text": "Search across my archive freezes for a few seconds before results show up.",
+      "rating": 3,
+      "review_date": "2026-03-06T09:00:00Z",
+      "app_version": "4.2.0",
+      "sentiment": "neutral",
+      "category": "performance",
+      "severity": 3,
+      "summary": "Search across my archive freezes for a few seconds before results show up.",
+      "theme_title": "Slow start-up on large libraries"
+    },
+    {
+      "id": 11,
+      "author": "yusuf",
+      "title": "Laggy on older phone",
+      "text": "Scrolling the note list stutters badly on my three year old phone.",
+      "rating": 2,
+      "review_date": "2026-03-02T09:00:00Z",
+      "app_version": "4.1.9",
+      "sentiment": "negative",
+      "category": "performance",
+      "severity": 3,
+      "summary": "Scrolling the note list stutters badly on my three year old phone.",
+      "theme_title": "Slow start-up on large libraries"
+    },
+    {
+      "id": 12,
+      "author": "claire_d",
+      "title": "Start-up got slower",
+      "text": "Opening the app now shows a blank screen for several seconds before my notes load.",
+      "rating": 2,
+      "review_date": "2026-02-28T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "negative",
+      "category": "performance",
+      "severity": 4,
+      "summary": "Opening the app now shows a blank screen for several seconds before my notes load.",
+      "theme_title": "Slow start-up on large libraries"
+    },
+    {
+      "id": 13,
+      "author": "ivan.p",
+      "title": "Good app, slow with big library",
+      "text": "Great for small notebooks, but my research vault makes it crawl.",
+      "rating": 3,
+      "review_date": "2026-02-21T09:00:00Z",
+      "app_version": "4.2.0",
+      "sentiment": "neutral",
+      "category": "performance",
+      "severity": 2,
+      "summary": "Great for small notebooks, but my research vault makes it crawl.",
+      "theme_title": "Slow start-up on large libraries"
+    },
+    {
+      "id": 14,
+      "author": "rob_h",
+      "title": "Price doubled",
+      "text": "Features I used for years are now Pro only and the price went up. Feels like a bait and switch.",
+      "rating": 1,
+      "review_date": "2026-03-03T09:00:00Z",
+      "app_version": "4.2.0",
+      "sentiment": "negative",
+      "category": "pricing",
+      "severity": 4,
+      "summary": "Features I used for years are now Pro only and the price went up.",
+      "theme_title": "Subscription price increase"
+    },
+    {
+      "id": 15,
+      "author": "nadia",
+      "title": "Too expensive now",
+      "text": "The new Pro plan costs more than competitors with fewer features.",
+      "rating": 2,
+      "review_date": "2026-03-01T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "negative",
+      "category": "pricing",
+      "severity": 3,
+      "summary": "The new Pro plan costs more than competitors with fewer features.",
+      "theme_title": "Subscription price increase"
+    },
+    {
+      "id": 16,
+      "author": "kwame",
+      "title": "Paywalled export",
+      "text": "Exporting to PDF now needs Pro. That used to be free.",
+      "rating": 2,
+      "review_date": "2026-02-26T09:00:00Z",
+      "app_version": "4.2.0",
+      "sentiment": "negative",
+      "category": "pricing",
+      "severity": 3,
+      "summary": "Exporting to PDF now needs Pro.",
+      "theme_title": "Subscription price increase"
+    },
+    {
+      "id": 17,
+      "author": "emma.s",
+      "title": "Fair but pricey",
+      "text": "I understand they need revenue, but a family plan or student discount would help.",
+      "rating": 3,
+      "review_date": "2026-02-20T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "neutral",
+      "category": "pricing",
+      "severity": 2,
+      "summary": "I understand they need revenue, but a family plan or student discount would help.",
+      "theme_title": "Subscription price increase"
+    },
+    {
+      "id": 18,
+      "author": "georgeb",
+      "title": "Cancelled my subscription",
+      "text": "Moving tags behind the paywall was the last straw.",
+      "rating": 1,
+      "review_date": "2026-02-18T09:00:00Z",
+      "app_version": "4.2.0",
+      "sentiment": "negative",
+      "category": "pricing",
+      "severity": 4,
+      "summary": "Moving tags behind the paywall was the last straw.",
+      "theme_title": "Subscription price increase"
+    },
+    {
+      "id": 19,
+      "author": "aiko",
+      "title": "Add pencil support",
+      "text": "Would be perfect on iPad if I could write with the pencil and search my handwriting.",
+      "rating": 4,
+      "review_date": "2026-03-09T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "neutral",
+      "category": "feature_request",
+      "severity": 2,
+      "summary": "Would be perfect on iPad if I could write with the pencil and search my handwriting.",
+      "theme_title": "Requests for handwriting support"
+    },
+    {
+      "id": 20,
+      "author": "tomasz",
+      "title": "Handwriting please",
+      "text": "Everything is great except there is no way to sketch or handwrite.",
+      "rating": 3,
+      "review_date": "2026-03-04T09:00:00Z",
+      "app_version": "4.2.0",
+      "sentiment": "neutral",
+      "category": "feature_request",
+      "severity": 2,
+      "summary": "Everything is great except there is no way to sketch or handwrite.",
+      "theme_title": "Requests for handwriting support"
+    },
+    {
+      "id": 21,
+      "author": "priya.n",
+      "title": "Great app, one wish",
+      "text": "Love it. Handwritten notes would make this my only notes app.",
+      "rating": 4,
+      "review_date": "2026-02-24T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "positive",
+      "category": "feature_request",
+      "severity": 1,
+      "summary": "Love it.",
+      "theme_title": "Requests for handwriting support"
+    },
+    {
+      "id": 22,
+      "author": "ben_lee",
+      "title": "Missing drawing tools",
+      "text": "Need simple drawing for diagrams in lecture notes.",
+      "rating": 3,
+      "review_date": "2026-02-19T09:00:00Z",
+      "app_version": "4.1.9",
+      "sentiment": "neutral",
+      "category": "feature_request",
+      "severity": 2,
+      "summary": "Need simple drawing for diagrams in lecture notes.",
+      "theme_title": "Requests for handwriting support"
+    },
+    {
+      "id": 23,
+      "author": "omar",
+      "title": "Dark mode hard to read",
+      "text": "Grey text on dark grey is very low contrast. Code blocks are almost invisible.",
+      "rating": 3,
+      "review_date": "2026-03-08T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "neutral",
+      "category": "ui_ux",
+      "severity": 2,
+      "summary": "Grey text on dark grey is very low contrast.",
+      "theme_title": "Dark mode contrast"
+    },
+    {
+      "id": 24,
+      "author": "rachel.m",
+      "title": "Contrast issues",
+      "text": "I have low vision and the dark theme is unreadable for me.",
+      "rating": 2,
+      "review_date": "2026-03-02T09:00:00Z",
+      "app_version": "4.2.0",
+      "sentiment": "negative",
+      "category": "ui_ux",
+      "severity": 3,
+      "summary": "I have low vision and the dark theme is unreadable for me.",
+      "theme_title": "Dark mode contrast"
+    },
+    {
+      "id": 25,
+      "author": "felix",
+      "title": "Needs a high contrast option",
+      "text": "Please add a high contrast theme or let us pick text colors.",
+      "rating": 3,
+      "review_date": "2026-02-23T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "neutral",
+      "category": "ui_ux",
+      "severity": 2,
+      "summary": "Please add a high contrast theme or let us pick text colors.",
+      "theme_title": "Dark mode contrast"
+    },
+    {
+      "id": 26,
+      "author": "sofia_r",
+      "title": "Best minimal notes app",
+      "text": "Clean, fast and gets out of the way. The quick capture widget is brilliant.",
+      "rating": 5,
+      "review_date": "2026-03-11T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "positive",
+      "category": "praise",
+      "severity": 1,
+      "summary": "Clean, fast and gets out of the way.",
+      "theme_title": "Clean, focused writing experience"
+    },
+    {
+      "id": 27,
+      "author": "liam.c",
+      "title": "Love the editor",
+      "text": "Markdown shortcuts feel natural and the typography is beautiful.",
+      "rating": 5,
+      "review_date": "2026-03-10T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "positive",
+      "category": "praise",
+      "severity": 1,
+      "summary": "Markdown shortcuts feel natural and the typography is beautiful.",
+      "theme_title": "Clean, focused writing experience"
+    },
+    {
+      "id": 28,
+      "author": "hana",
+      "title": "Calm and focused",
+      "text": "No clutter, no distractions. Exactly what I wanted for journaling.",
+      "rating": 4,
+      "review_date": "2026-03-07T09:00:00Z",
+      "app_version": "4.2.0",
+      "sentiment": "positive",
+      "category": "praise",
+      "severity": 1,
+      "summary": "No clutter, no distractions.",
+      "theme_title": "Clean, focused writing experience"
+    },
+    {
+      "id": 29,
+      "author": "diego",
+      "title": "Perfect for quick capture",
+      "text": "The widget lets me jot ideas in two seconds. Five stars.",
+      "rating": 5,
+      "review_date": "2026-03-06T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "positive",
+      "category": "praise",
+      "severity": 1,
+      "summary": "The widget lets me jot ideas in two seconds.",
+      "theme_title": "Clean, focused writing experience"
+    },
+    {
+      "id": 30,
+      "author": "chloe.w",
+      "title": "Beautiful design",
+      "text": "The nicest looking notes app I have used. Worth every penny.",
+      "rating": 5,
+      "review_date": "2026-03-03T09:00:00Z",
+      "app_version": "4.2.0",
+      "sentiment": "positive",
+      "category": "praise",
+      "severity": 1,
+      "summary": "The nicest looking notes app I have used.",
+      "theme_title": "Clean, focused writing experience"
+    },
+    {
+      "id": 31,
+      "author": "arjun",
+      "title": "Simple and reliable on one device",
+      "text": "I only use it on my phone and it has been perfect.",
+      "rating": 4,
+      "review_date": "2026-02-28T09:00:00Z",
+      "app_version": "4.1.9",
+      "sentiment": "positive",
+      "category": "praise",
+      "severity": 1,
+      "summary": "I only use it on my phone and it has been perfect.",
+      "theme_title": "Clean, focused writing experience"
+    },
+    {
+      "id": 32,
+      "author": "zoe_t",
+      "title": "My daily driver",
+      "text": "Been using it for three years. Still the best writing experience.",
+      "rating": 5,
+      "review_date": "2026-02-22T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "positive",
+      "category": "praise",
+      "severity": 1,
+      "summary": "Been using it for three years.",
+      "theme_title": "Clean, focused writing experience"
+    },
+    {
+      "id": 33,
+      "author": "malik",
+      "title": "Good support",
+      "text": "Support replied within a day and helped me move my notes.",
+      "rating": 4,
+      "review_date": "2026-03-05T09:00:00Z",
+      "app_version": "4.2.0",
+      "sentiment": "positive",
+      "category": "other",
+      "severity": 1,
+      "summary": "Support replied within a day and helped me move my notes.",
+      "theme_title": null
+    },
+    {
+      "id": 34,
+      "author": "petra",
+      "title": "Login loop",
+      "text": "Signing in with my email sometimes loops back to the login screen.",
+      "rating": 3,
+      "review_date": "2026-03-01T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "neutral",
+      "category": "account",
+      "severity": 2,
+      "summary": "Signing in with my email sometimes loops back to the login screen.",
+      "theme_title": null
+    },
+    {
+      "id": 35,
+      "author": "noah.g",
+      "title": "Upsell banners",
+      "text": "The free tier now shows a Pro banner on every screen.",
+      "rating": 2,
+      "review_date": "2026-02-27T09:00:00Z",
+      "app_version": "4.2.0",
+      "sentiment": "negative",
+      "category": "ads",
+      "severity": 3,
+      "summary": "The free tier now shows a Pro banner on every screen.",
+      "theme_title": null
+    },
+    {
+      "id": 36,
+      "author": "ines",
+      "title": "Great widgets",
+      "text": "Home screen widgets are genuinely useful.",
+      "rating": 4,
+      "review_date": "2026-02-25T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "positive",
+      "category": "praise",
+      "severity": 1,
+      "summary": "Home screen widgets are genuinely useful.",
+      "theme_title": null
+    },
+    {
+      "id": 37,
+      "author": "kai",
+      "title": "Okay",
+      "text": "Does the job. Nothing special.",
+      "rating": 3,
+      "review_date": "2026-02-17T09:00:00Z",
+      "app_version": "4.1.9",
+      "sentiment": "neutral",
+      "category": "other",
+      "severity": 2,
+      "summary": "Does the job.",
+      "theme_title": null
+    },
+    {
+      "id": 38,
+      "author": "ana.l",
+      "title": "Fantastic",
+      "text": "Simple, elegant and fast.",
+      "rating": 5,
+      "review_date": "2026-02-16T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "positive",
+      "category": "praise",
+      "severity": 1,
+      "summary": "Simple, elegant and fast.",
+      "theme_title": null
+    },
+    {
+      "id": 39,
+      "author": "frank_o",
+      "title": "Cannot delete account",
+      "text": "There is no way to delete my account from inside the app.",
+      "rating": 2,
+      "review_date": "2026-02-15T09:00:00Z",
+      "app_version": "4.2.0",
+      "sentiment": "negative",
+      "category": "account",
+      "severity": 3,
+      "summary": "There is no way to delete my account from inside the app.",
+      "theme_title": null
+    },
+    {
+      "id": 40,
+      "author": "mei",
+      "title": "Add tags to widget",
+      "text": "Would love to pick a tag in the quick capture widget.",
+      "rating": 4,
+      "review_date": "2026-02-14T09:00:00Z",
+      "app_version": "4.2.1",
+      "sentiment": "positive",
+      "category": "feature_request",
+      "severity": 1,
+      "summary": "Would love to pick a tag in the quick capture widget.",
+      "theme_title": null
+    }
+  ]
+}

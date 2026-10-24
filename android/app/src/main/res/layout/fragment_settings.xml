@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sift_background">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationContentDescription="@string/action_back"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:title="@string/settings_title" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/screen_margin"
+            android:paddingTop="@dimen/space_2"
+            android:paddingEnd="@dimen/screen_margin"
+            android:paddingBottom="@dimen/space_8">
+
+            <!-- Backend -->
+            <TextView
+                android:id="@+id/backendLabel"
+                style="@style/Sift.SectionLabel"
+                android:text="@string/settings_backend_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/backendCaption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_1"
+                android:text="@string/settings_backend_caption"
+                android:textAppearance="@style/TextAppearance.Sift.BodySmall"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/backendLabel" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/urlLayout"
+                style="@style/Widget.Sift.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_3"
+                android:hint="@string/settings_backend_hint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/backendCaption"
+                app:startIconDrawable="@drawable/ic_link">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/urlInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="textUri"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/saveUrl"
+                style="@style/Widget.Sift.Button.Tonal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:text="@string/settings_save"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/urlLayout" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/testConnection"
+                style="@style/Widget.Sift.Button.Outlined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_2"
+                android:text="@string/settings_test_connection"
+                app:layout_constraintBaseline_toBaselineOf="@id/saveUrl"
+                app:layout_constraintStart_toEndOf="@id/saveUrl" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/resetUrl"
+                style="@style/Widget.Sift.Button.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_reset"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/saveUrl" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/healthProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/settings_checking"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:indicatorColor="@color/sift_primary"
+                app:indicatorSize="@dimen/icon_sm"
+                app:layout_constraintBottom_toBottomOf="@id/healthStatus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/healthStatus"
+                app:trackThickness="@dimen/stroke_thin" />
+
+            <TextView
+                android:id="@+id/healthStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:accessibilityLiveRegion="polite"
+                android:drawablePadding="@dimen/space_2"
+                android:gravity="center_vertical"
+                android:textAppearance="@style/TextAppearance.Sift.BodySmall"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/healthProgress"
+                app:layout_constraintTop_toBottomOf="@id/resetUrl"
+                tools:text="Connected. Nemotron and Tavily are configured."
+                tools:visibility="visible" />
+
+            <!-- Appearance -->
+            <TextView
+                android:id="@+id/appearanceLabel"
+                style="@style/Sift.SectionLabel"
+                android:layout_marginTop="@dimen/space_8"
+                android:text="@string/settings_appearance_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/healthStatus" />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/themeToggle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/appearanceLabel"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/themeDark"
+                    style="@style/Widget.Sift.Button.Outlined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_theme_dark" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/themeLight"
+                    style="@style/Widget.Sift.Button.Outlined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_theme_light" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/themeSystem"
+                    style="@style/Widget.Sift.Button.Outlined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_theme_system" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <!-- Data -->
+            <TextView
+                android:id="@+id/dataLabel"
+                style="@style/Sift.SectionLabel"
+                android:layout_marginTop="@dimen/space_8"
+                android:text="@string/settings_data_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/themeToggle" />
+
+            <TextView
+                android:id="@+id/dataCaption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_1"
+                android:text="@string/settings_data_caption"
+                android:textAppearance="@style/TextAppearance.Sift.BodySmall"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dataLabel" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clearData"
+                style="@style/Widget.Sift.Button.Outlined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:text="@string/settings_clear_data"
+                android:textColor="@color/sift_negative"
+                app:icon="@drawable/ic_delete"
+                app:iconTint="@color/sift_negative"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dataCaption" />
+
+            <!-- About -->
+            <TextView
+                android:id="@+id/aboutLabel"
+                style="@style/Sift.SectionLabel"
+                android:layout_marginTop="@dimen/space_8"
+                android:text="@string/settings_about_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clearData" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/poweredCard"
+                style="@style/Widget.Sift.Card.Raised"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/aboutLabel">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_4">
+
+                    <ImageView
+                        android:id="@+id/poweredIcon"
+                        android:layout_width="@dimen/icon_xl"
+                        android:layout_height="@dimen/icon_xl"
+                        android:background="@drawable/bg_icon_tile"
+                        android:importantForAccessibility="no"
+                        android:padding="@dimen/space_2"
+                        android:src="@drawable/ic_auto_awesome"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/sift_primary_text" />
+
+                    <TextView
+                        android:id="@+id/poweredTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_3"
+                        android:accessibilityHeading="true"
+                        android:text="@string/powered_by_title"
+                        android:textAppearance="@style/TextAppearance.Sift.Subtitle"
+                        app:layout_constraintBottom_toBottomOf="@id/poweredIcon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/poweredIcon"
+                        app:layout_constraintTop_toTopOf="@id/poweredIcon" />
+
+                    <TextView
+                        android:id="@+id/poweredBody"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_3"
+                        android:text="@string/powered_by_body"
+                        android:textAppearance="@style/TextAppearance.Sift.BodySmall"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/poweredIcon" />
+
+                    <TextView
+                        android:id="@+id/fastModel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_3"
+                        android:textAppearance="@style/TextAppearance.Sift.Caption"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/poweredBody"
+                        tools:text="Fast model: Nemotron Nano" />
+
+                    <TextView
+                        android:id="@+id/reasoningModel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_1"
+                        android:textAppearance="@style/TextAppearance.Sift.Caption"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/fastModel"
+                        tools:text="Reasoning model: Nemotron Super" />
+
+                    <TextView
+                        android:id="@+id/searchProvider"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_1"
+                        android:text="@string/powered_by_search"
+                        android:textAppearance="@style/TextAppearance.Sift.Caption"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/reasoningModel" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/privacyNote"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_3"
+                android:drawablePadding="@dimen/space_2"
+                android:text="@string/settings_privacy_note"
+                android:textAppearance="@style/TextAppearance.Sift.BodySmall"
+                app:drawableStartCompat="@drawable/ic_info"
+                app:drawableTint="@color/sift_text_tertiary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/poweredCard" />
+
+            <TextView
+                android:id="@+id/versionText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_4"
+                android:textAppearance="@style/TextAppearance.Sift.Caption"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/privacyNote"
+                tools:text="Version 1.0.0" />
+
+            <TextView
+                android:id="@+id/licenseToggle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:background="?attr/selectableItemBackground"
+                android:drawablePadding="@dimen/space_2"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/touch_target"
+                android:text="@string/settings_license"
+                android:textAppearance="@style/TextAppearance.Sift.Body"
+                app:drawableEndCompat="@drawable/ic_expand_more"
+                app:drawableTint="@color/sift_text_secondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/versionText" />
+
+            <TextView
+                android:id="@+id/licenseText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:text="@string/license_text"
+                android:textAppearance="@style/TextAppearance.Sift.Caption"
+                android:textIsSelectable="true"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/licenseToggle"
+                tools:visibility="visible" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- In-screen confirmation overlay for clearing local data -->
+    <View
+        android:id="@+id/scrim"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/sift_scrim"
+        android:clickable="true"
+        android:contentDescription="@string/action_cancel"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/confirmPanel"
+        style="@style/Widget.Sift.Card.Overlay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_margin"
+        android:layout_marginEnd="@dimen/screen_margin"
+        android:layout_marginBottom="@dimen/space_4"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/space_5">
+
+            <TextView
+                android:id="@+id/confirmTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:accessibilityHeading="true"
+                android:text="@string/settings_clear_confirm_title"
+                android:textAppearance="@style/TextAppearance.Sift.Title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/confirmMessage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:text="@string/settings_clear_confirm_message"
+                android:textAppearance="@style/TextAppearance.Sift.Body.Secondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/confirmTitle" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/confirmClear"
+                style="@style/Widget.Sift.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_5"
+                android:backgroundTint="@color/sift_negative"
+                android:text="@string/settings_clear_confirm"
+                android:textColor="@color/sift_on_negative"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/confirmMessage" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cancelClear"
+                style="@style/Widget.Sift.Button.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space_2"
+                android:text="@string/action_cancel"
+                app:layout_constraintBaseline_toBaselineOf="@id/confirmClear"
+                app:layout_constraintEnd_toStartOf="@id/confirmClear" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
