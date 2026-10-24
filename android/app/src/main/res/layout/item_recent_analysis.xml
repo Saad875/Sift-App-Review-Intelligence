@@ -37,7 +37,7 @@
             android:maxLines="1"
             android:textAppearance="@style/TextAppearance.Sift.Subtitle"
             app:layout_constraintBottom_toTopOf="@id/meta"
-            app:layout_constraintEnd_toStartOf="@id/statusBadge"
+            app:layout_constraintEnd_toStartOf="@id/chevron"
             app:layout_constraintStart_toEndOf="@id/appIcon"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed"
@@ -51,7 +51,7 @@
             android:ellipsize="end"
             android:maxLines="2"
             android:textAppearance="@style/TextAppearance.Sift.Caption"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/statusBadge"
             app:layout_constraintEnd_toEndOf="@id/appName"
             app:layout_constraintStart_toStartOf="@id/appName"
             app:layout_constraintTop_toBottomOf="@id/appName"
@@ -60,10 +60,10 @@
         <TextView
             android:id="@+id/statusBadge"
             style="@style/Sift.Badge"
-            android:layout_marginEnd="@dimen/space_2"
+            android:layout_marginTop="@dimen/space_2"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/chevron"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/appName"
+            app:layout_constraintTop_toBottomOf="@id/meta"
             tools:text="284 reviews" />
 
         <ImageView

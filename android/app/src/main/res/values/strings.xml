@@ -37,9 +37,9 @@
     <!-- Backlog -->
     <string name="backlog_type_bug">Bug</string>
     <string name="backlog_type_feature">Feature</string>
-    <string name="effort_small">Small effort</string>
-    <string name="effort_medium">Medium effort</string>
-    <string name="effort_large">Large effort</string>
+    <string name="effort_small">Small</string>
+    <string name="effort_medium">Medium</string>
+    <string name="effort_large">Large</string>
 
     <!-- Reply tones -->
     <string name="tone_friendly">Friendly</string>

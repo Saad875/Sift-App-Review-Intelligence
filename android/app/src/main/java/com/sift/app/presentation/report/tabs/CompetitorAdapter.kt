@@ -1,5 +1,8 @@
 package com.sift.app.presentation.report.tabs
 
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.LeadingMarginSpan
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.StringRes
@@ -56,7 +59,13 @@ class CompetitorAdapter(
             val inflater = LayoutInflater.from(section.root.context)
             values.forEach { value ->
                 val row = ItemBulletBinding.inflate(inflater, section.sectionItems, false).root
-                row.text = row.context.getString(R.string.bullet_item, value)
+                val text = row.context.getString(R.string.bullet_item, value)
+                // Hang wrapped lines under the text, not under the bullet.
+                val prefixEnd = if (text.endsWith(value)) text.length - value.length else 0
+                val bulletWidth = row.paint.measureText(text, 0, prefixEnd).toInt()
+                row.text = SpannableString(text).apply {
+                    setSpan(LeadingMarginSpan.Standard(0, bulletWidth), 0, length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                }
                 section.sectionItems.addView(row)
             }
         }

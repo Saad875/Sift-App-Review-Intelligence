@@ -55,7 +55,7 @@
     <dimen name="overlay_panel_max_height">480dp</dimen>
 
     <!-- Charts -->
-    <dimen name="donut_size">168dp</dimen>
+    <dimen name="donut_size">144dp</dimen>
     <dimen name="donut_stroke">20dp</dimen>
     <dimen name="donut_gap">6dp</dimen>
     <dimen name="bar_height">10dp</dimen>

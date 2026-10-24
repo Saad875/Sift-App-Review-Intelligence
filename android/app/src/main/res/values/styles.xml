@@ -24,18 +24,20 @@
 
     <!-- Buttons -->
     <style name="Widget.Sift.Button" parent="Widget.Material3.Button">
+        <item name="iconGravity">textStart</item>
         <item name="android:minHeight">@dimen/button_height</item>
         <item name="android:textAppearance">@style/TextAppearance.Sift.Button</item>
         <item name="cornerRadius">@dimen/radius_md</item>
-        <item name="backgroundTint">@color/sift_primary</item>
-        <item name="android:textColor">@color/sift_on_primary</item>
-        <item name="iconTint">@color/sift_on_primary</item>
+        <item name="backgroundTint">@color/button_primary_background</item>
+        <item name="android:textColor">@color/button_primary_content</item>
+        <item name="iconTint">@color/button_primary_content</item>
         <item name="rippleColor">@color/sift_on_primary</item>
         <item name="android:paddingStart">@dimen/space_6</item>
         <item name="android:paddingEnd">@dimen/space_6</item>
     </style>
 
     <style name="Widget.Sift.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="iconGravity">textStart</item>
         <item name="android:minHeight">@dimen/button_height</item>
         <item name="android:textAppearance">@style/TextAppearance.Sift.Button</item>
         <item name="cornerRadius">@dimen/radius_md</item>
@@ -46,6 +48,7 @@
     </style>
 
     <style name="Widget.Sift.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="iconGravity">textStart</item>
         <item name="android:minHeight">@dimen/touch_target</item>
         <item name="android:textAppearance">@style/TextAppearance.Sift.Button</item>
         <item name="android:textColor">@color/sift_primary_text</item>
@@ -54,6 +57,7 @@
     </style>
 
     <style name="Widget.Sift.Button.Tonal" parent="Widget.Material3.Button.TonalButton">
+        <item name="iconGravity">textStart</item>
         <item name="android:minHeight">@dimen/button_height</item>
         <item name="android:textAppearance">@style/TextAppearance.Sift.Button</item>
         <item name="cornerRadius">@dimen/radius_md</item>

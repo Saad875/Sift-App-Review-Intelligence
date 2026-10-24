@@ -24,43 +24,41 @@
             android:paddingEnd="@dimen/screen_margin"
             android:paddingBottom="@dimen/space_8">
 
-            <include
-                android:id="@+id/metricReviews"
-                layout="@layout/item_metric"
+            <LinearLayout
+                android:id="@+id/metricsRow"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/space_1"
-                app:layout_constraintEnd_toStartOf="@id/metricRating"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <include
-                android:id="@+id/metricRating"
-                layout="@layout/item_metric"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/space_1"
-                android:layout_marginEnd="@dimen/space_1"
-                app:layout_constraintEnd_toStartOf="@id/metricNegative"
-                app:layout_constraintStart_toEndOf="@id/metricReviews"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <include
-                android:id="@+id/metricNegative"
-                layout="@layout/item_metric"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/space_1"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/metricRating"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.Barrier
-                android:id="@+id/metricsBottom"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:barrierDirection="bottom"
-                app:constraint_referenced_ids="metricReviews,metricRating,metricNegative" />
+                <include
+                    android:id="@+id/metricReviews"
+                    layout="@layout/item_metric"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/space_1"
+                    android:layout_weight="1" />
+
+                <include
+                    android:id="@+id/metricRating"
+                    layout="@layout/item_metric"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/space_1"
+                    android:layout_marginEnd="@dimen/space_1"
+                    android:layout_weight="1" />
+
+                <include
+                    android:id="@+id/metricNegative"
+                    layout="@layout/item_metric"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/space_1"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/sentimentCard"
@@ -69,7 +67,7 @@
                 android:layout_marginTop="@dimen/space_3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/metricsBottom">
+                app:layout_constraintTop_toBottomOf="@id/metricsRow">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -97,7 +95,7 @@
                         android:id="@+id/legend"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/space_6"
+                        android:layout_marginStart="@dimen/space_4"
                         android:orientation="vertical"
                         app:layout_constraintBottom_toBottomOf="@id/donut"
                         app:layout_constraintEnd_toEndOf="parent"

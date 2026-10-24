@@ -1,6 +1,7 @@
 package com.sift.app.presentation.common
 
 import android.content.ActivityNotFoundException
+import android.content.ClipData
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -38,6 +39,8 @@ object ExternalActions {
             putExtra(Intent.EXTRA_SUBJECT, subject)
             putExtra(Intent.EXTRA_TEXT, markdown)
             putExtra(Intent.EXTRA_STREAM, uri)
+            // ClipData carries the read grant through the chooser, so its preview can open the file.
+            clipData = ClipData.newRawUri(fileStem, uri)
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }
         context.startActivity(Intent.createChooser(send, context.getString(R.string.report_share_title)))
