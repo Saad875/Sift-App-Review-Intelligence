@@ -78,6 +78,7 @@
     <dimen name="shine_width">72dp</dimen>
     <dimen name="bottom_action_clearance">120dp</dimen>
     <dimen name="bottom_fade_height">140dp</dimen>
+    <dimen name="status_scrim_fade">24dp</dimen>
 
     <!-- Charts -->
     <dimen name="donut_size">144dp</dimen>

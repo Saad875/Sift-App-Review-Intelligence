@@ -18,6 +18,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.google.android.material.snackbar.Snackbar
+import com.sift.app.R
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
@@ -55,10 +56,11 @@ fun View.applySystemBarPadding(top: Boolean = false, bottom: Boolean = false, ho
     requestApplyInsetsWhenAttached()
 }
 
-/** Sizes a status bar scrim view to the top system bar inset. */
+/** Sizes a status bar scrim view to the top system bar inset plus a short fade below it. */
 fun View.matchStatusBarHeight() {
+    val fade = resources.getDimensionPixelSize(R.dimen.status_scrim_fade)
     ViewCompat.setOnApplyWindowInsetsListener(this) { view, insets ->
-        val top = insets.getInsets(WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()).top
+        val top = insets.getInsets(WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()).top + fade
         if (view.layoutParams.height != top) view.updateLayoutParams<ViewGroup.LayoutParams> { height = top }
         insets
     }
