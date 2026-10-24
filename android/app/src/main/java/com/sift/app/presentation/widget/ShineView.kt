@@ -40,6 +40,11 @@ class ShineView @JvmOverloads constructor(
         paint.shader = LinearGradient(0f, 0f, bandWidth, 0f, intArrayOf(clear, light, clear), null, Shader.TileMode.CLAMP)
     }
 
+    /** Never drives its parent's size: takes zero unless given an exact size (match_parent in a measured parent). */
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        setMeasuredDimension(resolveSize(0, widthMeasureSpec), resolveSize(0, heightMeasureSpec))
+    }
+
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
         bounds.set(0f, 0f, w.toFloat(), h.toFloat())
