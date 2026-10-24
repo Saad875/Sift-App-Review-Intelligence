@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hero call-to-action: NVIDIA green into a bright lime, with a ripple. -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android" android:color="@color/ripple_on_primary">
+    <item>
+        <selector>
+            <item android:state_enabled="false">
+                <shape android:shape="rectangle">
+                    <corners android:radius="@dimen/radius_pill" />
+                    <solid android:color="@color/sift_disabled_container" />
+                </shape>
+            </item>
+            <item>
+                <shape android:shape="rectangle">
+                    <corners android:radius="@dimen/radius_pill" />
+                    <gradient
+                        android:angle="0"
+                        android:endColor="@color/sift_primary_bright"
+                        android:startColor="@color/sift_primary" />
+                </shape>
+            </item>
+        </selector>
+    </item>
+</ripple>

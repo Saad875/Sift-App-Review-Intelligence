@@ -10,10 +10,12 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.sift.app.R
 import com.sift.app.di.AppContainer
 import com.sift.app.domain.error.AppError
+import com.sift.app.domain.model.AppLanguage
 import com.sift.app.domain.model.BackendHealth
 import com.sift.app.domain.model.ThemeMode
 import com.sift.app.domain.usecase.CheckBackendUseCase
 import com.sift.app.domain.usecase.ClearLocalDataUseCase
+import com.sift.app.domain.usecase.LanguageUseCase
 import com.sift.app.domain.usecase.PreferencesUseCase
 import com.sift.app.presentation.common.UiError
 import com.sift.app.presentation.common.UiState
@@ -39,6 +41,7 @@ sealed interface HealthState {
 
 /** Everything the Settings screen shows. */
 data class SettingsContent(
+    val language: AppLanguage,
     val backendUrl: String,
     val isDefaultUrl: Boolean,
     @StringRes val urlError: Int?,
@@ -61,6 +64,7 @@ sealed interface SettingsEvent {
 /** Backend URL, connection test, theme, local data and the About section. */
 class SettingsViewModel(
     private val preferences: PreferencesUseCase,
+    private val language: LanguageUseCase,
     private val checkBackend: CheckBackendUseCase,
     private val clearLocalData: ClearLocalDataUseCase,
     private val savedState: SavedStateHandle
@@ -69,6 +73,7 @@ class SettingsViewModel(
     private val _state = MutableStateFlow<UiState<SettingsContent>>(
         UiState.Content(
             SettingsContent(
+                language = language.current(),
                 backendUrl = preferences.backendUrl(),
                 isDefaultUrl = preferences.backendUrl() == preferences.defaultBackendUrl,
                 urlError = null,
@@ -160,7 +165,8 @@ class SettingsViewModel(
         fun factory(container: AppContainer) = viewModelFactory {
             initializer {
                 SettingsViewModel(
-                    container.preferences, container.checkBackend, container.clearLocalData, createSavedStateHandle()
+                    container.preferences, container.language, container.checkBackend, container.clearLocalData,
+                    createSavedStateHandle()
                 )
             }
         }

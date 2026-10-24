@@ -5,7 +5,7 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/sift_background">
+    android:background="@drawable/bg_screen">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"

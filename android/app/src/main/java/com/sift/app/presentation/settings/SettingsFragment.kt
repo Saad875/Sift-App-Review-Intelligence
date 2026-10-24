@@ -18,6 +18,7 @@ import com.sift.app.domain.model.ModelRole
 import com.sift.app.domain.model.NemotronVariant
 import com.sift.app.domain.model.ThemeMode
 import com.sift.app.presentation.common.BaseFragment
+import com.sift.app.presentation.common.LanguageLabels
 import com.sift.app.presentation.common.Motion
 import com.sift.app.presentation.common.ThemeApplier
 import com.sift.app.presentation.common.UiState
@@ -29,6 +30,9 @@ import com.sift.app.presentation.common.fadeVisible
 import com.sift.app.presentation.common.hideKeyboard
 import com.sift.app.presentation.common.nameRes
 import com.sift.app.presentation.common.snackbar
+import com.sift.app.presentation.navigation.Transition
+import com.sift.app.presentation.onboarding.LanguageFragment
+import com.sift.app.presentation.onboarding.PremiumFragment
 
 /** Settings and About: backend URL, connection test, theme, local data, credits and licence. */
 class SettingsFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsBinding::inflate) {
@@ -58,6 +62,17 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsB
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, closePanelOnBack)
 
         binding.toolbar.setNavigationOnClickListener { navigator.back() }
+        binding.languageRow.rowIcon.setImageResource(R.drawable.ic_public)
+        binding.languageRow.rowTitle.setText(R.string.settings_language)
+        binding.languageRow.root.setOnClickListener {
+            navigator.push(LanguageFragment.newInstance(LanguageFragment.Mode.SETTINGS), Transition.FORWARD)
+        }
+        binding.proRow.rowIcon.setImageResource(R.drawable.ic_workspace_premium)
+        binding.proRow.rowTitle.setText(R.string.settings_pro)
+        binding.proRow.rowValue.setText(R.string.settings_pro_caption)
+        binding.proRow.root.setOnClickListener {
+            navigator.push(PremiumFragment.newInstance(PremiumFragment.Mode.SETTINGS), Transition.FORWARD)
+        }
         binding.versionText.text = getString(R.string.settings_version, BuildConfig.VERSION_NAME)
 
         binding.urlInput.doAfterTextChanged { viewModel.clearUrlError() }
@@ -106,6 +121,9 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsB
         }
         binding.urlLayout.error = content.urlError?.let { getString(it) }
         binding.resetUrl.isEnabled = !content.isDefaultUrl
+        val languageName = getString(LanguageLabels.nativeName(content.language))
+        binding.languageRow.rowValue.text = languageName
+        binding.languageRow.root.contentDescription = getString(R.string.cd_settings_language, languageName)
 
         val buttonId = themeByButton.entries.first { it.value == content.themeMode }.key
         if (binding.themeToggle.checkedButtonId != buttonId) binding.themeToggle.check(buttonId)

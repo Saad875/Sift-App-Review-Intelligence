@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_2"
+    android:clickable="true"
+    android:focusable="true"
+    android:stateListAnimator="@animator/press_scale">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/space_16"
+        android:paddingStart="@dimen/space_4"
+        android:paddingTop="@dimen/space_3"
+        android:paddingEnd="@dimen/space_4"
+        android:paddingBottom="@dimen/space_3">
+
+        <TextView
+            android:id="@+id/mark"
+            android:layout_width="@dimen/language_mark_size"
+            android:layout_height="@dimen/language_mark_size"
+            android:background="@drawable/bg_orb"
+            android:gravity="center"
+            android:importantForAccessibility="no"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Sift.Subtitle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="ES" />
+
+        <TextView
+            android:id="@+id/nativeName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_4"
+            android:layout_marginEnd="@dimen/space_3"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.Sift.Subtitle"
+            app:layout_constraintBottom_toTopOf="@id/localName"
+            app:layout_constraintEnd_toStartOf="@id/check"
+            app:layout_constraintStart_toEndOf="@id/mark"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Español" />
+
+        <TextView
+            android:id="@+id/localName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.Sift.Caption"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/nativeName"
+            app:layout_constraintStart_toStartOf="@id/nativeName"
+            app:layout_constraintTop_toBottomOf="@id/nativeName"
+            tools:text="Spanish" />
+
+        <ImageView
+            android:id="@+id/check"
+            android:layout_width="@dimen/icon_lg"
+            android:layout_height="@dimen/icon_lg"
+            android:background="@drawable/bg_check_circle"
+            android:importantForAccessibility="no"
+            android:padding="@dimen/space_1_5"
+            android:src="@drawable/ic_check"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/sift_on_primary" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

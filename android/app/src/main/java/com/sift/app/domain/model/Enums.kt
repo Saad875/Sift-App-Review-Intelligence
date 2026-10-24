@@ -139,3 +139,41 @@ enum class NemotronVariant {
         }
     }
 }
+
+/**
+ * Languages the app is translated into, in order of total speakers.
+ * [tag] is the BCP 47 tag used for resources and per-app locale storage.
+ */
+enum class AppLanguage(val tag: String) {
+    ENGLISH("en"),
+    CHINESE("zh-CN"),
+    HINDI("hi"),
+    SPANISH("es"),
+    FRENCH("fr"),
+    ARABIC("ar"),
+    BENGALI("bn"),
+    PORTUGUESE("pt"),
+    RUSSIAN("ru"),
+    URDU("ur"),
+    INDONESIAN("in"),
+    GERMAN("de"),
+    JAPANESE("ja"),
+    SWAHILI("sw"),
+    TURKISH("tr");
+
+    companion object {
+        val DEFAULT = ENGLISH
+
+        /**
+         * Best match for a tag such as "pt-BR", "zh-Hans-CN" or "id": exact tag first,
+         * then the language subtag (with the legacy Indonesian code handled).
+         */
+        fun fromTag(tag: String?): AppLanguage? {
+            if (tag.isNullOrBlank()) return null
+            val normalized = tag.replace('_', '-')
+            entries.firstOrNull { it.tag.equals(normalized, ignoreCase = true) }?.let { return it }
+            val language = normalized.substringBefore('-').lowercase().let { if (it == "id") "in" else it }
+            return entries.firstOrNull { it.tag.substringBefore('-') == language }
+        }
+    }
+}

@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/sift_background">
+    android:background="@drawable/bg_screen">
 
-    <View
-        android:id="@+id/glow"
+    <com.sift.app.presentation.widget.AuroraView
+        android:id="@+id/aurora"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/bg_hero_glow"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintHeight_percent="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,6 +54,19 @@
                 android:textAppearance="@style/TextAppearance.Sift.Title"
                 app:layout_constraintBottom_toBottomOf="@id/settingsButton"
                 app:layout_constraintStart_toEndOf="@id/brandMark"
+                app:layout_constraintTop_toTopOf="@id/settingsButton" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/proButton"
+                style="@style/Widget.Sift.Button.Hero.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/space_2"
+                android:contentDescription="@string/cd_home_pro"
+                android:text="@string/home_pro"
+                app:icon="@drawable/ic_workspace_premium"
+                app:layout_constraintBottom_toBottomOf="@id/settingsButton"
+                app:layout_constraintEnd_toStartOf="@id/settingsButton"
                 app:layout_constraintTop_toTopOf="@id/settingsButton" />
 
             <com.google.android.material.button.MaterialButton

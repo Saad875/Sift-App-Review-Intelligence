@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Spacing scale (4dp grid) -->
+    <dimen name="space_0">0dp</dimen>
     <dimen name="space_0_5">2dp</dimen>
     <dimen name="space_1">4dp</dimen>
     <dimen name="space_1_5">6dp</dimen>
@@ -22,6 +23,7 @@
     <dimen name="radius_md">12dp</dimen>
     <dimen name="radius_lg">16dp</dimen>
     <dimen name="radius_xl">24dp</dimen>
+    <dimen name="radius_xxl">32dp</dimen>
     <dimen name="radius_pill">100dp</dimen>
 
     <!-- Elevation -->
@@ -49,10 +51,33 @@
     <dimen name="toolbar_height">56dp</dimen>
     <dimen name="search_field_height">60dp</dimen>
     <dimen name="button_height">52dp</dimen>
+    <dimen name="button_height_hero">56dp</dimen>
     <dimen name="score_badge_size">52dp</dimen>
     <dimen name="score_ring_large">72dp</dimen>
     <dimen name="tab_height">48dp</dimen>
     <dimen name="overlay_panel_max_height">480dp</dimen>
+
+    <!-- Onboarding -->
+    <dimen name="splash_logo_tile">112dp</dimen>
+    <dimen name="splash_logo_icon">64dp</dimen>
+    <dimen name="splash_glow_size">280dp</dimen>
+    <dimen name="orb_glow_radius">140dp</dimen>
+    <dimen name="welcome_art_height">300dp</dimen>
+    <dimen name="welcome_orb_size">176dp</dimen>
+    <dimen name="welcome_orb_glow">300dp</dimen>
+    <dimen name="welcome_icon_size">72dp</dimen>
+    <dimen name="welcome_float_distance">8dp</dimen>
+    <dimen name="indicator_dot">8dp</dimen>
+    <dimen name="indicator_dot_active">24dp</dimen>
+    <dimen name="indicator_gap">8dp</dimen>
+    <dimen name="language_mark_size">44dp</dimen>
+    <dimen name="pro_orb_size">96dp</dimen>
+    <dimen name="pro_orb_glow">220dp</dimen>
+    <dimen name="pro_column_width">84dp</dimen>
+    <dimen name="selection_stroke">2dp</dimen>
+    <dimen name="shine_width">72dp</dimen>
+    <dimen name="bottom_action_clearance">120dp</dimen>
+    <dimen name="bottom_fade_height">140dp</dimen>
 
     <!-- Charts -->
     <dimen name="donut_size">144dp</dimen>
@@ -80,10 +105,15 @@
     <!-- Motion -->
     <dimen name="stagger_offset">24dp</dimen>
     <dimen name="press_translation">2dp</dimen>
+    <item name="press_scale_button" format="float" type="dimen">0.95</item>
+    <item name="press_scale_card" format="float" type="dimen">0.98</item>
+    <item name="overshoot_tension" format="float" type="dimen">2.2</item>
+    <dimen name="tab_indicator_height">3dp</dimen>
 
     <!-- Type scale -->
+    <dimen name="text_hero">40sp</dimen>
     <dimen name="text_display">32sp</dimen>
-    <dimen name="text_headline">24sp</dimen>
+    <dimen name="text_headline">26sp</dimen>
     <dimen name="text_title">20sp</dimen>
     <dimen name="text_subtitle">16sp</dimen>
     <dimen name="text_body">16sp</dimen>
@@ -94,4 +124,15 @@
     <dimen name="text_donut_center">28sp</dimen>
     <dimen name="text_donut_caption">12sp</dimen>
     <dimen name="text_chart_label">12sp</dimen>
+
+    <!-- Line heights -->
+    <dimen name="line_hero">46sp</dimen>
+    <dimen name="line_display">40sp</dimen>
+    <dimen name="line_headline">32sp</dimen>
+    <dimen name="line_title">26sp</dimen>
+    <dimen name="line_subtitle">22sp</dimen>
+    <dimen name="line_body">24sp</dimen>
+    <dimen name="line_body_small">20sp</dimen>
+    <dimen name="line_label">16sp</dimen>
+    <dimen name="line_metric">34sp</dimen>
 </resources>

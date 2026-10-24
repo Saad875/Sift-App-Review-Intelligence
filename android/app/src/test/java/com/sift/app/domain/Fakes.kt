@@ -17,6 +17,7 @@ import com.sift.app.domain.model.ThemeMode
 import com.sift.app.domain.repository.AnalysisRepository
 import com.sift.app.domain.repository.AppSearchRepository
 import com.sift.app.domain.repository.ReplyRepository
+import com.sift.app.domain.repository.LanguageRepository
 import com.sift.app.domain.repository.SettingsRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
@@ -37,16 +38,26 @@ class FakeSearchRepository(var result: List<AppSummary> = listOf(sampleApp)) : A
     }
 }
 
+class FakeLanguageRepository(
+    var selected: String? = null,
+    var device: List<String> = listOf("en-US")
+) : LanguageRepository {
+    val applied = mutableListOf<String>()
+    override fun selectedTag() = selected
+    override fun deviceTags() = device
+    override fun select(tag: String) { applied += tag; selected = tag }
+}
+
 class FakeSettingsRepository : SettingsRepository {
     override val defaultBackendUrl = "http://10.0.2.2:8000/"
     var url = defaultBackendUrl
     var country = "us"
-    var intro = false
+    var onboarding = false
     var theme = ThemeMode.DARK
     override fun backendUrl() = url
     override fun setBackendUrl(url: String) { this.url = url }
-    override fun isIntroCompleted() = intro
-    override fun setIntroCompleted() { intro = true }
+    override fun isOnboardingCompleted() = onboarding
+    override fun setOnboardingCompleted() { onboarding = true }
     override fun themeMode() = theme
     override fun setThemeMode(mode: ThemeMode) { theme = mode }
     override fun lastCountry() = country

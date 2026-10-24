@@ -15,11 +15,25 @@
     <color name="sift_divider">#E1E7F0</color>
     <color name="sift_scrim">#990B1F3A</color>
 
+    <!-- Screen gradient, glass cards and ambient glows -->
+    <color name="sift_background_top">#FFFFFF</color>
+    <color name="sift_background_bottom">#E8EFF9</color>
+    <color name="sift_glass">#D9FFFFFF</color>
+    <color name="sift_glass_strong">#F2FFFFFF</color>
+    <color name="sift_glass_stroke">#1F0B1F3A</color>
+    <color name="sift_glow_green">#4076B900</color>
+    <color name="sift_glow_blue">#334A7DFF</color>
+    <color name="sift_glow_cyan">#262FB9C7</color>
+    <color name="sift_disabled_container">#1F0B1F3A</color>
+    <color name="sift_shine">#59FFFFFF</color>
+    <color name="sift_accent_blue">#2F6FD6</color>
+
     <!-- Accent -->
     <color name="sift_primary">#76B900</color>
     <color name="sift_on_primary">#0B1F3A</color>
     <color name="sift_primary_text">#3D6B00</color>
     <color name="sift_primary_container">#2676B900</color>
+    <color name="sift_primary_bright">#9AD62A</color>
 
     <!-- Text (contrast on sift_background: 15.9:1, 7.4:1, 4.6:1) -->
     <color name="sift_text_primary">#0B1F3A</color>

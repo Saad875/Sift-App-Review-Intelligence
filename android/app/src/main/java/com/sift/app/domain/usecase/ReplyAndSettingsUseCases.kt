@@ -2,12 +2,14 @@ package com.sift.app.domain.usecase
 
 import com.sift.app.domain.error.AppError
 import com.sift.app.domain.error.InvalidReason
+import com.sift.app.domain.model.AppLanguage
 import com.sift.app.domain.model.BackendHealth
 import com.sift.app.domain.model.ReplyDraft
 import com.sift.app.domain.model.ReplyTone
 import com.sift.app.domain.model.Review
 import com.sift.app.domain.model.ThemeMode
 import com.sift.app.domain.repository.BackendRepository
+import com.sift.app.domain.repository.LanguageRepository
 import com.sift.app.domain.repository.ReplyRepository
 import com.sift.app.domain.repository.SettingsRepository
 import com.sift.app.domain.util.BackendUrlRules
@@ -34,9 +36,9 @@ class PreferencesUseCase(private val settings: SettingsRepository) {
 
     fun resetBackendUrl(): String = settings.defaultBackendUrl.also(settings::setBackendUrl)
 
-    fun isIntroCompleted(): Boolean = settings.isIntroCompleted()
+    fun isOnboardingCompleted(): Boolean = settings.isOnboardingCompleted()
 
-    fun completeIntro() = settings.setIntroCompleted()
+    fun completeOnboarding() = settings.setOnboardingCompleted()
 
     fun themeMode(): ThemeMode = settings.themeMode()
 
@@ -48,4 +50,22 @@ class PreferencesUseCase(private val settings: SettingsRepository) {
 /** Calls the backend health endpoint at the configured URL. */
 class CheckBackendUseCase(private val repository: BackendRepository) {
     suspend operator fun invoke(): Result<BackendHealth> = runCatchingApp { repository.health() }
+}
+
+/** Lists the supported languages and reads or changes the app language. */
+class LanguageUseCase(private val repository: LanguageRepository) {
+    val languages: List<AppLanguage> get() = AppLanguage.entries
+
+    /** The chosen language, else the first supported device language, else English. */
+    fun current(): AppLanguage =
+        AppLanguage.fromTag(repository.selectedTag())
+            ?: repository.deviceTags().firstNotNullOfOrNull(AppLanguage::fromTag)
+            ?: AppLanguage.DEFAULT
+
+    /** Applies [language]. Returns false when it is already the current one. */
+    fun select(language: AppLanguage): Boolean {
+        if (AppLanguage.fromTag(repository.selectedTag()) == language) return false
+        repository.select(language.tag)
+        return true
+    }
 }

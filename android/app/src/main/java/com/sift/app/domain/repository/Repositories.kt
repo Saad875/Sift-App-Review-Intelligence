@@ -61,10 +61,17 @@ interface SettingsRepository {
     val defaultBackendUrl: String
     fun backendUrl(): String
     fun setBackendUrl(url: String)
-    fun isIntroCompleted(): Boolean
-    fun setIntroCompleted()
+    fun isOnboardingCompleted(): Boolean
+    fun setOnboardingCompleted()
     fun themeMode(): ThemeMode
     fun setThemeMode(mode: ThemeMode)
     fun lastCountry(): String
     fun setLastCountry(country: String)
+}
+
+/** The per-app language. A null tag means "follow the device language". */
+interface LanguageRepository {
+    fun selectedTag(): String?
+    fun deviceTags(): List<String>
+    fun select(tag: String)
 }

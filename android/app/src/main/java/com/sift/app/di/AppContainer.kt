@@ -5,6 +5,7 @@ import com.google.gson.Gson
 import com.sift.app.BuildConfig
 import com.sift.app.data.csv.CsvDocumentReader
 import com.sift.app.data.demo.DemoDataSource
+import com.sift.app.data.language.AppCompatLanguageRepository
 import com.sift.app.data.local.SiftDatabase
 import com.sift.app.data.network.ApiCaller
 import com.sift.app.data.network.ConnectivityChecker
@@ -26,6 +27,7 @@ import com.sift.app.domain.usecase.ClearLocalDataUseCase
 import com.sift.app.domain.usecase.DraftReplyUseCase
 import com.sift.app.domain.usecase.GetBacklogItemUseCase
 import com.sift.app.domain.usecase.GetReviewUseCase
+import com.sift.app.domain.usecase.LanguageUseCase
 import com.sift.app.domain.usecase.LoadDemoUseCase
 import com.sift.app.domain.usecase.ObserveAnalysisUseCase
 import com.sift.app.domain.usecase.ObserveRecentAnalysesUseCase
@@ -112,6 +114,7 @@ class AppContainer(context: Context) {
     val buildMarkdown by lazy { BuildMarkdownUseCase() }
     val preferences by lazy { PreferencesUseCase(settingsRepository) }
     val checkBackend by lazy { CheckBackendUseCase(backendRepository) }
+    val language by lazy { LanguageUseCase(AppCompatLanguageRepository()) }
 
     private companion object {
         // Retrofit needs a syntactically valid base URL; BaseUrlInterceptor swaps in the real one.

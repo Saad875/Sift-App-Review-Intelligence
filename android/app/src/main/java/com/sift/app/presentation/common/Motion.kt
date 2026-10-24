@@ -4,8 +4,11 @@ import android.animation.ValueAnimator
 import android.content.Context
 import android.provider.Settings
 import android.view.View
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.OvershootInterpolator
 import android.view.animation.PathInterpolator
 import android.widget.TextView
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.isVisible
 import com.sift.app.R
 import java.text.NumberFormat
@@ -94,3 +97,70 @@ fun TextView.countUpDecimal(target: Double, format: (Double) -> String) {
     setTag(R.id.tag_count_animator, animator)
     animator.start()
 }
+
+/** Springs a view in from a smaller scale; instant when animations are off. */
+fun View.popIn(delayMillis: Long = 0) {
+    if (!Motion.enabled(context)) {
+        isVisible = true
+        alpha = 1f
+        scaleX = 1f
+        scaleY = 1f
+        return
+    }
+    alpha = 0f
+    scaleX = POP_START_SCALE
+    scaleY = POP_START_SCALE
+    isVisible = true
+    animate().alpha(1f).scaleX(1f).scaleY(1f)
+        .setStartDelay(delayMillis)
+        .setDuration(Motion.duration(context, R.integer.motion_extra_long))
+        .setInterpolator(OvershootInterpolator(ResourcesCompat.getFloat(resources, R.dimen.overshoot_tension)))
+        .start()
+}
+
+/** Gently breathes a decorative view's scale and alpha until it is detached. */
+fun View.startPulse(maxScale: Float = PULSE_SCALE) {
+    startAmbient(R.integer.glow_pulse_cycle) { fraction ->
+        val scale = 1f + (maxScale - 1f) * fraction
+        scaleX = scale
+        scaleY = scale
+        alpha = PULSE_MIN_ALPHA + (1f - PULSE_MIN_ALPHA) * (1f - fraction)
+    }
+}
+
+/** Floats a decorative view up and down by [distancePx] until it is detached. */
+fun View.startFloat(distancePx: Float, startFraction: Float = 0f) {
+    startAmbient(R.integer.float_cycle, startFraction) { fraction ->
+        translationY = -distancePx * fraction
+    }
+}
+
+/**
+ * Runs a reversing ambient loop on this view (decorative, so it may run longer than
+ * screen transitions). Does nothing when animations are off; stops on detach.
+ */
+private fun View.startAmbient(durationRes: Int, startFraction: Float = 0f, onFrame: View.(Float) -> Unit) {
+    (getTag(R.id.tag_ambient_animator) as? ValueAnimator)?.cancel()
+    if (!Motion.enabled(context)) return
+    val animator = ValueAnimator.ofFloat(0f, 1f).apply {
+        duration = Motion.duration(context, durationRes)
+        repeatCount = ValueAnimator.INFINITE
+        repeatMode = ValueAnimator.REVERSE
+        interpolator = AccelerateDecelerateInterpolator()
+        addUpdateListener { onFrame(it.animatedValue as Float) }
+        currentPlayTime = (duration * startFraction).toLong()
+    }
+    setTag(R.id.tag_ambient_animator, animator)
+    addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener {
+        override fun onViewAttachedToWindow(v: View) = Unit
+        override fun onViewDetachedFromWindow(v: View) {
+            animator.cancel()
+            v.removeOnAttachStateChangeListener(this)
+        }
+    })
+    animator.start()
+}
+
+private const val POP_START_SCALE = 0.6f
+private const val PULSE_SCALE = 1.12f
+private const val PULSE_MIN_ALPHA = 0.6f

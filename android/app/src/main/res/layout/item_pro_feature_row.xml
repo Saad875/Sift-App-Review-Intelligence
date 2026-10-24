@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:minHeight="@dimen/touch_target"
+    android:paddingTop="@dimen/space_2"
+    android:paddingBottom="@dimen/space_2">
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_2"
+        android:importantForAccessibility="no"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.Sift.BodySmall"
+        android:textColor="@color/sift_text_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/freeValue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Analyses per month" />
+
+    <TextView
+        android:id="@+id/freeValue"
+        android:layout_width="@dimen/pro_column_width"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:importantForAccessibility="no"
+        android:maxLines="2"
+        android:textAppearance="@style/TextAppearance.Sift.BodySmall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/proValue"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="3" />
+
+    <ImageView
+        android:id="@+id/freeIcon"
+        android:layout_width="@dimen/icon_sm"
+        android:layout_height="@dimen/icon_sm"
+        android:importantForAccessibility="no"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/freeValue"
+        app:layout_constraintEnd_toEndOf="@id/freeValue"
+        app:layout_constraintStart_toStartOf="@id/freeValue"
+        app:layout_constraintTop_toTopOf="@id/freeValue" />
+
+    <TextView
+        android:id="@+id/proValue"
+        android:layout_width="@dimen/pro_column_width"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:importantForAccessibility="no"
+        android:maxLines="2"
+        android:textAppearance="@style/TextAppearance.Sift.Subtitle"
+        android:textColor="@color/sift_primary_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Unlimited" />
+
+    <ImageView
+        android:id="@+id/proIcon"
+        android:layout_width="@dimen/icon_sm"
+        android:layout_height="@dimen/icon_sm"
+        android:importantForAccessibility="no"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/proValue"
+        app:layout_constraintEnd_toEndOf="@id/proValue"
+        app:layout_constraintStart_toStartOf="@id/proValue"
+        app:layout_constraintTop_toTopOf="@id/proValue" />
+</androidx.constraintlayout.widget.ConstraintLayout>

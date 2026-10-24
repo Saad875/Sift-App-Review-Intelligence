@@ -1,49 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Type scale. All sizes are in sp so text follows the system font size. -->
+<!-- Type scale on Manrope. All sizes are in sp so text follows the system font size.
+     Each style sets both lineHeight and android:lineHeight: MaterialTextView reads the
+     framework attribute first, and some OEM base styles set it. -->
 <resources xmlns:tools="http://schemas.android.com/tools">
     <style name="TextAppearance.Sift" parent="TextAppearance.Material3.BodyLarge">
         <item name="android:textColor">@color/sift_text_primary</item>
-        <item name="fontFamily">sans-serif</item>
-        <item name="android:fontFamily">sans-serif</item>
+        <item name="fontFamily">@font/manrope_regular</item>
+        <item name="android:fontFamily">@font/manrope_regular</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="TextAppearance.Sift.Hero">
+        <item name="android:textSize">@dimen/text_hero</item>
+        <item name="fontFamily">@font/manrope_extrabold</item>
+        <item name="android:fontFamily">@font/manrope_extrabold</item>
+        <item name="android:letterSpacing">-0.03</item>
+        <item name="lineHeight">@dimen/line_hero</item>
+        <item name="android:lineHeight" tools:targetApi="p">@dimen/line_hero</item>
     </style>
 
     <style name="TextAppearance.Sift.Display">
         <item name="android:textSize">@dimen/text_display</item>
-        <item name="fontFamily">sans-serif-medium</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="android:letterSpacing">-0.01</item>
-        <item name="lineHeight">40sp</item>
-        <item name="android:lineHeight" tools:targetApi="p">40sp</item>
+        <item name="fontFamily">@font/manrope_extrabold</item>
+        <item name="android:fontFamily">@font/manrope_extrabold</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="lineHeight">@dimen/line_display</item>
+        <item name="android:lineHeight" tools:targetApi="p">@dimen/line_display</item>
     </style>
 
     <style name="TextAppearance.Sift.Headline">
         <item name="android:textSize">@dimen/text_headline</item>
-        <item name="fontFamily">sans-serif-medium</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="lineHeight">32sp</item>
-        <item name="android:lineHeight" tools:targetApi="p">32sp</item>
+        <item name="fontFamily">@font/manrope_bold</item>
+        <item name="android:fontFamily">@font/manrope_bold</item>
+        <item name="android:letterSpacing">-0.01</item>
+        <item name="lineHeight">@dimen/line_headline</item>
+        <item name="android:lineHeight" tools:targetApi="p">@dimen/line_headline</item>
     </style>
 
     <style name="TextAppearance.Sift.Title">
         <item name="android:textSize">@dimen/text_title</item>
-        <item name="fontFamily">sans-serif-medium</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="lineHeight">28sp</item>
-        <item name="android:lineHeight" tools:targetApi="p">28sp</item>
+        <item name="fontFamily">@font/manrope_bold</item>
+        <item name="android:fontFamily">@font/manrope_bold</item>
+        <item name="lineHeight">@dimen/line_title</item>
+        <item name="android:lineHeight" tools:targetApi="p">@dimen/line_title</item>
     </style>
 
     <style name="TextAppearance.Sift.Subtitle">
         <item name="android:textSize">@dimen/text_subtitle</item>
-        <item name="fontFamily">sans-serif-medium</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="lineHeight">24sp</item>
-        <item name="android:lineHeight" tools:targetApi="p">24sp</item>
+        <item name="fontFamily">@font/manrope_semibold</item>
+        <item name="android:fontFamily">@font/manrope_semibold</item>
+        <item name="lineHeight">@dimen/line_subtitle</item>
+        <item name="android:lineHeight" tools:targetApi="p">@dimen/line_subtitle</item>
     </style>
 
     <style name="TextAppearance.Sift.Body">
         <item name="android:textSize">@dimen/text_body</item>
-        <item name="lineHeight">24sp</item>
-        <item name="android:lineHeight" tools:targetApi="p">24sp</item>
+        <item name="lineHeight">@dimen/line_body</item>
+        <item name="android:lineHeight" tools:targetApi="p">@dimen/line_body</item>
     </style>
 
     <style name="TextAppearance.Sift.Body.Secondary">
@@ -52,49 +65,63 @@
 
     <style name="TextAppearance.Sift.BodySmall">
         <item name="android:textSize">@dimen/text_body_small</item>
+        <item name="fontFamily">@font/manrope_medium</item>
+        <item name="android:fontFamily">@font/manrope_medium</item>
         <item name="android:textColor">@color/sift_text_secondary</item>
-        <item name="lineHeight">20sp</item>
-        <item name="android:lineHeight" tools:targetApi="p">20sp</item>
+        <item name="lineHeight">@dimen/line_body_small</item>
+        <item name="android:lineHeight" tools:targetApi="p">@dimen/line_body_small</item>
     </style>
 
     <style name="TextAppearance.Sift.Label">
         <item name="android:textSize">@dimen/text_label</item>
-        <item name="fontFamily">sans-serif-medium</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">@font/manrope_bold</item>
+        <item name="android:fontFamily">@font/manrope_bold</item>
         <item name="android:textColor">@color/sift_text_secondary</item>
-        <item name="android:letterSpacing">0.06</item>
+        <item name="android:letterSpacing">0.08</item>
         <item name="android:textAllCaps">true</item>
-        <item name="lineHeight">16sp</item>
-        <item name="android:lineHeight" tools:targetApi="p">16sp</item>
+        <item name="lineHeight">@dimen/line_label</item>
+        <item name="android:lineHeight" tools:targetApi="p">@dimen/line_label</item>
     </style>
 
     <style name="TextAppearance.Sift.Caption">
         <item name="android:textSize">@dimen/text_caption</item>
+        <item name="fontFamily">@font/manrope_medium</item>
+        <item name="android:fontFamily">@font/manrope_medium</item>
         <item name="android:textColor">@color/sift_text_tertiary</item>
-        <item name="lineHeight">16sp</item>
-        <item name="android:lineHeight" tools:targetApi="p">16sp</item>
+        <item name="lineHeight">@dimen/line_label</item>
+        <item name="android:lineHeight" tools:targetApi="p">@dimen/line_label</item>
     </style>
 
     <style name="TextAppearance.Sift.Metric">
         <item name="android:textSize">@dimen/text_metric</item>
-        <item name="fontFamily">sans-serif-medium</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="lineHeight">34sp</item>
-        <item name="android:lineHeight" tools:targetApi="p">34sp</item>
+        <item name="fontFamily">@font/manrope_extrabold</item>
+        <item name="android:fontFamily">@font/manrope_extrabold</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="lineHeight">@dimen/line_metric</item>
+        <item name="android:lineHeight" tools:targetApi="p">@dimen/line_metric</item>
+    </style>
+
+    <style name="TextAppearance.Sift.Price">
+        <item name="android:textSize">@dimen/text_headline</item>
+        <item name="fontFamily">@font/manrope_extrabold</item>
+        <item name="android:fontFamily">@font/manrope_extrabold</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="lineHeight">@dimen/line_headline</item>
+        <item name="android:lineHeight" tools:targetApi="p">@dimen/line_headline</item>
     </style>
 
     <style name="TextAppearance.Sift.Button" parent="TextAppearance.Material3.LabelLarge">
         <item name="android:textSize">@dimen/text_body</item>
-        <item name="fontFamily">sans-serif-medium</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">@font/manrope_bold</item>
+        <item name="android:fontFamily">@font/manrope_bold</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:letterSpacing">0.01</item>
     </style>
 
     <style name="TextAppearance.Sift.Tab" parent="TextAppearance.Material3.TitleSmall">
         <item name="android:textSize">@dimen/text_body_small</item>
-        <item name="fontFamily">sans-serif-medium</item>
-        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">@font/manrope_semibold</item>
+        <item name="android:fontFamily">@font/manrope_semibold</item>
         <item name="android:textAllCaps">false</item>
     </style>
 </resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Round green halo behind the logo and onboarding illustrations. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <gradient
+        android:endColor="@android:color/transparent"
+        android:gradientRadius="@dimen/orb_glow_radius"
+        android:startColor="@color/sift_glow_green"
+        android:type="radial" />
+</shape>

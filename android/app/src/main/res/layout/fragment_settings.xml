@@ -5,7 +5,7 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/sift_background">
+    android:background="@drawable/bg_screen">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
@@ -37,13 +37,42 @@
             android:paddingEnd="@dimen/screen_margin"
             android:paddingBottom="@dimen/space_8">
 
+            <!-- General -->
+            <TextView
+                android:id="@+id/generalLabel"
+                style="@style/Sift.SectionLabel"
+                android:text="@string/settings_general_label"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/languageRow"
+                layout="@layout/item_settings_row"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/generalLabel" />
+
+            <include
+                android:id="@+id/proRow"
+                layout="@layout/item_settings_row"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/languageRow" />
+
             <!-- Backend -->
             <TextView
                 android:id="@+id/backendLabel"
                 style="@style/Sift.SectionLabel"
+                android:layout_marginTop="@dimen/space_8"
                 android:text="@string/settings_backend_label"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/proRow" />
 
             <TextView
                 android:id="@+id/backendCaption"

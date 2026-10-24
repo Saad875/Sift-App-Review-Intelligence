@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:stateListAnimator="@animator/press_scale">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/space_16"
+        android:padding="@dimen/space_4">
+
+        <ImageView
+            android:id="@+id/rowIcon"
+            android:layout_width="@dimen/app_icon_sm"
+            android:layout_height="@dimen/app_icon_sm"
+            android:background="@drawable/bg_icon_tile"
+            android:importantForAccessibility="no"
+            android:padding="@dimen/space_3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/sift_primary_text"
+            tools:src="@drawable/ic_public" />
+
+        <TextView
+            android:id="@+id/rowTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_4"
+            android:layout_marginEnd="@dimen/space_2"
+            android:textAppearance="@style/TextAppearance.Sift.Subtitle"
+            app:layout_constraintBottom_toTopOf="@id/rowValue"
+            app:layout_constraintEnd_toStartOf="@id/rowChevron"
+            app:layout_constraintStart_toEndOf="@id/rowIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Language" />
+
+        <TextView
+            android:id="@+id/rowValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_0_5"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.Sift.Caption"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/rowTitle"
+            app:layout_constraintStart_toStartOf="@id/rowTitle"
+            app:layout_constraintTop_toBottomOf="@id/rowTitle"
+            tools:text="English" />
+
+        <ImageView
+            android:id="@+id/rowChevron"
+            android:layout_width="@dimen/icon_md"
+            android:layout_height="@dimen/icon_md"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_chevron_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/sift_text_tertiary" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

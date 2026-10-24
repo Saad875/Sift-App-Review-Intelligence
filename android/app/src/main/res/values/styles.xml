@@ -2,16 +2,16 @@
 <resources>
     <!-- Cards -->
     <style name="Widget.Sift.Card" parent="Widget.Material3.CardView.Filled">
-        <item name="cardBackgroundColor">@color/sift_surface</item>
-        <item name="cardCornerRadius">@dimen/radius_lg</item>
+        <item name="cardBackgroundColor">@color/sift_glass</item>
+        <item name="cardCornerRadius">@dimen/radius_xl</item>
         <item name="cardElevation">@dimen/elevation_0</item>
-        <item name="strokeColor">@color/sift_outline</item>
+        <item name="strokeColor">@color/sift_glass_stroke</item>
         <item name="strokeWidth">@dimen/stroke_hairline</item>
         <item name="rippleColor">@color/ripple_primary</item>
     </style>
 
     <style name="Widget.Sift.Card.Raised">
-        <item name="cardBackgroundColor">@color/sift_surface_raised</item>
+        <item name="cardBackgroundColor">@color/sift_glass_strong</item>
         <item name="strokeWidth">@dimen/elevation_0</item>
     </style>
 
@@ -24,10 +24,11 @@
 
     <!-- Buttons -->
     <style name="Widget.Sift.Button" parent="Widget.Material3.Button">
+        <item name="android:stateListAnimator">@animator/press_bounce</item>
         <item name="iconGravity">textStart</item>
         <item name="android:minHeight">@dimen/button_height</item>
         <item name="android:textAppearance">@style/TextAppearance.Sift.Button</item>
-        <item name="cornerRadius">@dimen/radius_md</item>
+        <item name="cornerRadius">@dimen/radius_pill</item>
         <item name="backgroundTint">@color/button_primary_background</item>
         <item name="android:textColor">@color/button_primary_content</item>
         <item name="iconTint">@color/button_primary_content</item>
@@ -36,18 +37,42 @@
         <item name="android:paddingEnd">@dimen/space_6</item>
     </style>
 
+    <!-- Gradient call-to-action for onboarding and Pro. -->
+    <style name="Widget.Sift.Button.Hero">
+        <item name="backgroundTint">@null</item>
+        <item name="android:background">@drawable/bg_button_gradient</item>
+        <item name="android:minHeight">@dimen/button_height_hero</item>
+        <item name="android:elevation">@dimen/elevation_0</item>
+    </style>
+
+    <!-- Compact gradient pill, for the Pro entry point in headers. -->
+    <style name="Widget.Sift.Button.Hero.Small">
+        <item name="android:minHeight">@dimen/touch_target</item>
+        <item name="android:minWidth">@dimen/space_0</item>
+        <item name="android:paddingStart">@dimen/space_3</item>
+        <item name="android:paddingEnd">@dimen/space_4</item>
+        <item name="iconSize">@dimen/icon_xs</item>
+        <item name="iconPadding">@dimen/space_1_5</item>
+        <item name="android:textAppearance">@style/TextAppearance.Sift.Tab</item>
+        <item name="android:insetTop">@dimen/space_1</item>
+        <item name="android:insetBottom">@dimen/space_1</item>
+    </style>
+
     <style name="Widget.Sift.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:stateListAnimator">@animator/press_bounce</item>
         <item name="iconGravity">textStart</item>
         <item name="android:minHeight">@dimen/button_height</item>
         <item name="android:textAppearance">@style/TextAppearance.Sift.Button</item>
-        <item name="cornerRadius">@dimen/radius_md</item>
+        <item name="cornerRadius">@dimen/radius_pill</item>
         <item name="strokeColor">@color/button_outline_stroke</item>
+        <item name="backgroundTint">@color/sift_glass</item>
         <item name="android:textColor">@color/sift_text_primary</item>
         <item name="iconTint">@color/sift_primary_text</item>
         <item name="rippleColor">@color/ripple_primary</item>
     </style>
 
     <style name="Widget.Sift.Button.Text" parent="Widget.Material3.Button.TextButton">
+        <item name="android:stateListAnimator">@animator/press_bounce</item>
         <item name="iconGravity">textStart</item>
         <item name="android:minHeight">@dimen/touch_target</item>
         <item name="android:textAppearance">@style/TextAppearance.Sift.Button</item>
@@ -57,10 +82,11 @@
     </style>
 
     <style name="Widget.Sift.Button.Tonal" parent="Widget.Material3.Button.TonalButton">
+        <item name="android:stateListAnimator">@animator/press_bounce</item>
         <item name="iconGravity">textStart</item>
         <item name="android:minHeight">@dimen/button_height</item>
         <item name="android:textAppearance">@style/TextAppearance.Sift.Button</item>
-        <item name="cornerRadius">@dimen/radius_md</item>
+        <item name="cornerRadius">@dimen/radius_pill</item>
         <item name="backgroundTint">@color/sift_surface_raised</item>
         <item name="android:textColor">@color/sift_text_primary</item>
         <item name="iconTint">@color/sift_primary_text</item>
@@ -68,6 +94,7 @@
     </style>
 
     <style name="Widget.Sift.Button.Icon" parent="Widget.Material3.Button.IconButton">
+        <item name="android:stateListAnimator">@animator/press_bounce</item>
         <item name="android:minWidth">@dimen/touch_target</item>
         <item name="android:minHeight">@dimen/touch_target</item>
         <item name="iconTint">@color/sift_text_primary</item>
@@ -105,7 +132,7 @@
         <item name="boxCornerRadiusBottomStart">@dimen/radius_md</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/radius_md</item>
         <item name="boxStrokeColor">@color/sift_primary</item>
-        <item name="boxBackgroundColor">@color/sift_surface</item>
+        <item name="boxBackgroundColor">@color/sift_glass</item>
         <item name="hintTextColor">@color/sift_primary_text</item>
         <item name="android:textColorHint">@color/sift_text_tertiary</item>
         <item name="startIconTint">@color/sift_text_secondary</item>
@@ -119,6 +146,7 @@
         <item name="boxCornerRadiusBottomEnd">@dimen/radius_xl</item>
         <item name="boxStrokeWidth">@dimen/stroke_hairline</item>
         <item name="boxStrokeWidthFocused">@dimen/stroke_thin</item>
+        <item name="boxStrokeColor">@color/search_box_stroke</item>
         <item name="startIconTint">@color/sift_primary_text</item>
     </style>
 
@@ -133,8 +161,11 @@
 
     <style name="Widget.Sift.TabLayout" parent="Widget.Material3.TabLayout">
         <item name="android:background">@android:color/transparent</item>
+        <item name="tabIndicator">@drawable/bg_tab_indicator</item>
         <item name="tabIndicatorColor">@color/sift_primary</item>
-        <item name="tabIndicatorHeight">@dimen/stroke_thin</item>
+        <item name="tabIndicatorHeight">@dimen/tab_indicator_height</item>
+        <item name="tabIndicatorAnimationMode">elastic</item>
+        <item name="tabIndicatorAnimationDuration">@integer/motion_long</item>
         <item name="tabIndicatorFullWidth">false</item>
         <item name="tabTextColor">@color/tab_text</item>
         <item name="tabTextAppearance">@style/TextAppearance.Sift.Tab</item>

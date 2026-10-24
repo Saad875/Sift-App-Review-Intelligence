@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Solid disc behind onboarding icons: deep blue fading into NVIDIA green. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <gradient
+        android:angle="315"
+        android:endColor="@color/sift_primary_container"
+        android:startColor="@color/sift_glass_strong" />
+    <stroke
+        android:width="@dimen/stroke_hairline"
+        android:color="@color/sift_glass_stroke" />
+</shape>

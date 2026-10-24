@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:stateListAnimator="@animator/press_scale">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_4">
+
+        <ImageView
+            android:id="@+id/radio"
+            android:layout_width="@dimen/icon_md"
+            android:layout_height="@dimen/icon_md"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_radio_checked" />
+
+        <TextView
+            android:id="@+id/planTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_3"
+            android:layout_marginTop="@dimen/space_1"
+            android:textAppearance="@style/TextAppearance.Sift.Subtitle"
+            app:layout_constraintBottom_toTopOf="@id/planDetail"
+            app:layout_constraintStart_toEndOf="@id/radio"
+            app:layout_constraintTop_toBottomOf="@id/badge"
+            app:layout_goneMarginTop="@dimen/space_0"
+            tools:text="Yearly" />
+
+        <TextView
+            android:id="@+id/badge"
+            style="@style/Sift.Badge"
+            android:background="@drawable/bg_badge_primary"
+            android:text="@string/pro_plan_best_value"
+            android:textColor="@color/sift_on_primary"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/planTitle"
+            app:layout_constraintStart_toStartOf="@id/planTitle"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/planDetail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_0_5"
+            android:layout_marginEnd="@dimen/space_2"
+            android:textAppearance="@style/TextAppearance.Sift.Caption"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/planPrice"
+            app:layout_constraintStart_toStartOf="@id/planTitle"
+            app:layout_constraintTop_toBottomOf="@id/planTitle"
+            tools:text="$4.00 per month, billed yearly" />
+
+        <TextView
+            android:id="@+id/planPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.Sift.Subtitle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="$47.99 / year" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

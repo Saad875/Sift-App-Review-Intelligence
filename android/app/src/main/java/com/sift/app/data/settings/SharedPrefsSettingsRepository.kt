@@ -17,9 +17,9 @@ class SharedPrefsSettingsRepository(
 
     override fun setBackendUrl(url: String) = prefs.edit { putString(KEY_BACKEND_URL, url) }
 
-    override fun isIntroCompleted(): Boolean = prefs.getBoolean(KEY_INTRO_DONE, false)
+    override fun isOnboardingCompleted(): Boolean = prefs.getBoolean(KEY_ONBOARDING_DONE, false)
 
-    override fun setIntroCompleted() = prefs.edit { putBoolean(KEY_INTRO_DONE, true) }
+    override fun setOnboardingCompleted() = prefs.edit { putBoolean(KEY_ONBOARDING_DONE, true) }
 
     override fun themeMode(): ThemeMode =
         prefs.getString(KEY_THEME, null)?.let { stored -> ThemeMode.entries.firstOrNull { it.name == stored } }
@@ -34,7 +34,7 @@ class SharedPrefsSettingsRepository(
     private companion object {
         const val FILE = "sift_settings"
         const val KEY_BACKEND_URL = "backend_url"
-        const val KEY_INTRO_DONE = "intro_done"
+        const val KEY_ONBOARDING_DONE = "onboarding_done"
         const val KEY_THEME = "theme_mode"
         const val KEY_COUNTRY = "last_country"
         const val DEFAULT_COUNTRY = "us"

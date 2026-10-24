@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Each language's name in its own script, and a short monogram for its badge.
+     These never change with the UI language. -->
+<resources>
+    <string name="language_native_en" translatable="false">English</string>
+    <string name="language_native_zh" translatable="false">简体中文</string>
+    <string name="language_native_hi" translatable="false">हिन्दी</string>
+    <string name="language_native_es" translatable="false">Español</string>
+    <string name="language_native_fr" translatable="false">Français</string>
+    <string name="language_native_ar" translatable="false">العربية</string>
+    <string name="language_native_bn" translatable="false">বাংলা</string>
+    <string name="language_native_pt" translatable="false">Português</string>
+    <string name="language_native_ru" translatable="false">Русский</string>
+    <string name="language_native_ur" translatable="false">اردو</string>
+    <string name="language_native_in" translatable="false">Bahasa Indonesia</string>
+    <string name="language_native_de" translatable="false">Deutsch</string>
+    <string name="language_native_ja" translatable="false">日本語</string>
+    <string name="language_native_sw" translatable="false">Kiswahili</string>
+    <string name="language_native_tr" translatable="false">Türkçe</string>
+
+    <string name="language_mark_en" translatable="false">EN</string>
+    <string name="language_mark_zh" translatable="false">中</string>
+    <string name="language_mark_hi" translatable="false">हि</string>
+    <string name="language_mark_es" translatable="false">ES</string>
+    <string name="language_mark_fr" translatable="false">FR</string>
+    <string name="language_mark_ar" translatable="false">ع</string>
+    <string name="language_mark_bn" translatable="false">বা</string>
+    <string name="language_mark_pt" translatable="false">PT</string>
+    <string name="language_mark_ru" translatable="false">RU</string>
+    <string name="language_mark_ur" translatable="false">اُ</string>
+    <string name="language_mark_in" translatable="false">ID</string>
+    <string name="language_mark_de" translatable="false">DE</string>
+    <string name="language_mark_ja" translatable="false">日</string>
+    <string name="language_mark_sw" translatable="false">SW</string>
+    <string name="language_mark_tr" translatable="false">TR</string>
+</resources>

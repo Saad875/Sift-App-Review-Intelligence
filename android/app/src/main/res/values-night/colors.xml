@@ -2,19 +2,33 @@
 <!-- Dark palette, used by default. -->
 <resources>
     <!-- Surfaces -->
-    <color name="sift_background">#0B1F3A</color>
-    <color name="sift_surface">#12294A</color>
-    <color name="sift_surface_raised">#193459</color>
-    <color name="sift_surface_overlay">#1C3A63</color>
-    <color name="sift_outline">#2C4A75</color>
-    <color name="sift_divider">#203D66</color>
+    <color name="sift_background">#070F20</color>
+    <color name="sift_surface">#14284A</color>
+    <color name="sift_surface_raised">#1A3259</color>
+    <color name="sift_surface_overlay">#1D3963</color>
+    <color name="sift_outline">#2A4670</color>
+    <color name="sift_divider">#1E3A62</color>
     <color name="sift_scrim">#B3050F1F</color>
+
+    <!-- Screen gradient, glass cards and ambient glows -->
+    <color name="sift_background_top">#0F2650</color>
+    <color name="sift_background_bottom">#050B18</color>
+    <color name="sift_glass">#B3142A4F</color>
+    <color name="sift_glass_strong">#E6172F57</color>
+    <color name="sift_glass_stroke">#26FFFFFF</color>
+    <color name="sift_glow_green">#5976B900</color>
+    <color name="sift_glow_blue">#594A7DFF</color>
+    <color name="sift_glow_cyan">#3D2FD3E0</color>
+    <color name="sift_disabled_container">#1FFFFFFF</color>
+    <color name="sift_shine">#59FFFFFF</color>
+    <color name="sift_accent_blue">#5B8CFF</color>
 
     <!-- Accent -->
     <color name="sift_primary">#76B900</color>
     <color name="sift_on_primary">#0B1F3A</color>
     <color name="sift_primary_text">#8FD11A</color>
     <color name="sift_primary_container">#3376B900</color>
+    <color name="sift_primary_bright">#B4F03C</color>
 
     <!-- Text (contrast on sift_background: 16.4:1, 9.2:1, 5.6:1) -->
     <color name="sift_text_primary">#FFFFFF</color>
@@ -33,9 +47,9 @@
     <color name="sift_info_container">#297FB0FF</color>
 
     <!-- Skeleton loaders -->
-    <color name="sift_skeleton_base">#173157</color>
-    <color name="sift_skeleton_highlight">#22416D</color>
+    <color name="sift_skeleton_base">#15294A</color>
+    <color name="sift_skeleton_highlight">#223F69</color>
 
     <!-- Chart track -->
-    <color name="sift_chart_track">#1C3A63</color>
+    <color name="sift_chart_track">#1B3357</color>
 </resources>

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isVisible
+import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.viewModels
 import com.sift.app.R
 import com.sift.app.databinding.FragmentHomeBinding
@@ -20,8 +21,11 @@ import com.sift.app.presentation.common.applySystemBarPadding
 import com.sift.app.presentation.common.bind
 import com.sift.app.presentation.common.collectWhileStarted
 import com.sift.app.presentation.common.errorMessage
+import com.sift.app.presentation.common.fadeInUp
 import com.sift.app.presentation.common.hideKeyboard
 import com.sift.app.presentation.common.snackbar
+import com.sift.app.presentation.navigation.Transition
+import com.sift.app.presentation.onboarding.PremiumFragment
 import com.sift.app.presentation.progress.ProgressFragment
 import com.sift.app.presentation.report.ReportFragment
 import com.sift.app.presentation.search.SearchFragment
@@ -46,6 +50,17 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         binding.recentList.adapter = adapter
 
         binding.settingsButton.setOnClickListener { navigator.push(SettingsFragment.newInstance()) }
+        binding.proButton.setOnClickListener {
+            navigator.push(PremiumFragment.newInstance(PremiumFragment.Mode.SETTINGS), Transition.FORWARD)
+        }
+        binding.scroll.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, _ ->
+            binding.aurora.setScrollOffset(scrollY)
+        })
+        if (savedInstanceState == null) {
+            val step = resources.getInteger(R.integer.motion_stagger_step).toLong()
+            listOf(binding.headline, binding.subtitle, binding.searchLayout, binding.importCard, binding.demoCard)
+                .forEachIndexed { index, target -> target.fadeInUp(delayMillis = step * (index + 1)) }
+        }
         binding.searchInput.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 submitSearch()

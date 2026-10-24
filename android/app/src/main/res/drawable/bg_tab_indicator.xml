@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Rounded pill under the selected tab. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <corners android:radius="@dimen/radius_pill" />
+    <solid android:color="@color/sift_primary" />
+    <size android:height="@dimen/tab_indicator_height" />
+</shape>
