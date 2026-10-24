@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="review_count">
+        <item quantity="one">%1$s रिव्यू</item>
+        <item quantity="other">%1$s रिव्यू</item>
+    </plurals>
+    <plurals name="rating_count">
+        <item quantity="one">%1$s रेटिंग</item>
+        <item quantity="other">%1$s रेटिंग</item>
+    </plurals>
+    <plurals name="step_fetching_done">
+        <item quantity="one">%1$s यूनीक रिव्यू इकट्ठा हुआ</item>
+        <item quantity="other">%1$s यूनीक रिव्यू इकट्ठा हुए</item>
+    </plurals>
+    <plurals name="step_classifying_done">
+        <item quantity="one">%1$s रिव्यू वर्गीकृत हुआ</item>
+        <item quantity="other">%1$s रिव्यू वर्गीकृत हुए</item>
+    </plurals>
+    <plurals name="step_clustering_done">
+        <item quantity="one">%1$d थीम मिली</item>
+        <item quantity="other">%1$d थीम मिलीं</item>
+    </plurals>
+    <plurals name="step_prioritizing_done">
+        <item quantity="one">%1$d बैकलॉग आइटम रैंक हुआ</item>
+        <item quantity="other">%1$d बैकलॉग आइटम रैंक हुए</item>
+    </plurals>
+    <plurals name="step_researching_done">
+        <item quantity="one">%1$d प्रतिस्पर्धी पर रिसर्च हुई</item>
+        <item quantity="other">%1$d प्रतिस्पर्धियों पर रिसर्च हुई</item>
+    </plurals>
+    <plurals name="cd_star_rating">
+        <item quantity="one">%1$d स्टार</item>
+        <item quantity="other">%1$d स्टार</item>
+    </plurals>
+</resources>

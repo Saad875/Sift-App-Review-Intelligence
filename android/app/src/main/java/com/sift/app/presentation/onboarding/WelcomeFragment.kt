@@ -26,7 +26,9 @@ class WelcomeFragment : BaseFragment<FragmentWelcomeBinding>(FragmentWelcomeBind
 
         override fun onPageSelected(position: Int) {
             val last = position == WelcomePage.entries.lastIndex
-            binding.nextButton.setText(if (last) R.string.welcome_get_started else R.string.welcome_next)
+            val label = getString(if (last) R.string.welcome_get_started else R.string.welcome_next)
+            // Re-setting identical text mid-layout makes MaterialButton misplace its end icon.
+            if (binding.nextButton.text.toString() != label) binding.nextButton.text = label
         }
     }
 

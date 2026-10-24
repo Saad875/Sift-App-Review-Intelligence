@@ -22,6 +22,7 @@ import com.sift.app.presentation.common.bind
 import com.sift.app.presentation.common.collectWhileStarted
 import com.sift.app.presentation.common.errorMessage
 import com.sift.app.presentation.common.fadeInUp
+import com.sift.app.presentation.common.matchStatusBarHeight
 import com.sift.app.presentation.common.hideKeyboard
 import com.sift.app.presentation.common.snackbar
 import com.sift.app.presentation.navigation.Transition
@@ -45,6 +46,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.content.applySystemBarPadding(top = true, bottom = true)
+        binding.statusScrim.matchStatusBarHeight()
 
         adapter = RecentAnalysisAdapter(viewModel::onAnalysisClicked)
         binding.recentList.adapter = adapter

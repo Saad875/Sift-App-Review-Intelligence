@@ -113,6 +113,11 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsB
         viewModel.saveBackendUrl(binding.urlInput.text?.toString().orEmpty())
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.refreshLanguage()
+    }
+
     private fun render(state: UiState<SettingsContent>) {
         val content = (state as? UiState.Content)?.data ?: return
         if (!urlInitialised) {

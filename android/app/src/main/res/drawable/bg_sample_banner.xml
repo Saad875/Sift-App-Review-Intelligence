@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Glass notice with a warm amber edge: marks sample data without shouting. -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
-    <solid android:color="@color/sift_neutral_container" />
-    <corners android:radius="@dimen/radius_md" />
+    <gradient
+        android:angle="0"
+        android:endColor="@color/sift_glass"
+        android:startColor="@color/sift_neutral_container" />
+    <stroke
+        android:width="@dimen/stroke_hairline"
+        android:color="@color/sift_neutral_container" />
+    <corners android:radius="@dimen/radius_lg" />
 </shape>

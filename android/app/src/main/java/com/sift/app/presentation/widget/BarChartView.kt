@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.use
 import com.sift.app.R
 import com.sift.app.presentation.common.Motion
+import com.sift.app.presentation.common.appTypeface
 import kotlin.math.max
 
 /**
@@ -30,8 +31,11 @@ class BarChartView @JvmOverloads constructor(
 
     private val barPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val trackPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val labelPaint = TextPaint(Paint.ANTI_ALIAS_FLAG)
-    private val valuePaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply { textAlign = Paint.Align.RIGHT }
+    private val labelPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply { typeface = context.appTypeface(R.font.manrope_medium) }
+    private val valuePaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+        textAlign = Paint.Align.RIGHT
+        typeface = context.appTypeface(R.font.manrope_semibold)
+    }
     private val rect = RectF()
 
     private var barHeight = 0f
@@ -110,27 +114,34 @@ class BarChartView @JvmOverloads constructor(
         if (bars.isEmpty()) return
         val maxValue = bars.maxOf { it.value }.coerceAtLeast(1)
         val rowHeight = rowHeight()
-        val trackStart = paddingLeft + labelWidth
-        val trackEnd = width - paddingRight - valueWidth
+        // In right-to-left layouts the labels sit on the right and bars grow leftwards.
+        val rtl = layoutDirection == LAYOUT_DIRECTION_RTL
+        val trackStart = if (rtl) paddingLeft + valueWidth else paddingLeft + labelWidth
+        val trackEnd = if (rtl) width - paddingRight - labelWidth else width - paddingRight - valueWidth
         val trackWidth = (trackEnd - trackStart).coerceAtLeast(0f)
         val radius = barHeight / 2f
         val textOffset = -(labelPaint.ascent() + labelPaint.descent()) / 2f
+        labelPaint.textAlign = if (rtl) Paint.Align.RIGHT else Paint.Align.LEFT
+        valuePaint.textAlign = if (rtl) Paint.Align.LEFT else Paint.Align.RIGHT
+        val labelX = if (rtl) (width - paddingRight).toFloat() else paddingLeft.toFloat()
+        val valueX = if (rtl) paddingLeft.toFloat() else (width - paddingRight).toFloat()
 
         bars.forEachIndexed { index, bar ->
             val top = paddingTop + index * (rowHeight + rowSpacing)
             val centerY = top + rowHeight / 2f
-            canvas.drawText(bar.label, paddingLeft.toFloat(), centerY + textOffset, labelPaint)
+            canvas.drawText(bar.label, labelX, centerY + textOffset, labelPaint)
 
             rect.set(trackStart, centerY - barHeight / 2f, trackEnd, centerY + barHeight / 2f)
             canvas.drawRoundRect(rect, radius, radius, trackPaint)
 
-            val fill = trackWidth * (bar.value.toFloat() / maxValue) * progress
-            if (fill > 0f) {
-                rect.set(trackStart, centerY - barHeight / 2f, trackStart + max(fill, barHeight), centerY + barHeight / 2f)
+            val fill = max(trackWidth * (bar.value.toFloat() / maxValue) * progress, barHeight)
+            if (bar.value > 0 && progress > 0f) {
+                if (rtl) rect.set(trackEnd - fill, centerY - barHeight / 2f, trackEnd, centerY + barHeight / 2f)
+                else rect.set(trackStart, centerY - barHeight / 2f, trackStart + fill, centerY + barHeight / 2f)
                 barPaint.color = bar.color
                 canvas.drawRoundRect(rect, radius, radius, barPaint)
             }
-            canvas.drawText(bar.valueText, (width - paddingRight).toFloat(), centerY + textOffset, valuePaint)
+            canvas.drawText(bar.valueText, valueX, centerY + textOffset, valuePaint)
         }
     }
 

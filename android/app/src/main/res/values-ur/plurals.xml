@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="review_count">
+        <item quantity="one">%1$s ریویو</item>
+        <item quantity="other">%1$s ریویوز</item>
+    </plurals>
+    <plurals name="rating_count">
+        <item quantity="one">%1$s ریٹنگ</item>
+        <item quantity="other">%1$s ریٹنگز</item>
+    </plurals>
+    <plurals name="step_fetching_done">
+        <item quantity="one">%1$s منفرد ریویو جمع ہوا</item>
+        <item quantity="other">%1$s منفرد ریویوز جمع ہوئے</item>
+    </plurals>
+    <plurals name="step_classifying_done">
+        <item quantity="one">%1$s ریویو کی درجہ بندی ہوئی</item>
+        <item quantity="other">%1$s ریویوز کی درجہ بندی ہوئی</item>
+    </plurals>
+    <plurals name="step_clustering_done">
+        <item quantity="one">%1$d موضوع ملا</item>
+        <item quantity="other">%1$d موضوعات ملے</item>
+    </plurals>
+    <plurals name="step_prioritizing_done">
+        <item quantity="one">%1$d بیک لاگ آئٹم ترتیب دیا گیا</item>
+        <item quantity="other">%1$d بیک لاگ آئٹمز ترتیب دیے گئے</item>
+    </plurals>
+    <plurals name="step_researching_done">
+        <item quantity="one">%1$d حریف پر تحقیق ہوئی</item>
+        <item quantity="other">%1$d حریفوں پر تحقیق ہوئی</item>
+    </plurals>
+    <plurals name="cd_star_rating">
+        <item quantity="one">%1$d ستارہ</item>
+        <item quantity="other">%1$d ستارے</item>
+    </plurals>
+</resources>

@@ -18,6 +18,7 @@ import com.sift.app.presentation.common.UiState
 import com.sift.app.presentation.common.applySystemBarPadding
 import com.sift.app.presentation.common.collectWhileStarted
 import com.sift.app.presentation.common.fadeInUp
+import com.sift.app.presentation.common.matchStatusBarHeight
 import com.sift.app.presentation.common.popIn
 import com.sift.app.presentation.common.snackbar
 import com.sift.app.presentation.common.startPulse
@@ -52,6 +53,7 @@ class PremiumFragment : BaseFragment<FragmentPremiumBinding>(FragmentPremiumBind
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.content.applySystemBarPadding(top = true, bottom = true)
+        binding.statusScrim.matchStatusBarHeight()
 
         ProFeature.entries.forEach(::addFeatureRow)
         binding.planYearly.badge.isVisible = true

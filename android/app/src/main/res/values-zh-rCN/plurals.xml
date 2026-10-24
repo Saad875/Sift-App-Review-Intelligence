@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="review_count">
+        <item quantity="other">%1$s 条评论</item>
+    </plurals>
+    <plurals name="rating_count">
+        <item quantity="other">%1$s 个评分</item>
+    </plurals>
+    <plurals name="step_fetching_done">
+        <item quantity="other">已收集 %1$s 条不重复评论</item>
+    </plurals>
+    <plurals name="step_classifying_done">
+        <item quantity="other">已分类 %1$s 条评论</item>
+    </plurals>
+    <plurals name="step_clustering_done">
+        <item quantity="other">发现 %1$d 个主题</item>
+    </plurals>
+    <plurals name="step_prioritizing_done">
+        <item quantity="other">已排序 %1$d 个待办事项</item>
+    </plurals>
+    <plurals name="step_researching_done">
+        <item quantity="other">已调研 %1$d 个竞品</item>
+    </plurals>
+    <plurals name="cd_star_rating">
+        <item quantity="other">%1$d 星</item>
+    </plurals>
+</resources>

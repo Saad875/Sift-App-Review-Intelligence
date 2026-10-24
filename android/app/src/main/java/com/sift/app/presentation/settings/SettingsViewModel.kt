@@ -124,6 +124,12 @@ class SettingsViewModel(
         }
     }
 
+    /** Re-reads the app language, which may have changed on the language screen. */
+    fun refreshLanguage() {
+        val current = language.current()
+        if ((_state.value as? UiState.Content)?.data?.language != current) update { it.copy(language = current) }
+    }
+
     fun setThemeMode(mode: ThemeMode) {
         val current = (_state.value as? UiState.Content)?.data?.themeMode
         if (current == mode) return

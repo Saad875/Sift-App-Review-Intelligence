@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="review_count">
+        <item quantity="one">%1$sটি রিভিউ</item>
+        <item quantity="other">%1$sটি রিভিউ</item>
+    </plurals>
+    <plurals name="rating_count">
+        <item quantity="one">%1$sটি রেটিং</item>
+        <item quantity="other">%1$sটি রেটিং</item>
+    </plurals>
+    <plurals name="step_fetching_done">
+        <item quantity="one">%1$sটি অনন্য রিভিউ সংগৃহীত</item>
+        <item quantity="other">%1$sটি অনন্য রিভিউ সংগৃহীত</item>
+    </plurals>
+    <plurals name="step_classifying_done">
+        <item quantity="one">%1$sটি রিভিউ শ্রেণিবদ্ধ</item>
+        <item quantity="other">%1$sটি রিভিউ শ্রেণিবদ্ধ</item>
+    </plurals>
+    <plurals name="step_clustering_done">
+        <item quantity="one">%1$dটি থিম পাওয়া গেছে</item>
+        <item quantity="other">%1$dটি থিম পাওয়া গেছে</item>
+    </plurals>
+    <plurals name="step_prioritizing_done">
+        <item quantity="one">%1$dটি ব্যাকলগ আইটেম সাজানো হয়েছে</item>
+        <item quantity="other">%1$dটি ব্যাকলগ আইটেম সাজানো হয়েছে</item>
+    </plurals>
+    <plurals name="step_researching_done">
+        <item quantity="one">%1$dটি প্রতিযোগী নিয়ে গবেষণা হয়েছে</item>
+        <item quantity="other">%1$dটি প্রতিযোগী নিয়ে গবেষণা হয়েছে</item>
+    </plurals>
+    <plurals name="cd_star_rating">
+        <item quantity="one">%1$dটি স্টার</item>
+        <item quantity="other">%1$dটি স্টার</item>
+    </plurals>
+</resources>

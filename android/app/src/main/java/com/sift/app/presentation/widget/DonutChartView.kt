@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.use
 import com.sift.app.R
 import com.sift.app.presentation.common.Motion
+import com.sift.app.presentation.common.appTypeface
 import kotlin.math.min
 
 /**
@@ -33,8 +34,14 @@ class DonutChartView @JvmOverloads constructor(
         strokeCap = Paint.Cap.ROUND
     }
     private val trackPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { style = Paint.Style.STROKE }
-    private val centerPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply { textAlign = Paint.Align.CENTER }
-    private val captionPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply { textAlign = Paint.Align.CENTER }
+    private val centerPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+        textAlign = Paint.Align.CENTER
+        typeface = context.appTypeface(R.font.manrope_extrabold)
+    }
+    private val captionPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+        textAlign = Paint.Align.CENTER
+        typeface = context.appTypeface(R.font.manrope_medium)
+    }
     private val bounds = RectF()
     private val defaultSize = resources.getDimensionPixelSize(R.dimen.donut_size)
     private var gapPx = 0f

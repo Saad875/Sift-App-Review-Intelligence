@@ -3,6 +3,7 @@ package com.sift.app.domain
 import com.sift.app.domain.error.AppError
 import com.sift.app.domain.error.InvalidReason
 import com.sift.app.domain.model.AnalysisRequest
+import com.sift.app.domain.model.AppLanguage
 import com.sift.app.domain.model.AnalysisStatus
 import com.sift.app.domain.model.BackendHealth
 import com.sift.app.domain.model.CsvDocument
@@ -11,6 +12,7 @@ import com.sift.app.domain.model.Review
 import com.sift.app.domain.repository.BackendRepository
 import com.sift.app.domain.usecase.CheckBackendUseCase
 import com.sift.app.domain.usecase.DraftReplyUseCase
+import com.sift.app.domain.usecase.LanguageUseCase
 import com.sift.app.domain.usecase.PollAnalysisUseCase
 import com.sift.app.domain.usecase.PollEvent
 import com.sift.app.domain.usecase.PreferencesUseCase
@@ -21,6 +23,8 @@ import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.test.currentTime
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -179,6 +183,54 @@ class PreferencesUseCaseTest {
     fun `reset restores the default`() {
         settings.url = "https://other/"
         assertEquals(settings.defaultBackendUrl, useCase.resetBackendUrl())
+    }
+
+    @Test
+    fun `onboarding runs once`() {
+        assertFalse(useCase.isOnboardingCompleted())
+        useCase.completeOnboarding()
+        assertTrue(useCase.isOnboardingCompleted())
+    }
+}
+
+class LanguageUseCaseTest {
+    @Test
+    fun `offers the 15 languages with English first`() {
+        val languages = LanguageUseCase(FakeLanguageRepository()).languages
+        assertEquals(15, languages.size)
+        assertEquals(AppLanguage.ENGLISH, languages.first())
+        assertEquals(languages.size, languages.map { it.tag }.toSet().size)
+    }
+
+    @Test
+    fun `chosen language wins over the device language`() {
+        val useCase = LanguageUseCase(FakeLanguageRepository(selected = "ar", device = listOf("de-DE")))
+        assertEquals(AppLanguage.ARABIC, useCase.current())
+    }
+
+    @Test
+    fun `falls back to the first supported device language, then English`() {
+        assertEquals(AppLanguage.GERMAN, LanguageUseCase(FakeLanguageRepository(device = listOf("nl-NL", "de-AT"))).current())
+        assertEquals(AppLanguage.ENGLISH, LanguageUseCase(FakeLanguageRepository(device = listOf("nl-NL"))).current())
+    }
+
+    @Test
+    fun `region and script variants and the legacy Indonesian code are matched`() {
+        assertEquals(AppLanguage.PORTUGUESE, AppLanguage.fromTag("pt-BR"))
+        assertEquals(AppLanguage.CHINESE, AppLanguage.fromTag("zh-Hans-CN"))
+        assertEquals(AppLanguage.INDONESIAN, AppLanguage.fromTag("id"))
+        assertEquals(AppLanguage.INDONESIAN, AppLanguage.fromTag("in_ID"))
+        assertNull(AppLanguage.fromTag("xx"))
+        assertNull(AppLanguage.fromTag(null))
+    }
+
+    @Test
+    fun `selecting applies the tag once`() {
+        val repository = FakeLanguageRepository(selected = "en")
+        val useCase = LanguageUseCase(repository)
+        assertTrue(useCase.select(AppLanguage.JAPANESE))
+        assertFalse(useCase.select(AppLanguage.JAPANESE))
+        assertEquals(listOf("ja"), repository.applied)
     }
 }
 

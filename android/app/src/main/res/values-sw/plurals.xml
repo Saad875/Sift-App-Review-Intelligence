@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="review_count">
+        <item quantity="one">Maoni %1$s</item>
+        <item quantity="other">Maoni %1$s</item>
+    </plurals>
+    <plurals name="rating_count">
+        <item quantity="one">Ukadiriaji %1$s</item>
+        <item quantity="other">Ukadiriaji %1$s</item>
+    </plurals>
+    <plurals name="step_fetching_done">
+        <item quantity="one">Maoni %1$s ya kipekee yamekusanywa</item>
+        <item quantity="other">Maoni %1$s ya kipekee yamekusanywa</item>
+    </plurals>
+    <plurals name="step_classifying_done">
+        <item quantity="one">Maoni %1$s yameainishwa</item>
+        <item quantity="other">Maoni %1$s yameainishwa</item>
+    </plurals>
+    <plurals name="step_clustering_done">
+        <item quantity="one">Mada %1$d imepatikana</item>
+        <item quantity="other">Mada %1$d zimepatikana</item>
+    </plurals>
+    <plurals name="step_prioritizing_done">
+        <item quantity="one">Kipengee %1$d kimepangwa</item>
+        <item quantity="other">Vipengee %1$d vimepangwa</item>
+    </plurals>
+    <plurals name="step_researching_done">
+        <item quantity="one">Mshindani %1$d amechunguzwa</item>
+        <item quantity="other">Washindani %1$d wamechunguzwa</item>
+    </plurals>
+    <plurals name="cd_star_rating">
+        <item quantity="one">Nyota %1$d</item>
+        <item quantity="other">Nyota %1$d</item>
+    </plurals>
+</resources>

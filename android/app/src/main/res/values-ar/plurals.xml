@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="review_count">
+        <item quantity="zero">لا توجد مراجعات</item>
+        <item quantity="one">مراجعة واحدة</item>
+        <item quantity="two">مراجعتان</item>
+        <item quantity="few">%1$s مراجعات</item>
+        <item quantity="many">%1$s مراجعة</item>
+        <item quantity="other">%1$s مراجعة</item>
+    </plurals>
+    <plurals name="rating_count">
+        <item quantity="zero">لا توجد تقييمات</item>
+        <item quantity="one">تقييم واحد</item>
+        <item quantity="two">تقييمان</item>
+        <item quantity="few">%1$s تقييمات</item>
+        <item quantity="many">%1$s تقييمًا</item>
+        <item quantity="other">%1$s تقييم</item>
+    </plurals>
+    <plurals name="step_fetching_done">
+        <item quantity="zero">لم تُجمع أي مراجعة فريدة</item>
+        <item quantity="one">جُمعت مراجعة فريدة واحدة</item>
+        <item quantity="two">جُمعت مراجعتان فريدتان</item>
+        <item quantity="few">جُمعت %1$s مراجعات فريدة</item>
+        <item quantity="many">جُمعت %1$s مراجعة فريدة</item>
+        <item quantity="other">جُمعت %1$s مراجعة فريدة</item>
+    </plurals>
+    <plurals name="step_classifying_done">
+        <item quantity="zero">لم تُصنَّف أي مراجعة</item>
+        <item quantity="one">صُنّفت مراجعة واحدة</item>
+        <item quantity="two">صُنّفت مراجعتان</item>
+        <item quantity="few">صُنّفت %1$s مراجعات</item>
+        <item quantity="many">صُنّفت %1$s مراجعة</item>
+        <item quantity="other">صُنّفت %1$s مراجعة</item>
+    </plurals>
+    <plurals name="step_clustering_done">
+        <item quantity="zero">لم يُعثر على أي موضوع</item>
+        <item quantity="one">عُثر على موضوع واحد</item>
+        <item quantity="two">عُثر على موضوعين</item>
+        <item quantity="few">عُثر على %1$d مواضيع</item>
+        <item quantity="many">عُثر على %1$d موضوعًا</item>
+        <item quantity="other">عُثر على %1$d موضوع</item>
+    </plurals>
+    <plurals name="step_prioritizing_done">
+        <item quantity="zero">لم يُرتَّب أي عنصر</item>
+        <item quantity="one">رُتّب عنصر واحد</item>
+        <item quantity="two">رُتّب عنصران</item>
+        <item quantity="few">رُتّبت %1$d عناصر</item>
+        <item quantity="many">رُتّب %1$d عنصرًا</item>
+        <item quantity="other">رُتّب %1$d عنصر</item>
+    </plurals>
+    <plurals name="step_researching_done">
+        <item quantity="zero">لم يُبحث عن أي منافس</item>
+        <item quantity="one">بُحث عن منافس واحد</item>
+        <item quantity="two">بُحث عن منافسَين</item>
+        <item quantity="few">بُحث عن %1$d منافسين</item>
+        <item quantity="many">بُحث عن %1$d منافسًا</item>
+        <item quantity="other">بُحث عن %1$d منافس</item>
+    </plurals>
+    <plurals name="cd_star_rating">
+        <item quantity="zero">بلا نجوم</item>
+        <item quantity="one">نجمة واحدة</item>
+        <item quantity="two">نجمتان</item>
+        <item quantity="few">%1$d نجوم</item>
+        <item quantity="many">%1$d نجمة</item>
+        <item quantity="other">%1$d نجمة</item>
+    </plurals>
+</resources>

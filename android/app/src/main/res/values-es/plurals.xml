@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="review_count">
+        <item quantity="one">%1$s reseña</item>
+        <item quantity="many">%1$s reseñas</item>
+        <item quantity="other">%1$s reseñas</item>
+    </plurals>
+    <plurals name="rating_count">
+        <item quantity="one">%1$s valoración</item>
+        <item quantity="many">%1$s valoraciones</item>
+        <item quantity="other">%1$s valoraciones</item>
+    </plurals>
+    <plurals name="step_fetching_done">
+        <item quantity="one">%1$s reseña única recopilada</item>
+        <item quantity="many">%1$s reseñas únicas recopiladas</item>
+        <item quantity="other">%1$s reseñas únicas recopiladas</item>
+    </plurals>
+    <plurals name="step_classifying_done">
+        <item quantity="one">%1$s reseña clasificada</item>
+        <item quantity="many">%1$s reseñas clasificadas</item>
+        <item quantity="other">%1$s reseñas clasificadas</item>
+    </plurals>
+    <plurals name="step_clustering_done">
+        <item quantity="one">%1$d tema encontrado</item>
+        <item quantity="many">%1$d temas encontrados</item>
+        <item quantity="other">%1$d temas encontrados</item>
+    </plurals>
+    <plurals name="step_prioritizing_done">
+        <item quantity="one">%1$d elemento del backlog priorizado</item>
+        <item quantity="many">%1$d elementos del backlog priorizados</item>
+        <item quantity="other">%1$d elementos del backlog priorizados</item>
+    </plurals>
+    <plurals name="step_researching_done">
+        <item quantity="one">%1$d competidor investigado</item>
+        <item quantity="many">%1$d competidores investigados</item>
+        <item quantity="other">%1$d competidores investigados</item>
+    </plurals>
+    <plurals name="cd_star_rating">
+        <item quantity="one">%1$d estrella</item>
+        <item quantity="many">%1$d estrellas</item>
+        <item quantity="other">%1$d estrellas</item>
+    </plurals>
+</resources>

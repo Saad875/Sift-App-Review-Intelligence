@@ -47,7 +47,7 @@
     <string name="tone_apologetic">Apologetic</string>
 
     <!-- Sources -->
-    <string name="source_app_store">App Store</string>
+    <string name="source_app_store" translatable="false">App Store</string>
     <string name="source_csv">CSV upload</string>
     <string name="source_demo">Sample</string>
 
@@ -137,21 +137,21 @@
     <string name="cd_page_indicator">Page %1$d of %2$d</string>
 
     <!-- Sift Pro preview -->
-    <string name="pro_title">Sift Pro</string>
+    <string name="pro_title" translatable="false">Sift Pro</string>
     <string name="pro_subtitle">Deeper analyses, more competitors and unlimited reports for teams that ship fast.</string>
     <string name="pro_preview_badge">Preview</string>
     <string name="pro_compare_feature">Feature</string>
     <string name="pro_compare_free">Free</string>
     <string name="pro_compare_pro">Pro</string>
     <string name="pro_feature_analyses">Analyses per month</string>
-    <string name="pro_feature_analyses_free">3</string>
+    <string name="pro_feature_analyses_free" translatable="false">3</string>
     <string name="pro_feature_analyses_pro">Unlimited</string>
     <string name="pro_feature_reviews">Reviews per analysis</string>
-    <string name="pro_feature_reviews_free">300</string>
+    <string name="pro_feature_reviews_free" translatable="false">300</string>
     <string name="pro_feature_reviews_pro">2,000</string>
     <string name="pro_feature_competitors">Competitor research</string>
-    <string name="pro_feature_competitors_free">1</string>
-    <string name="pro_feature_competitors_pro">3</string>
+    <string name="pro_feature_competitors_free" translatable="false">1</string>
+    <string name="pro_feature_competitors_pro" translatable="false">3</string>
     <string name="pro_feature_replies">AI reply drafts</string>
     <string name="pro_feature_export">Team export and sharing</string>
     <string name="cd_pro_included">Included</string>
@@ -249,11 +249,11 @@
     <!-- Shared formatting -->
     <string name="list_separator">, </string>
     <string name="quote_format">“%1$s”</string>
-    <string name="bullet_item">• %1$s</string>
+    <string name="bullet_item" translatable="false">• %1$s</string>
     <string name="value_unavailable" translatable="false">–</string>
     <string name="star_filled" translatable="false">★</string>
     <string name="star_empty" translatable="false">☆</string>
-    <string name="star_label">%1$d★</string>
+    <string name="star_label" translatable="false">%1$d★</string>
     <string name="error_no_browser">No app on this device can open web links.</string>
 
     <!-- Report -->
@@ -299,7 +299,7 @@
     <string name="reviews_clear_filters">Clear filters</string>
     <string name="cd_filter_sentiment">Filter by sentiment</string>
     <string name="cd_filter_category">Filter by category</string>
-    <string name="review_version">v%1$s</string>
+    <string name="review_version" translatable="false">v%1$s</string>
     <string name="review_severity">Severity %1$d/5</string>
     <string name="review_detail_title">Review</string>
     <string name="review_summary_label">Nemotron summary</string>
@@ -347,7 +347,7 @@
     <string name="settings_title">Settings</string>
     <string name="settings_general_label">General</string>
     <string name="settings_language">Language</string>
-    <string name="settings_pro">Sift Pro</string>
+    <string name="settings_pro" translatable="false">Sift Pro</string>
     <string name="settings_pro_caption">See what is coming in Pro</string>
     <string name="cd_settings_language">Language: %1$s. Double tap to change.</string>
     <string name="settings_backend_label">Backend</string>
@@ -380,7 +380,7 @@
     <string name="settings_models_unknown">Test the connection to see which Nemotron models your backend uses.</string>
     <string name="settings_fast_model">Fast model: %1$s</string>
     <string name="settings_reasoning_model">Reasoning model: %1$s</string>
-    <string name="settings_model_with_id">%1$s (%2$s)</string>
+    <string name="settings_model_with_id" translatable="false">%1$s (%2$s)</string>
     <string name="settings_privacy_note">Reviews come only from the public App Store feed or files you choose. Sift never scrapes Google Play.</string>
     <string name="settings_version">Version %1$s</string>
     <string name="settings_license">Open source licence (MIT)</string>

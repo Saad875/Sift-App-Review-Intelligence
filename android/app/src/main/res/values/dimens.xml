@@ -73,7 +73,7 @@
     <dimen name="language_mark_size">44dp</dimen>
     <dimen name="pro_orb_size">96dp</dimen>
     <dimen name="pro_orb_glow">220dp</dimen>
-    <dimen name="pro_column_width">84dp</dimen>
+    <dimen name="pro_column_width">96dp</dimen>
     <dimen name="selection_stroke">2dp</dimen>
     <dimen name="shine_width">72dp</dimen>
     <dimen name="bottom_action_clearance">120dp</dimen>

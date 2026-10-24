@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="review_count">
+        <item quantity="one">%1$s отзыв</item>
+        <item quantity="few">%1$s отзыва</item>
+        <item quantity="many">%1$s отзывов</item>
+        <item quantity="other">%1$s отзыва</item>
+    </plurals>
+    <plurals name="rating_count">
+        <item quantity="one">%1$s оценка</item>
+        <item quantity="few">%1$s оценки</item>
+        <item quantity="many">%1$s оценок</item>
+        <item quantity="other">%1$s оценки</item>
+    </plurals>
+    <plurals name="step_fetching_done">
+        <item quantity="one">Собран %1$s уникальный отзыв</item>
+        <item quantity="few">Собрано %1$s уникальных отзыва</item>
+        <item quantity="many">Собрано %1$s уникальных отзывов</item>
+        <item quantity="other">Собрано %1$s уникального отзыва</item>
+    </plurals>
+    <plurals name="step_classifying_done">
+        <item quantity="one">Классифицирован %1$s отзыв</item>
+        <item quantity="few">Классифицировано %1$s отзыва</item>
+        <item quantity="many">Классифицировано %1$s отзывов</item>
+        <item quantity="other">Классифицировано %1$s отзыва</item>
+    </plurals>
+    <plurals name="step_clustering_done">
+        <item quantity="one">Найдена %1$d тема</item>
+        <item quantity="few">Найдено %1$d темы</item>
+        <item quantity="many">Найдено %1$d тем</item>
+        <item quantity="other">Найдено %1$d темы</item>
+    </plurals>
+    <plurals name="step_prioritizing_done">
+        <item quantity="one">Приоритизирован %1$d пункт бэклога</item>
+        <item quantity="few">Приоритизировано %1$d пункта бэклога</item>
+        <item quantity="many">Приоритизировано %1$d пунктов бэклога</item>
+        <item quantity="other">Приоритизировано %1$d пункта бэклога</item>
+    </plurals>
+    <plurals name="step_researching_done">
+        <item quantity="one">Изучен %1$d конкурент</item>
+        <item quantity="few">Изучено %1$d конкурента</item>
+        <item quantity="many">Изучено %1$d конкурентов</item>
+        <item quantity="other">Изучено %1$d конкурента</item>
+    </plurals>
+    <plurals name="cd_star_rating">
+        <item quantity="one">%1$d звезда</item>
+        <item quantity="few">%1$d звезды</item>
+        <item quantity="many">%1$d звёзд</item>
+        <item quantity="other">%1$d звезды</item>
+    </plurals>
+</resources>

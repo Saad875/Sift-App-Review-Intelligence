@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="review_count">
+        <item quantity="one">%1$s Bewertung</item>
+        <item quantity="other">%1$s Bewertungen</item>
+    </plurals>
+    <plurals name="rating_count">
+        <item quantity="one">%1$s Bewertung</item>
+        <item quantity="other">%1$s Bewertungen</item>
+    </plurals>
+    <plurals name="step_fetching_done">
+        <item quantity="one">%1$s eindeutige Bewertung gesammelt</item>
+        <item quantity="other">%1$s eindeutige Bewertungen gesammelt</item>
+    </plurals>
+    <plurals name="step_classifying_done">
+        <item quantity="one">%1$s Bewertung eingeordnet</item>
+        <item quantity="other">%1$s Bewertungen eingeordnet</item>
+    </plurals>
+    <plurals name="step_clustering_done">
+        <item quantity="one">%1$d Thema gefunden</item>
+        <item quantity="other">%1$d Themen gefunden</item>
+    </plurals>
+    <plurals name="step_prioritizing_done">
+        <item quantity="one">%1$d Backlog-Eintrag priorisiert</item>
+        <item quantity="other">%1$d Backlog-Einträge priorisiert</item>
+    </plurals>
+    <plurals name="step_researching_done">
+        <item quantity="one">%1$d Wettbewerber recherchiert</item>
+        <item quantity="other">%1$d Wettbewerber recherchiert</item>
+    </plurals>
+    <plurals name="cd_star_rating">
+        <item quantity="one">%1$d Stern</item>
+        <item quantity="other">%1$d Sterne</item>
+    </plurals>
+</resources>

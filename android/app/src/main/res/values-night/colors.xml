@@ -20,6 +20,8 @@
     <color name="sift_glow_blue">#594A7DFF</color>
     <color name="sift_glow_cyan">#3D2FD3E0</color>
     <color name="sift_disabled_container">#1FFFFFFF</color>
+    <color name="sift_status_scrim">#F20F2650</color>
+    <color name="sift_status_scrim_end">#000F2650</color>
     <color name="sift_shine">#59FFFFFF</color>
     <color name="sift_accent_blue">#5B8CFF</color>
 

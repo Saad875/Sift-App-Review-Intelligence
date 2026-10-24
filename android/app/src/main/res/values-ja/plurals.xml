@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="review_count">
+        <item quantity="other">レビュー %1$s 件</item>
+    </plurals>
+    <plurals name="rating_count">
+        <item quantity="other">評価 %1$s 件</item>
+    </plurals>
+    <plurals name="step_fetching_done">
+        <item quantity="other">重複のないレビューを %1$s 件収集</item>
+    </plurals>
+    <plurals name="step_classifying_done">
+        <item quantity="other">%1$s 件のレビューを分類</item>
+    </plurals>
+    <plurals name="step_clustering_done">
+        <item quantity="other">%1$d 個のテーマを抽出</item>
+    </plurals>
+    <plurals name="step_prioritizing_done">
+        <item quantity="other">%1$d 件のバックログ項目を順位付け</item>
+    </plurals>
+    <plurals name="step_researching_done">
+        <item quantity="other">%1$d 社の競合を調査</item>
+    </plurals>
+    <plurals name="cd_star_rating">
+        <item quantity="other">星 %1$d</item>
+    </plurals>
+</resources>

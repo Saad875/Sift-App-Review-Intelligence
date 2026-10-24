@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="review_count">
+        <item quantity="other">%1$s ulasan</item>
+    </plurals>
+    <plurals name="rating_count">
+        <item quantity="other">%1$s rating</item>
+    </plurals>
+    <plurals name="step_fetching_done">
+        <item quantity="other">%1$s ulasan unik terkumpul</item>
+    </plurals>
+    <plurals name="step_classifying_done">
+        <item quantity="other">%1$s ulasan terklasifikasi</item>
+    </plurals>
+    <plurals name="step_clustering_done">
+        <item quantity="other">%1$d tema ditemukan</item>
+    </plurals>
+    <plurals name="step_prioritizing_done">
+        <item quantity="other">%1$d item backlog diurutkan</item>
+    </plurals>
+    <plurals name="step_researching_done">
+        <item quantity="other">%1$d pesaing diriset</item>
+    </plurals>
+    <plurals name="cd_star_rating">
+        <item quantity="other">%1$d bintang</item>
+    </plurals>
+</resources>

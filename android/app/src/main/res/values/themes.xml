@@ -45,6 +45,7 @@
         <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Sift.Large</item>
 
         <!-- Component defaults -->
+        <item name="android:textViewStyle">@style/Widget.Sift.TextView</item>
         <item name="materialCardViewStyle">@style/Widget.Sift.Card</item>
         <item name="materialButtonStyle">@style/Widget.Sift.Button</item>
         <item name="materialButtonOutlinedStyle">@style/Widget.Sift.Button.Outlined</item>

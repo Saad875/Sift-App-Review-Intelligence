@@ -13,7 +13,9 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.use
 import com.sift.app.R
 import com.sift.app.presentation.common.Motion
+import com.sift.app.presentation.common.appTypeface
 import kotlin.math.min
+import java.text.NumberFormat
 import kotlin.math.roundToInt
 
 /** A small ring that fills to a 0 to 100 score with the number in the middle. */
@@ -29,6 +31,7 @@ class ScoreRingView @JvmOverloads constructor(
     }
     private val trackPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { style = Paint.Style.STROKE }
     private val textPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
+        typeface = context.appTypeface(R.font.manrope_bold)
         textAlign = Paint.Align.CENTER
         isFakeBoldText = true
     }
@@ -92,7 +95,7 @@ class ScoreRingView @JvmOverloads constructor(
         canvas.drawArc(bounds, 0f, FULL_CIRCLE, false, trackPaint)
         val sweep = FULL_CIRCLE * score / MAX_SCORE * progress
         if (sweep > 0f) canvas.drawArc(bounds, START_ANGLE, sweep, false, ringPaint)
-        val shown = (score * progress).roundToInt().toString()
+        val shown = NumberFormat.getIntegerInstance().format((score * progress).roundToInt())
         val y = height / 2f - (textPaint.ascent() + textPaint.descent()) / 2f
         canvas.drawText(shown, width / 2f, y, textPaint)
     }

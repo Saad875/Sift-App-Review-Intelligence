@@ -6,6 +6,7 @@ import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.button.MaterialButton
 import com.sift.app.R
 import com.sift.app.databinding.FragmentLanguageBinding
 import com.sift.app.presentation.common.BaseFragment
@@ -41,6 +42,10 @@ class LanguageFragment : BaseFragment<FragmentLanguageBinding>(FragmentLanguageB
         binding.backButton.isVisible = fromSettings
         binding.backButton.setOnClickListener { navigator.back() }
         binding.continueButton.setText(if (fromSettings) R.string.action_done else R.string.language_continue)
+        if (fromSettings) {
+            binding.continueButton.setIconResource(R.drawable.ic_check)
+            binding.continueButton.iconGravity = MaterialButton.ICON_GRAVITY_TEXT_START
+        }
         binding.continueButton.setOnClickListener {
             if (fromSettings) navigator.back()
             else navigator.push(WelcomeFragment.newInstance(), Transition.FORWARD)

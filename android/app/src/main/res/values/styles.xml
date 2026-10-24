@@ -65,10 +65,18 @@
         <item name="android:textAppearance">@style/TextAppearance.Sift.Button</item>
         <item name="cornerRadius">@dimen/radius_pill</item>
         <item name="strokeColor">@color/button_outline_stroke</item>
-        <item name="backgroundTint">@color/sift_glass</item>
+        <item name="backgroundTint">@color/button_outlined_background</item>
         <item name="android:textColor">@color/sift_text_primary</item>
         <item name="iconTint">@color/sift_primary_text</item>
         <item name="rippleColor">@color/ripple_primary</item>
+    </style>
+
+    <!-- Buttons inside a MaterialButtonToggleGroup (the group shapes the outer corners). -->
+    <style name="Widget.Sift.Button.Outlined.Segment">
+        <item name="cornerRadius">@dimen/radius_lg</item>
+        <item name="android:paddingStart">@dimen/space_2</item>
+        <item name="android:paddingEnd">@dimen/space_2</item>
+        <item name="android:maxLines">1</item>
     </style>
 
     <style name="Widget.Sift.Button.Text" parent="Widget.Material3.Button.TextButton">
@@ -195,6 +203,12 @@
         <item name="trackColor">@color/sift_chart_track</item>
         <item name="trackCornerRadius">@dimen/radius_pill</item>
         <item name="trackThickness">@dimen/share_bar_height</item>
+    </style>
+
+    <!-- Default for every TextView: hyphenate long words (German, Russian, Swahili) instead of splitting them bare. -->
+    <style name="Widget.Sift.TextView" parent="Widget.AppCompat.TextView">
+        <item name="android:hyphenationFrequency">normal</item>
+        <item name="android:breakStrategy">high_quality</item>
     </style>
 
     <!-- Base Sift namespace style -->

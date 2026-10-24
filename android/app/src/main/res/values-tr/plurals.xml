@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="review_count">
+        <item quantity="one">%1$s yorum</item>
+        <item quantity="other">%1$s yorum</item>
+    </plurals>
+    <plurals name="rating_count">
+        <item quantity="one">%1$s puan</item>
+        <item quantity="other">%1$s puan</item>
+    </plurals>
+    <plurals name="step_fetching_done">
+        <item quantity="one">%1$s benzersiz yorum toplandı</item>
+        <item quantity="other">%1$s benzersiz yorum toplandı</item>
+    </plurals>
+    <plurals name="step_classifying_done">
+        <item quantity="one">%1$s yorum sınıflandırıldı</item>
+        <item quantity="other">%1$s yorum sınıflandırıldı</item>
+    </plurals>
+    <plurals name="step_clustering_done">
+        <item quantity="one">%1$d tema bulundu</item>
+        <item quantity="other">%1$d tema bulundu</item>
+    </plurals>
+    <plurals name="step_prioritizing_done">
+        <item quantity="one">%1$d iş listesi öğesi sıralandı</item>
+        <item quantity="other">%1$d iş listesi öğesi sıralandı</item>
+    </plurals>
+    <plurals name="step_researching_done">
+        <item quantity="one">%1$d rakip araştırıldı</item>
+        <item quantity="other">%1$d rakip araştırıldı</item>
+    </plurals>
+    <plurals name="cd_star_rating">
+        <item quantity="one">%1$d yıldız</item>
+        <item quantity="other">%1$d yıldız</item>
+    </plurals>
+</resources>

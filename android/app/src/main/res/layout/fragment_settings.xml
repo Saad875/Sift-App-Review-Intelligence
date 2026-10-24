@@ -187,7 +187,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/themeDark"
-                    style="@style/Widget.Sift.Button.Outlined"
+                    style="@style/Widget.Sift.Button.Outlined.Segment"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -195,7 +195,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/themeLight"
-                    style="@style/Widget.Sift.Button.Outlined"
+                    style="@style/Widget.Sift.Button.Outlined.Segment"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -203,7 +203,7 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/themeSystem"
-                    style="@style/Widget.Sift.Button.Outlined"
+                    style="@style/Widget.Sift.Button.Outlined.Segment"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

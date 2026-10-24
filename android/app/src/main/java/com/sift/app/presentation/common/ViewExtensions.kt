@@ -55,6 +55,16 @@ fun View.applySystemBarPadding(top: Boolean = false, bottom: Boolean = false, ho
     requestApplyInsetsWhenAttached()
 }
 
+/** Sizes a status bar scrim view to the top system bar inset. */
+fun View.matchStatusBarHeight() {
+    ViewCompat.setOnApplyWindowInsetsListener(this) { view, insets ->
+        val top = insets.getInsets(WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout()).top
+        if (view.layoutParams.height != top) view.updateLayoutParams<ViewGroup.LayoutParams> { height = top }
+        insets
+    }
+    requestApplyInsetsWhenAttached()
+}
+
 /** Adds the bottom system bar inset to the view's bottom margin (for floating buttons). */
 fun View.applySystemBarBottomMargin() {
     val initial = (layoutParams as? ViewGroup.MarginLayoutParams)?.bottomMargin ?: 0
