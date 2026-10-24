@@ -117,11 +117,19 @@ REST_FRAMEWORK = {
 CACHES = {"default": {"BACKEND": "django.core.cache.backends.locmem.LocMemCache"}}
 
 # --- AI providers ---
-NEBIUS_API_KEY = os.environ.get("NEBIUS_API_KEY", "")
+
+
+def _secret(name):
+    """Reads a key, treating the .env.example placeholders ("your-...") as not set."""
+    value = os.environ.get(name, "").strip()
+    return "" if value.startswith("your-") else value
+
+
+NEBIUS_API_KEY = _secret("NEBIUS_API_KEY")
 NEBIUS_BASE_URL = os.environ.get("NEBIUS_BASE_URL", "https://api.tokenfactory.nebius.com/v1/")
 MODEL_FAST = os.environ.get("MODEL_FAST", "")
 MODEL_REASONING = os.environ.get("MODEL_REASONING", "")
-TAVILY_API_KEY = os.environ.get("TAVILY_API_KEY", "")
+TAVILY_API_KEY = _secret("TAVILY_API_KEY")
 LLM_TIMEOUT_SECONDS = float(os.environ.get("LLM_TIMEOUT_SECONDS", "90"))
 HTTP_TIMEOUT_SECONDS = float(os.environ.get("HTTP_TIMEOUT_SECONDS", "15"))
 
