@@ -36,11 +36,11 @@ class DonutChartView @JvmOverloads constructor(
     private val trackPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { style = Paint.Style.STROKE }
     private val centerPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
         textAlign = Paint.Align.CENTER
-        typeface = context.appTypeface(R.font.manrope_extrabold)
+        typeface = context.appTypeface(R.font.poppins_bold)
     }
     private val captionPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
         textAlign = Paint.Align.CENTER
-        typeface = context.appTypeface(R.font.manrope_medium)
+        typeface = context.appTypeface(R.font.poppins_medium)
     }
     private val bounds = RectF()
     private val defaultSize = resources.getDimensionPixelSize(R.dimen.donut_size)

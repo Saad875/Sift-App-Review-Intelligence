@@ -18,6 +18,7 @@ import com.sift.app.presentation.common.UiState
 import com.sift.app.presentation.common.applySystemBarPadding
 import com.sift.app.presentation.common.collectWhileStarted
 import com.sift.app.presentation.common.fadeInUp
+import com.sift.app.presentation.common.hapticTap
 import com.sift.app.presentation.common.matchStatusBarHeight
 import com.sift.app.presentation.common.popIn
 import com.sift.app.presentation.common.snackbar
@@ -57,9 +58,18 @@ class PremiumFragment : BaseFragment<FragmentPremiumBinding>(FragmentPremiumBind
 
         ProFeature.entries.forEach(::addFeatureRow)
         binding.planYearly.badge.isVisible = true
-        binding.planYearly.root.setOnClickListener { viewModel.selectPlan(ProPlan.YEARLY) }
-        binding.planMonthly.root.setOnClickListener { viewModel.selectPlan(ProPlan.MONTHLY) }
-        binding.continueButton.setOnClickListener { viewModel.subscribe() }
+        binding.planYearly.root.setOnClickListener {
+            it.hapticTap()
+            viewModel.selectPlan(ProPlan.YEARLY)
+        }
+        binding.planMonthly.root.setOnClickListener {
+            it.hapticTap()
+            viewModel.selectPlan(ProPlan.MONTHLY)
+        }
+        binding.continueButton.setOnClickListener {
+            it.hapticTap()
+            viewModel.subscribe()
+        }
         binding.laterButton.setOnClickListener { viewModel.leave() }
         binding.closeButton.setOnClickListener { viewModel.leave() }
 

@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_tagline">ذكاء مراجعات التطبيقات</string>
     <string name="action_retry">إعادة المحاولة</string>
     <string name="action_back">رجوع</string>
     <string name="action_cancel">إلغاء</string>
     <string name="action_close">إغلاق</string>
     <string name="action_done">تم</string>
     <string name="action_copy">نسخ</string>
-    <string name="action_share">مشاركة</string>
+    <string name="action_copied">تم النسخ</string>
     <string name="action_settings">الإعدادات</string>
     <string name="percent_value">%1$d%%</string>
     <string name="copied_to_clipboard">تم النسخ إلى الحافظة</string>
-    <string name="sample_data_label">بيانات تجريبية</string>
-    <string name="sample_data_banner">أنت تشاهد تحليلًا تجريبيًا. الأرقام والاقتباسات للتوضيح فقط وليست مراجعات حقيقية.</string>
     <string name="sentiment_positive">إيجابي</string>
     <string name="sentiment_neutral">محايد</string>
     <string name="sentiment_negative">سلبي</string>
@@ -34,7 +31,6 @@
     <string name="tone_formal">رسمي</string>
     <string name="tone_apologetic">اعتذاري</string>
     <string name="source_csv">رفع ملف CSV</string>
-    <string name="source_demo">تجريبي</string>
     <string name="step_fetching_title">جمع المراجعات</string>
     <string name="step_classifying_title">تصنيف كل مراجعة</string>
     <string name="step_clustering_title">العثور على المواضيع</string>
@@ -60,7 +56,7 @@
     <string name="error_offline_title">أنت غير متصل بالإنترنت</string>
     <string name="error_offline_message">تحقق من اتصالك وحاول مرة أخرى. التقارير التي فتحتها سابقًا لا تزال متاحة.</string>
     <string name="error_backend_title">تعذّر الوصول إلى خادم Sift</string>
-    <string name="error_backend_message">لم يستجب الخادم. تحقق من عنوان URL للخادم الخلفي في الإعدادات أو حاول مرة أخرى بعد قليل.</string>
+    <string name="error_backend_message">لم يستجب الخادم. تحقق من اتصالك وحاول مرة أخرى بعد قليل.</string>
     <string name="error_server_title">أبلغ الخادم عن مشكلة</string>
     <string name="error_rate_limited_title">تمهّل قليلًا</string>
     <string name="error_rate_limited_message">طلبات كثيرة جدًا من هذا الجهاز. يُرجى الانتظار دقيقة ثم المحاولة مرة أخرى.</string>
@@ -75,7 +71,7 @@
     <string name="error_too_many_competitors">يمكنك المقارنة مع ثلاثة منافسين كحد أقصى.</string>
     <string name="error_competitor_name">يجب أن يتكون اسم المنافس من 1 إلى 60 حرفًا.</string>
     <string name="error_backend_url">أدخل عنوان URL كاملًا يبدأ بـ http أو https، مثل https://sift.example.com/</string>
-    <string name="error_reply_sample">تحتاج مسودات الردود إلى تحليل حقيقي. المراجعات التجريبية غير مخزنة على الخادم.</string>
+    <string name="error_reply_unavailable">هذه المراجعة غير مخزنة على الخادم، لذا لا يمكن صياغة رد عليها.</string>
     <string name="action_search">بحث</string>
     <string name="powered_by_short">مدعوم بـ NVIDIA Nemotron على Nebius Token Factory</string>
     <string name="splash_tagline">حوّل المراجعات إلى خارطة طريقك</string>
@@ -136,17 +132,12 @@
     <string name="home_import_csv">استيراد CSV</string>
     <string name="home_import_csv_caption">Play Console أو أي ملف مراجعات مُصدَّر</string>
     <string name="home_import_csv_cd">استيراد المراجعات من ملف CSV</string>
-    <string name="home_try_demo">جرّب العرض التوضيحي</string>
-    <string name="home_try_demo_caption">تقرير تجريبي كامل بدون إنترنت</string>
-    <string name="home_try_demo_cd">فتح تقرير تجريبي يعمل بدون إنترنت</string>
     <string name="home_recent">التحليلات الأخيرة</string>
-    <string name="home_pro">Pro</string>
-    <string name="cd_home_pro">فتح Sift Pro</string>
     <string name="status_failed">فشل</string>
     <string name="status_in_progress">قيد التقدم · %1$d%%</string>
     <string name="cd_recent_analysis">%1$s. %2$s. %3$s</string>
     <string name="empty_recent_title">لا توجد تحليلات بعد</string>
-    <string name="empty_recent_message">ابحث عن تطبيق في الأعلى أو استورد ملف CSV أو افتح التقرير التجريبي لترى ما يمكن أن يفعله Sift.</string>
+    <string name="empty_recent_message">ابحث عن تطبيق في الأعلى أو استورد ملف CSV للحصول على تقريرك الأول.</string>
     <string name="empty_search_prompt_title">ابحث عن تطبيق</string>
     <string name="empty_search_prompt_message">اكتب حرفين على الأقل للبحث في App Store.</string>
     <string name="empty_search_title">لم يتم العثور على تطبيقات</string>
@@ -278,18 +269,6 @@
     <string name="settings_language">اللغة</string>
     <string name="settings_pro_caption">اكتشف ما يقدمه Pro قريبًا</string>
     <string name="cd_settings_language">اللغة: %1$s. انقر مرتين للتغيير.</string>
-    <string name="settings_backend_label">الخادم الخلفي</string>
-    <string name="settings_backend_caption">يرسل Sift كل طلب ذكاء اصطناعي عبر خادمك الخلفي، لذلك لا تُخزَّن أي مفاتيح API على هذا الجهاز. استخدم http://10.0.2.2:8000/ لخادم خلفي يعمل على الكمبيوتر الذي يشغّل المحاكي.</string>
-    <string name="settings_backend_hint">عنوان URL للخادم الخلفي</string>
-    <string name="settings_save">حفظ</string>
-    <string name="settings_reset">إعادة التعيين إلى الافتراضي</string>
-    <string name="settings_test_connection">اختبار الاتصال</string>
-    <string name="settings_saved">تم حفظ عنوان URL للخادم الخلفي</string>
-    <string name="settings_reset_done">تمت إعادة عنوان URL للخادم الخلفي إلى الافتراضي</string>
-    <string name="settings_checking">جارٍ التحقق من الاتصال…</string>
-    <string name="settings_connected_all">متصل. تم إعداد Nemotron وTavily.</string>
-    <string name="settings_connected_no_tavily">متصل. تم إعداد Nemotron؛ يحتاج البحث عن المنافسين إلى مفتاح Tavily على الخادم الخلفي.</string>
-    <string name="settings_connected_no_nebius">متصل، لكن الخادم الخلفي لا يحتوي على مفتاح Nebius Token Factory أو معرّفات النماذج، لذا ستفشل التحليلات.</string>
     <string name="settings_appearance_label">المظهر</string>
     <string name="settings_theme_dark">داكن</string>
     <string name="settings_theme_light">فاتح</string>
@@ -305,9 +284,6 @@
     <string name="powered_by_title">مدعوم بـ NVIDIA Nemotron على Nebius Token Factory</string>
     <string name="powered_by_body">يصنّف نموذج Nemotron سريع كل مراجعة. ويجمّع نموذج Nemotron أكبر للاستدلال الشكاوى في مواضيع، ويرتب قائمة المهام، ويبحث عن المنافسين، ويصوغ الردود. يعمل كلاهما على Nebius Token Factory عبر الخادم الخلفي لـ Sift.</string>
     <string name="powered_by_search">البحث على الويب: بحث Tavily</string>
-    <string name="settings_models_unknown">اختبر الاتصال لمعرفة نماذج Nemotron التي يستخدمها خادمك الخلفي.</string>
-    <string name="settings_fast_model">النموذج السريع: %1$s</string>
-    <string name="settings_reasoning_model">نموذج الاستدلال: %1$s</string>
     <string name="settings_privacy_note">تأتي المراجعات فقط من موجز App Store العام أو من الملفات التي تختارها. لا يستخرج Sift أي بيانات من Google Play مطلقًا.</string>
     <string name="settings_version">الإصدار %1$s</string>
     <string name="settings_license">ترخيص مفتوح المصدر (MIT)</string>

@@ -65,106 +65,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/languageRow" />
 
-            <!-- Backend -->
-            <TextView
-                android:id="@+id/backendLabel"
-                style="@style/Sift.SectionLabel"
-                android:layout_marginTop="@dimen/space_8"
-                android:text="@string/settings_backend_label"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/proRow" />
-
-            <TextView
-                android:id="@+id/backendCaption"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_1"
-                android:text="@string/settings_backend_caption"
-                android:textAppearance="@style/TextAppearance.Sift.BodySmall"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/backendLabel" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/urlLayout"
-                style="@style/Widget.Sift.TextInputLayout"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_3"
-                android:hint="@string/settings_backend_hint"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/backendCaption"
-                app:startIconDrawable="@drawable/ic_link">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/urlInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:imeOptions="actionDone"
-                    android:inputType="textUri"
-                    android:maxLines="1" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/saveUrl"
-                style="@style/Widget.Sift.Button.Tonal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_2"
-                android:text="@string/settings_save"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/urlLayout" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/testConnection"
-                style="@style/Widget.Sift.Button.Outlined"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/space_2"
-                android:text="@string/settings_test_connection"
-                app:layout_constraintBaseline_toBaselineOf="@id/saveUrl"
-                app:layout_constraintStart_toEndOf="@id/saveUrl" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/resetUrl"
-                style="@style/Widget.Sift.Button.Text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/settings_reset"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/saveUrl" />
-
-            <com.google.android.material.progressindicator.CircularProgressIndicator
-                android:id="@+id/healthProgress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/settings_checking"
-                android:indeterminate="true"
-                android:visibility="gone"
-                app:indicatorColor="@color/sift_primary"
-                app:indicatorSize="@dimen/icon_sm"
-                app:layout_constraintBottom_toBottomOf="@id/healthStatus"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/healthStatus"
-                app:trackThickness="@dimen/stroke_thin" />
-
-            <TextView
-                android:id="@+id/healthStatus"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_2"
-                android:accessibilityLiveRegion="polite"
-                android:drawablePadding="@dimen/space_2"
-                android:gravity="center_vertical"
-                android:textAppearance="@style/TextAppearance.Sift.BodySmall"
-                android:visibility="gone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/healthProgress"
-                app:layout_constraintTop_toBottomOf="@id/resetUrl"
-                tools:text="Connected. Nemotron and Tavily are configured."
-                tools:visibility="visible" />
-
             <!-- Appearance -->
             <TextView
                 android:id="@+id/appearanceLabel"
@@ -172,7 +72,7 @@
                 android:layout_marginTop="@dimen/space_8"
                 android:text="@string/settings_appearance_label"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/healthStatus" />
+                app:layout_constraintTop_toBottomOf="@id/proRow" />
 
             <com.google.android.material.button.MaterialButtonToggleGroup
                 android:id="@+id/themeToggle"
@@ -304,37 +204,15 @@
                         app:layout_constraintTop_toBottomOf="@id/poweredIcon" />
 
                     <TextView
-                        android:id="@+id/fastModel"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/space_3"
-                        android:textAppearance="@style/TextAppearance.Sift.Caption"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/poweredBody"
-                        tools:text="Fast model: Nemotron Nano" />
-
-                    <TextView
-                        android:id="@+id/reasoningModel"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/space_1"
-                        android:textAppearance="@style/TextAppearance.Sift.Caption"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/fastModel"
-                        tools:text="Reasoning model: Nemotron Super" />
-
-                    <TextView
                         android:id="@+id/searchProvider"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/space_1"
+                        android:layout_marginTop="@dimen/space_3"
                         android:text="@string/powered_by_search"
                         android:textAppearance="@style/TextAppearance.Sift.Caption"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/reasoningModel" />
+                        app:layout_constraintTop_toBottomOf="@id/poweredBody" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 

@@ -17,11 +17,18 @@
     <integer name="float_cycle">2600</integer>
     <integer name="shine_cycle">2800</integer>
 
+    <!-- Animated logo: dots dropping into the funnel -->
+    <integer name="logo_drop_cycle">1500</integer>
+    <integer name="logo_drop_stagger">180</integer>
+    <integer name="logo_drop_stagger_double">360</integer>
+
+    <!-- How long a button shows its "done" state -->
+    <integer name="success_hold">1800</integer>
+
     <!-- Splash -->
     <integer name="splash_hold">1500</integer>
     <integer name="splash_hold_static">600</integer>
 
     <!-- Limits -->
-    <integer name="max_competitors">3</integer>
     <integer name="competitor_name_max_length">60</integer>
 </resources>

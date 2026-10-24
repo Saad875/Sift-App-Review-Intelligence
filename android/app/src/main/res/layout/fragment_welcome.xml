@@ -48,22 +48,32 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/space_6"
         android:padding="@dimen/space_2"
-        app:layout_constraintBottom_toTopOf="@id/nextButton"
+        app:layout_constraintBottom_toTopOf="@id/nextButtonContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/nextButton"
-        style="@style/Widget.Sift.Button.Hero"
+    <FrameLayout
+        android:id="@+id/nextButtonContainer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/screen_margin"
         android:layout_marginEnd="@dimen/screen_margin"
         android:layout_marginBottom="@dimen/space_4"
-        android:text="@string/welcome_next"
-        app:icon="@drawable/ic_arrow_forward"
-        app:iconGravity="textEnd"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/nextButton"
+            style="@style/Widget.Sift.Button.Hero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_next"
+            app:icon="@drawable/ic_arrow_forward"
+            app:iconGravity="textEnd" />
+
+        <com.sift.app.presentation.widget.ShineView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

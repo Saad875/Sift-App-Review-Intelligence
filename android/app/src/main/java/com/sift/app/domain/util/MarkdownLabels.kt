@@ -7,7 +7,6 @@ package com.sift.app.domain.util
  */
 data class MarkdownLabels(
     val reportTitle: String,
-    val sampleNotice: String,
     val sourceLine: String,
     val countryLine: String,
     val overviewHeading: String,

@@ -10,6 +10,7 @@ import com.sift.app.presentation.common.BaseFragment
 import com.sift.app.presentation.common.Motion
 import com.sift.app.presentation.common.applySystemBarBottomMargin
 import com.sift.app.presentation.common.applySystemBarPadding
+import com.sift.app.presentation.common.hapticTap
 import com.sift.app.presentation.navigation.Transition
 import kotlin.math.abs
 
@@ -35,7 +36,7 @@ class WelcomeFragment : BaseFragment<FragmentWelcomeBinding>(FragmentWelcomeBind
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.topBar.applySystemBarPadding(top = true)
-        binding.nextButton.applySystemBarBottomMargin()
+        binding.nextButtonContainer.applySystemBarBottomMargin()
 
         binding.pager.adapter = WelcomePagerAdapter()
         binding.indicator.setCount(WelcomePage.entries.size)
@@ -44,6 +45,7 @@ class WelcomeFragment : BaseFragment<FragmentWelcomeBinding>(FragmentWelcomeBind
 
         binding.skipButton.setOnClickListener { openPro() }
         binding.nextButton.setOnClickListener {
+            it.hapticTap()
             val pager = binding.pager
             if (pager.currentItem < WelcomePage.entries.lastIndex) pager.currentItem = pager.currentItem + 1
             else openPro()

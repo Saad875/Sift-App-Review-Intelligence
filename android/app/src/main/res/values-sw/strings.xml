@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_tagline">Uchambuzi wa Maoni ya Programu</string>
     <string name="action_retry">Jaribu tena</string>
     <string name="action_back">Rudi</string>
     <string name="action_cancel">Ghairi</string>
     <string name="action_close">Funga</string>
     <string name="action_done">Imekamilika</string>
     <string name="action_copy">Nakili</string>
-    <string name="action_share">Shiriki</string>
+    <string name="action_copied">Imenakiliwa</string>
     <string name="action_settings">Mipangilio</string>
     <string name="percent_value">%1$d%%</string>
     <string name="copied_to_clipboard">Imenakiliwa kwenye ubao wa kunakili</string>
-    <string name="sample_data_label">Data ya mfano</string>
-    <string name="sample_data_banner">Unatazama uchambuzi wa mfano. Takwimu na nukuu ni za kuonyesha tu, si maoni halisi.</string>
     <string name="sentiment_positive">Chanya</string>
     <string name="sentiment_neutral">Wastani</string>
     <string name="sentiment_negative">Hasi</string>
@@ -34,7 +31,6 @@
     <string name="tone_formal">Rasmi</string>
     <string name="tone_apologetic">Kuomba radhi</string>
     <string name="source_csv">Faili ya CSV</string>
-    <string name="source_demo">Mfano</string>
     <string name="step_fetching_title">Kusanya maoni</string>
     <string name="step_classifying_title">Ainisha kila maoni</string>
     <string name="step_clustering_title">Tafuta mada</string>
@@ -60,7 +56,7 @@
     <string name="error_offline_title">Huna mtandao</string>
     <string name="error_offline_message">Angalia muunganisho wako kisha ujaribu tena. Ripoti ulizokwisha fungua bado zinapatikana.</string>
     <string name="error_backend_title">Haiwezi kufikia seva ya Sift</string>
-    <string name="error_backend_message">Seva haikujibu. Angalia URL ya backend kwenye Mipangilio au ujaribu tena baada ya muda mfupi.</string>
+    <string name="error_backend_message">Seva haikujibu. Angalia muunganisho wako na ujaribu tena baada ya muda mfupi.</string>
     <string name="error_server_title">Seva imeripoti tatizo</string>
     <string name="error_rate_limited_title">Punguza kasi kidogo</string>
     <string name="error_rate_limited_message">Maombi mengi mno kutoka kwenye kifaa hiki. Tafadhali subiri dakika moja kisha ujaribu tena.</string>
@@ -75,7 +71,7 @@
     <string name="error_too_many_competitors">Unaweza kulinganisha na hadi washindani watatu.</string>
     <string name="error_competitor_name">Majina ya washindani lazima yawe na herufi 1 hadi 60.</string>
     <string name="error_backend_url">Weka URL kamili ya http au https, kwa mfano https://sift.example.com/</string>
-    <string name="error_reply_sample">Rasimu za majibu zinahitaji uchambuzi halisi. Maoni ya mfano hayahifadhiwi kwenye seva.</string>
+    <string name="error_reply_unavailable">Maoni haya hayajahifadhiwa kwenye seva, kwa hiyo jibu haliwezi kuandaliwa.</string>
     <string name="action_search">Tafuta</string>
     <string name="powered_by_short">Inaendeshwa na NVIDIA Nemotron kwenye Nebius Token Factory</string>
     <string name="splash_tagline">Geuza maoni kuwa ramani yako ya kazi</string>
@@ -95,7 +91,7 @@
     <string name="welcome_understand_title">Elewa hisia za watumiaji</string>
     <string name="welcome_understand_body">NVIDIA Nemotron inaainisha hisia, aina na uzito katika lugha yoyote, kisha inapata mada.</string>
     <string name="welcome_understand_chip_primary">Hitilafu ya usawazishaji · Uzito 5</string>
-    <string name="welcome_understand_chip_secondary">72% chanya</string>
+    <string name="welcome_understand_chip_secondary">Chanya 72%</string>
     <string name="welcome_act_title">Toa kilicho muhimu</string>
     <string name="welcome_act_body">Pata orodha ya kazi iliyopangwa yenye ushahidi, rasimu za majibu na ulinganisho wa washindani uliotafitiwa mtandaoni.</string>
     <string name="welcome_act_chip_primary">#1 Rekebisha usawazishaji · Kipaumbele 94</string>
@@ -136,17 +132,12 @@
     <string name="home_import_csv">Leta CSV</string>
     <string name="home_import_csv_caption">Play Console au faili yoyote ya maoni</string>
     <string name="home_import_csv_cd">Leta maoni kutoka faili ya CSV</string>
-    <string name="home_try_demo">Jaribu onyesho</string>
-    <string name="home_try_demo_caption">Ripoti kamili ya mfano, bila mtandao</string>
-    <string name="home_try_demo_cd">Fungua ripoti ya mfano inayofanya kazi bila mtandao</string>
     <string name="home_recent">Uchambuzi wa hivi karibuni</string>
-    <string name="home_pro">Pro</string>
-    <string name="cd_home_pro">Fungua Sift Pro</string>
     <string name="status_failed">Imeshindwa</string>
     <string name="status_in_progress">Inaendelea · %1$d%%</string>
     <string name="cd_recent_analysis">%1$s. %2$s. %3$s</string>
     <string name="empty_recent_title">Bado hakuna uchambuzi</string>
-    <string name="empty_recent_message">Tafuta programu hapo juu, leta CSV, au fungua ripoti ya mfano ili kuona Sift inavyoweza kufanya.</string>
+    <string name="empty_recent_message">Tafuta programu hapo juu au leta CSV ili upate ripoti yako ya kwanza.</string>
     <string name="empty_search_prompt_title">Tafuta programu</string>
     <string name="empty_search_prompt_message">Andika angalau herufi mbili ili kutafuta kwenye App Store.</string>
     <string name="empty_search_title">Hakuna programu zilizopatikana</string>
@@ -278,18 +269,6 @@
     <string name="settings_language">Lugha</string>
     <string name="settings_pro_caption">Ona kinachokuja katika Pro</string>
     <string name="cd_settings_language">Lugha: %1$s. Gusa mara mbili ili kubadilisha.</string>
-    <string name="settings_backend_label">Backend</string>
-    <string name="settings_backend_caption">Sift hutuma kila ombi la AI kupitia backend yako, kwa hiyo hakuna funguo za API zinazohifadhiwa kwenye kifaa hiki. Tumia http://10.0.2.2:8000/ kwa backend inayoendeshwa kwenye kompyuta inayoendesha emulator.</string>
-    <string name="settings_backend_hint">URL ya backend</string>
-    <string name="settings_save">Hifadhi</string>
-    <string name="settings_reset">Rejesha chaguomsingi</string>
-    <string name="settings_test_connection">Jaribu muunganisho</string>
-    <string name="settings_saved">URL ya backend imehifadhiwa</string>
-    <string name="settings_reset_done">URL ya backend imerejeshwa kuwa chaguomsingi</string>
-    <string name="settings_checking">Inakagua muunganisho…</string>
-    <string name="settings_connected_all">Imeunganishwa. Nemotron na Tavily zimesanidiwa.</string>
-    <string name="settings_connected_no_tavily">Imeunganishwa. Nemotron imesanidiwa; utafiti wa washindani unahitaji ufunguo wa Tavily kwenye backend.</string>
-    <string name="settings_connected_no_nebius">Imeunganishwa, lakini backend haina ufunguo wa Nebius Token Factory wala vitambulisho vya modeli, kwa hiyo uchambuzi utashindwa.</string>
     <string name="settings_appearance_label">Mwonekano</string>
     <string name="settings_theme_dark">Giza</string>
     <string name="settings_theme_light">Mwanga</string>
@@ -305,9 +284,6 @@
     <string name="powered_by_title">Inaendeshwa na NVIDIA Nemotron kwenye Nebius Token Factory</string>
     <string name="powered_by_body">Modeli ya haraka ya Nemotron inaainisha kila maoni. Modeli kubwa zaidi ya Nemotron ya kufikiri inapanga malalamiko katika mada, inapanga orodha ya kazi, inachunguza washindani na kuandaa majibu. Zote mbili zinaendeshwa kwenye Nebius Token Factory kupitia backend ya Sift.</string>
     <string name="powered_by_search">Utafiti wa mtandaoni: utafutaji wa Tavily</string>
-    <string name="settings_models_unknown">Jaribu muunganisho ili kuona modeli za Nemotron ambazo backend yako inatumia.</string>
-    <string name="settings_fast_model">Modeli ya haraka: %1$s</string>
-    <string name="settings_reasoning_model">Modeli ya kufikiri: %1$s</string>
     <string name="settings_privacy_note">Maoni hutoka tu kwenye mkondo wa umma wa App Store au faili unazochagua. Sift kamwe haichukui data kutoka Google Play.</string>
     <string name="settings_version">Toleo %1$s</string>
     <string name="settings_license">Leseni ya programu huria (MIT)</string>

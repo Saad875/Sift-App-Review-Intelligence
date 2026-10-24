@@ -84,11 +84,10 @@ data class Analysis(
     val warnings: List<String>,
     val createdAtMillis: Long,
     val steps: List<PipelineStep>,
-    val stats: AnalysisStats,
-    val isDemo: Boolean
+    val stats: AnalysisStats
 )
 
-/** A user review and its classification. [remoteId] is null for demo data. */
+/** A user review and its classification. [remoteId] is the backend id used for reply drafting. */
 data class Review(
     val id: Long,
     val remoteId: Long?,

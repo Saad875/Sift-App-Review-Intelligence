@@ -31,8 +31,7 @@ enum class ReviewCategory(val key: String) {
 /** Where the reviews of an analysis came from. */
 enum class AnalysisSource(val key: String) {
     APP_STORE("appstore"),
-    CSV("csv"),
-    DEMO("demo");
+    CSV("csv");
 
     companion object {
         fun fromKey(key: String?): AnalysisSource = entries.firstOrNull { it.key == key } ?: APP_STORE

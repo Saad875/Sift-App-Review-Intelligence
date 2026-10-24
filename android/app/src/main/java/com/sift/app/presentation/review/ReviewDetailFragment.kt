@@ -24,7 +24,9 @@ import com.sift.app.presentation.common.copyToClipboard
 import com.sift.app.presentation.common.errorMessage
 import com.sift.app.presentation.common.fadeInUp
 import com.sift.app.presentation.common.fadeVisible
+import com.sift.app.presentation.common.hapticTap
 import com.sift.app.presentation.common.labelRes
+import com.sift.app.presentation.common.showSuccess
 import com.sift.app.presentation.reviews.ReviewText
 
 /** A review with its classification, and tone-aware reply drafting. */
@@ -51,12 +53,16 @@ class ReviewDetailFragment : BaseFragment<FragmentReviewDetailBinding>(FragmentR
         binding.toneChips.setOnCheckedStateChangeListener { _, checked ->
             checked.firstOrNull()?.let(toneByChip::get)?.let(viewModel::selectTone)
         }
-        binding.draftButton.setOnClickListener { viewModel.draft() }
+        binding.draftButton.setOnClickListener {
+            it.hapticTap()
+            viewModel.draft()
+        }
         binding.replyInput.doAfterTextChanged { viewModel.onReplyEdited(it?.toString().orEmpty()) }
         binding.copyReply.setOnClickListener {
             val text = binding.replyInput.text?.toString().orEmpty()
             if (text.isNotBlank()) {
                 requireContext().copyToClipboard(getString(R.string.review_reply_clip_label), text, R.string.copied_to_clipboard)
+                binding.copyReply.showSuccess(R.string.action_copied)
             }
         }
 
@@ -86,7 +92,7 @@ class ReviewDetailFragment : BaseFragment<FragmentReviewDetailBinding>(FragmentR
         if (binding.toneChips.checkedChipId != chipId) binding.toneChips.check(chipId)
 
         val drafting = content.reply == ReplyState.Drafting
-        binding.sampleNote.isVisible = !content.canReply
+        binding.replyUnavailableNote.isVisible = !content.canReply
         binding.toneChips.isEnabled = content.canReply && !drafting
         for (index in 0 until binding.toneChips.childCount) {
             binding.toneChips.getChildAt(index).isEnabled = content.canReply && !drafting

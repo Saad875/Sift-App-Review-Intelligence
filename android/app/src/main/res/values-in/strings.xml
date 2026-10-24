@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_tagline">Kecerdasan Ulasan Aplikasi</string>
     <string name="action_retry">Coba lagi</string>
     <string name="action_back">Kembali</string>
     <string name="action_cancel">Batal</string>
     <string name="action_close">Tutup</string>
     <string name="action_done">Selesai</string>
     <string name="action_copy">Salin</string>
-    <string name="action_share">Bagikan</string>
+    <string name="action_copied">Disalin</string>
     <string name="action_settings">Setelan</string>
     <string name="percent_value">%1$d%%</string>
     <string name="copied_to_clipboard">Disalin ke papan klip</string>
-    <string name="sample_data_label">Data contoh</string>
-    <string name="sample_data_banner">Anda sedang melihat analisis contoh. Angka dan kutipan hanya ilustrasi, bukan ulasan sungguhan.</string>
     <string name="sentiment_positive">Positif</string>
     <string name="sentiment_neutral">Netral</string>
     <string name="sentiment_negative">Negatif</string>
@@ -34,7 +31,6 @@
     <string name="tone_formal">Formal</string>
     <string name="tone_apologetic">Meminta maaf</string>
     <string name="source_csv">Unggahan CSV</string>
-    <string name="source_demo">Contoh</string>
     <string name="step_fetching_title">Kumpulkan ulasan</string>
     <string name="step_classifying_title">Klasifikasikan setiap ulasan</string>
     <string name="step_clustering_title">Temukan tema</string>
@@ -60,7 +56,7 @@
     <string name="error_offline_title">Anda sedang offline</string>
     <string name="error_offline_message">Periksa koneksi Anda dan coba lagi. Laporan yang sudah Anda buka tetap tersedia.</string>
     <string name="error_backend_title">Tidak dapat menghubungi server Sift</string>
-    <string name="error_backend_message">Server tidak merespons. Periksa URL backend di Setelan atau coba lagi sebentar lagi.</string>
+    <string name="error_backend_message">Server tidak merespons. Periksa koneksi Anda dan coba lagi sebentar lagi.</string>
     <string name="error_server_title">Server melaporkan masalah</string>
     <string name="error_rate_limited_title">Pelan-pelan dulu</string>
     <string name="error_rate_limited_message">Terlalu banyak permintaan dari perangkat ini. Tunggu satu menit lalu coba lagi.</string>
@@ -75,7 +71,7 @@
     <string name="error_too_many_competitors">Anda dapat membandingkan dengan hingga tiga pesaing.</string>
     <string name="error_competitor_name">Nama pesaing harus terdiri dari 1 hingga 60 karakter.</string>
     <string name="error_backend_url">Masukkan URL http atau https lengkap, misalnya https://sift.example.com/</string>
-    <string name="error_reply_sample">Draf balasan memerlukan analisis langsung. Ulasan contoh tidak disimpan di server.</string>
+    <string name="error_reply_unavailable">Ulasan ini tidak disimpan di server, jadi balasan tidak dapat dibuat.</string>
     <string name="action_search">Cari</string>
     <string name="powered_by_short">Didukung oleh NVIDIA Nemotron di Nebius Token Factory</string>
     <string name="splash_tagline">Ubah ulasan menjadi peta jalan Anda</string>
@@ -136,17 +132,12 @@
     <string name="home_import_csv">Impor CSV</string>
     <string name="home_import_csv_caption">Play Console atau ekspor ulasan apa pun</string>
     <string name="home_import_csv_cd">Impor ulasan dari file CSV</string>
-    <string name="home_try_demo">Coba demo</string>
-    <string name="home_try_demo_caption">Laporan contoh lengkap, offline</string>
-    <string name="home_try_demo_cd">Buka laporan contoh yang berfungsi offline</string>
     <string name="home_recent">Analisis terbaru</string>
-    <string name="home_pro">Pro</string>
-    <string name="cd_home_pro">Buka Sift Pro</string>
     <string name="status_failed">Gagal</string>
     <string name="status_in_progress">Berlangsung · %1$d%%</string>
     <string name="cd_recent_analysis">%1$s. %2$s. %3$s</string>
     <string name="empty_recent_title">Belum ada analisis</string>
-    <string name="empty_recent_message">Cari aplikasi di atas, impor CSV, atau buka laporan contoh untuk melihat kemampuan Sift.</string>
+    <string name="empty_recent_message">Cari aplikasi di atas atau impor CSV untuk mendapatkan laporan pertama Anda.</string>
     <string name="empty_search_prompt_title">Temukan aplikasi</string>
     <string name="empty_search_prompt_message">Ketik minimal dua karakter untuk mencari di App Store.</string>
     <string name="empty_search_title">Aplikasi tidak ditemukan</string>
@@ -278,18 +269,6 @@
     <string name="settings_language">Bahasa</string>
     <string name="settings_pro_caption">Lihat apa yang akan hadir di Pro</string>
     <string name="cd_settings_language">Bahasa: %1$s. Ketuk dua kali untuk mengubah.</string>
-    <string name="settings_backend_label">Backend</string>
-    <string name="settings_backend_caption">Sift mengirim setiap permintaan AI melalui backend Anda, jadi tidak ada kunci API yang disimpan di perangkat ini. Gunakan http://10.0.2.2:8000/ untuk backend yang berjalan di komputer yang menjalankan emulator.</string>
-    <string name="settings_backend_hint">URL backend</string>
-    <string name="settings_save">Simpan</string>
-    <string name="settings_reset">Setel ulang ke default</string>
-    <string name="settings_test_connection">Uji koneksi</string>
-    <string name="settings_saved">URL backend disimpan</string>
-    <string name="settings_reset_done">URL backend dikembalikan ke default</string>
-    <string name="settings_checking">Memeriksa koneksi…</string>
-    <string name="settings_connected_all">Terhubung. Nemotron dan Tavily sudah dikonfigurasi.</string>
-    <string name="settings_connected_no_tavily">Terhubung. Nemotron sudah dikonfigurasi; riset pesaing memerlukan kunci Tavily di backend.</string>
-    <string name="settings_connected_no_nebius">Terhubung, tetapi backend tidak memiliki kunci Nebius Token Factory atau ID model, sehingga analisis akan gagal.</string>
     <string name="settings_appearance_label">Tampilan</string>
     <string name="settings_theme_dark">Gelap</string>
     <string name="settings_theme_light">Terang</string>
@@ -305,9 +284,6 @@
     <string name="powered_by_title">Didukung oleh NVIDIA Nemotron di Nebius Token Factory</string>
     <string name="powered_by_body">Model Nemotron yang cepat mengklasifikasikan setiap ulasan. Model penalaran Nemotron yang lebih besar mengelompokkan keluhan ke dalam tema, mengurutkan backlog, meriset pesaing, dan membuat draf balasan. Keduanya berjalan di Nebius Token Factory melalui backend Sift.</string>
     <string name="powered_by_search">Riset web: penelusuran Tavily</string>
-    <string name="settings_models_unknown">Uji koneksi untuk melihat model Nemotron yang digunakan backend Anda.</string>
-    <string name="settings_fast_model">Model cepat: %1$s</string>
-    <string name="settings_reasoning_model">Model penalaran: %1$s</string>
     <string name="settings_privacy_note">Ulasan hanya berasal dari feed publik App Store atau file yang Anda pilih. Sift tidak pernah mengambil data dari Google Play.</string>
     <string name="settings_version">Versi %1$s</string>
     <string name="settings_license">Lisensi sumber terbuka (MIT)</string>

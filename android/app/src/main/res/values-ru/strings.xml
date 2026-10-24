@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_tagline">Аналитика отзывов о приложениях</string>
     <string name="action_retry">Повторить</string>
     <string name="action_back">Назад</string>
     <string name="action_cancel">Отмена</string>
     <string name="action_close">Закрыть</string>
     <string name="action_done">Готово</string>
     <string name="action_copy">Копировать</string>
-    <string name="action_share">Поделиться</string>
+    <string name="action_copied">Скопировано</string>
     <string name="action_settings">Настройки</string>
     <string name="percent_value">%1$d %%</string>
     <string name="copied_to_clipboard">Скопировано в буфер обмена</string>
-    <string name="sample_data_label">Пример</string>
-    <string name="sample_data_banner">Это пример анализа. Цифры и цитаты приведены для наглядности и не взяты из настоящих отзывов.</string>
     <string name="sentiment_positive">Позитивные</string>
     <string name="sentiment_neutral">Нейтральные</string>
     <string name="sentiment_negative">Негативные</string>
@@ -34,7 +31,6 @@
     <string name="tone_formal">Официальный</string>
     <string name="tone_apologetic">С извинениями</string>
     <string name="source_csv">Загрузка CSV</string>
-    <string name="source_demo">Пример</string>
     <string name="step_fetching_title">Сбор отзывов</string>
     <string name="step_classifying_title">Классификация отзывов</string>
     <string name="step_clustering_title">Поиск тем</string>
@@ -60,7 +56,7 @@
     <string name="error_offline_title">Нет подключения к интернету</string>
     <string name="error_offline_message">Проверьте подключение и повторите попытку. Уже открытые отчёты по-прежнему доступны.</string>
     <string name="error_backend_title">Не удаётся подключиться к серверу Sift</string>
-    <string name="error_backend_message">Сервер не ответил. Проверьте URL бэкенда в настройках или повторите попытку чуть позже.</string>
+    <string name="error_backend_message">Сервер не ответил. Проверьте подключение и повторите попытку чуть позже.</string>
     <string name="error_server_title">Сервер сообщил о проблеме</string>
     <string name="error_rate_limited_title">Не так быстро</string>
     <string name="error_rate_limited_message">Слишком много запросов с этого устройства. Подождите минуту и повторите попытку.</string>
@@ -75,7 +71,7 @@
     <string name="error_too_many_competitors">Можно сравнить не более чем с тремя конкурентами.</string>
     <string name="error_competitor_name">Название конкурента должно содержать от 1 до 60 символов.</string>
     <string name="error_backend_url">Введите полный URL с http или https, например https://sift.example.com/</string>
-    <string name="error_reply_sample">Для черновиков ответов нужен настоящий анализ. Примеры отзывов не хранятся на сервере.</string>
+    <string name="error_reply_unavailable">Этот отзыв не хранится на сервере, поэтому ответ составить нельзя.</string>
     <string name="action_search">Искать</string>
     <string name="powered_by_short">На базе NVIDIA Nemotron в Nebius Token Factory</string>
     <string name="splash_tagline">Превратите отзывы в дорожную карту</string>
@@ -136,17 +132,12 @@
     <string name="home_import_csv">Импорт CSV</string>
     <string name="home_import_csv_caption">Play Console или любая выгрузка отзывов</string>
     <string name="home_import_csv_cd">Импортировать отзывы из CSV-файла</string>
-    <string name="home_try_demo">Открыть демо</string>
-    <string name="home_try_demo_caption">Полный пример отчёта, без интернета</string>
-    <string name="home_try_demo_cd">Открыть пример отчёта, который работает без интернета</string>
     <string name="home_recent">Недавние анализы</string>
-    <string name="home_pro">Pro</string>
-    <string name="cd_home_pro">Открыть Sift Pro</string>
     <string name="status_failed">Ошибка</string>
     <string name="status_in_progress">Выполняется · %1$d %%</string>
     <string name="cd_recent_analysis">%1$s. %2$s. %3$s</string>
     <string name="empty_recent_title">Пока нет анализов</string>
-    <string name="empty_recent_message">Найдите приложение выше, импортируйте CSV или откройте пример отчёта, чтобы увидеть, на что способен Sift.</string>
+    <string name="empty_recent_message">Найдите приложение выше или импортируйте CSV, чтобы получить первый отчёт.</string>
     <string name="empty_search_prompt_title">Найдите приложение</string>
     <string name="empty_search_prompt_message">Введите не менее двух символов для поиска в App Store.</string>
     <string name="empty_search_title">Приложения не найдены</string>
@@ -278,18 +269,6 @@
     <string name="settings_language">Язык</string>
     <string name="settings_pro_caption">Узнайте, что появится в Pro</string>
     <string name="cd_settings_language">Язык: %1$s. Нажмите дважды, чтобы изменить.</string>
-    <string name="settings_backend_label">Бэкенд</string>
-    <string name="settings_backend_caption">Sift отправляет все запросы к ИИ через ваш бэкенд, поэтому на устройстве не хранятся ключи API. Используйте http://10.0.2.2:8000/ для бэкенда на компьютере, где запущен эмулятор.</string>
-    <string name="settings_backend_hint">URL бэкенда</string>
-    <string name="settings_save">Сохранить</string>
-    <string name="settings_reset">Сбросить</string>
-    <string name="settings_test_connection">Проверить подключение</string>
-    <string name="settings_saved">URL бэкенда сохранён</string>
-    <string name="settings_reset_done">Восстановлен URL бэкенда по умолчанию</string>
-    <string name="settings_checking">Проверка подключения…</string>
-    <string name="settings_connected_all">Подключено. Nemotron и Tavily настроены.</string>
-    <string name="settings_connected_no_tavily">Подключено. Nemotron настроен; для анализа конкурентов на бэкенде нужен ключ Tavily.</string>
-    <string name="settings_connected_no_nebius">Подключено, но на бэкенде нет ключа Nebius Token Factory или ID моделей, поэтому анализ не сработает.</string>
     <string name="settings_appearance_label">Оформление</string>
     <string name="settings_theme_dark">Тёмная</string>
     <string name="settings_theme_light">Светлая</string>
@@ -305,9 +284,6 @@
     <string name="powered_by_title">На базе NVIDIA Nemotron в Nebius Token Factory</string>
     <string name="powered_by_body">Быстрая модель Nemotron классифицирует каждый отзыв. Более крупная модель рассуждений Nemotron группирует жалобы по темам, приоритизирует бэклог, изучает конкурентов и составляет ответы. Обе работают в Nebius Token Factory через бэкенд Sift.</string>
     <string name="powered_by_search">Поиск в интернете: Tavily</string>
-    <string name="settings_models_unknown">Проверьте подключение, чтобы узнать, какие модели Nemotron использует ваш бэкенд.</string>
-    <string name="settings_fast_model">Быстрая модель: %1$s</string>
-    <string name="settings_reasoning_model">Модель рассуждений: %1$s</string>
     <string name="settings_privacy_note">Отзывы берутся только из публичной ленты App Store или из выбранных вами файлов. Sift никогда не собирает данные из Google Play.</string>
     <string name="settings_version">Версия %1$s</string>
     <string name="settings_license">Лицензия открытого ПО (MIT)</string>

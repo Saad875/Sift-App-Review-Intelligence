@@ -7,7 +7,6 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.sift.app.di.AppContainer
 import com.sift.app.domain.model.Analysis
 import com.sift.app.domain.model.AnalysisStatus
-import com.sift.app.domain.usecase.LoadDemoUseCase
 import com.sift.app.domain.usecase.ObserveRecentAnalysesUseCase
 import com.sift.app.presentation.common.EmptyKind
 import com.sift.app.presentation.common.UiError
@@ -25,7 +24,6 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.launch
 
 /** One-off actions for the Home screen. */
 sealed interface HomeEvent {
@@ -34,11 +32,10 @@ sealed interface HomeEvent {
     data class ShowError(val error: UiError) : HomeEvent
 }
 
-/** Recent analyses from the local cache, plus the demo action. */
+/** Recent analyses from the local cache. */
 @OptIn(ExperimentalCoroutinesApi::class)
 class HomeViewModel(
-    private val observeRecent: ObserveRecentAnalysesUseCase,
-    private val loadDemo: LoadDemoUseCase
+    private val observeRecent: ObserveRecentAnalysesUseCase
 ) : ViewModel() {
 
     private val reload = MutableStateFlow(0)
@@ -70,19 +67,11 @@ class HomeViewModel(
         eventChannel.trySend(event)
     }
 
-    fun onDemoClicked() {
-        viewModelScope.launch {
-            loadDemo()
-                .onSuccess { eventChannel.send(HomeEvent.OpenReport(it)) }
-                .onFailure { eventChannel.send(HomeEvent.ShowError(it.toUiError())) }
-        }
-    }
-
     companion object {
         private const val STOP_TIMEOUT_MILLIS = 5_000L
 
         fun factory(container: AppContainer) = viewModelFactory {
-            initializer { HomeViewModel(container.observeRecent, container.loadDemo) }
+            initializer { HomeViewModel(container.observeRecent) }
         }
     }
 }

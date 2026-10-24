@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Cards -->
     <style name="Widget.Sift.Card" parent="Widget.Material3.CardView.Filled">
         <item name="cardBackgroundColor">@color/sift_glass</item>
@@ -43,19 +43,6 @@
         <item name="android:background">@drawable/bg_button_gradient</item>
         <item name="android:minHeight">@dimen/button_height_hero</item>
         <item name="android:elevation">@dimen/elevation_0</item>
-    </style>
-
-    <!-- Compact gradient pill, for the Pro entry point in headers. -->
-    <style name="Widget.Sift.Button.Hero.Small">
-        <item name="android:minHeight">@dimen/touch_target</item>
-        <item name="android:minWidth">@dimen/space_0</item>
-        <item name="android:paddingStart">@dimen/space_3</item>
-        <item name="android:paddingEnd">@dimen/space_4</item>
-        <item name="iconSize">@dimen/icon_xs</item>
-        <item name="iconPadding">@dimen/space_1_5</item>
-        <item name="android:textAppearance">@style/TextAppearance.Sift.Tab</item>
-        <item name="android:insetTop">@dimen/space_1</item>
-        <item name="android:insetBottom">@dimen/space_1</item>
     </style>
 
     <style name="Widget.Sift.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
@@ -219,7 +206,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAppearance">@style/TextAppearance.Sift.Label</item>
-        <item name="android:accessibilityHeading">true</item>
+        <item name="android:accessibilityHeading" tools:targetApi="p">true</item>
     </style>
 
     <!-- Small rounded badge used for type, effort and sentiment labels -->

@@ -2,4 +2,5 @@
 <resources>
     <item name="tag_count_animator" type="id" />
     <item name="tag_ambient_animator" type="id" />
+    <item name="tag_success_reset" type="id" />
 </resources>

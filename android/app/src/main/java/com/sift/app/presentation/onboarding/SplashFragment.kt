@@ -10,6 +10,7 @@ import com.sift.app.databinding.FragmentSplashBinding
 import com.sift.app.presentation.common.BaseFragment
 import com.sift.app.presentation.common.Motion
 import com.sift.app.presentation.common.fadeInUp
+import com.sift.app.presentation.common.playLogo
 import com.sift.app.presentation.common.popIn
 import com.sift.app.presentation.common.startPulse
 import com.sift.app.presentation.navigation.Transition
@@ -27,6 +28,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
         val animated = Motion.enabled(requireContext())
         val step = resources.getInteger(R.integer.motion_stagger_step).toLong()
 
+        binding.logoMark.playLogo()
         binding.glowRing.popIn()
         binding.logoTile.popIn(delayMillis = step)
         binding.wordmark.fadeInUp(delayMillis = step * WORDMARK_STEPS)

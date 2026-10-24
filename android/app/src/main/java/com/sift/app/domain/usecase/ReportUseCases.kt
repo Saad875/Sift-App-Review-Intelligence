@@ -49,11 +49,6 @@ class GetBacklogItemUseCase(private val repository: AnalysisRepository) {
         runCatchingApp { repository.getBacklogItem(itemId) }
 }
 
-/** Loads the bundled sample analysis. */
-class LoadDemoUseCase(private val repository: AnalysisRepository) {
-    suspend operator fun invoke(): Result<String> = runCatchingApp { repository.loadDemo() }
-}
-
 /** Deletes every cached analysis. */
 class ClearLocalDataUseCase(private val repository: AnalysisRepository) {
     suspend operator fun invoke(): Result<Unit> = runCatchingApp { repository.clearAll() }

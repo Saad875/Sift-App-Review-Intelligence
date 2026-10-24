@@ -4,7 +4,6 @@ import android.content.Context
 import com.google.gson.Gson
 import com.sift.app.BuildConfig
 import com.sift.app.data.csv.CsvDocumentReader
-import com.sift.app.data.demo.DemoDataSource
 import com.sift.app.data.language.AppCompatLanguageRepository
 import com.sift.app.data.local.SiftDatabase
 import com.sift.app.data.network.ApiCaller
@@ -28,7 +27,6 @@ import com.sift.app.domain.usecase.DraftReplyUseCase
 import com.sift.app.domain.usecase.GetBacklogItemUseCase
 import com.sift.app.domain.usecase.GetReviewUseCase
 import com.sift.app.domain.usecase.LanguageUseCase
-import com.sift.app.domain.usecase.LoadDemoUseCase
 import com.sift.app.domain.usecase.ObserveAnalysisUseCase
 import com.sift.app.domain.usecase.ObserveRecentAnalysesUseCase
 import com.sift.app.domain.usecase.ObserveReportUseCase
@@ -92,8 +90,7 @@ class AppContainer(context: Context) {
             api = api,
             caller = apiCaller,
             dao = database.analysisDao(),
-            csvReader = CsvDocumentReader(appContext.contentResolver),
-            demo = DemoDataSource(appContext.assets, gson)
+            csvReader = CsvDocumentReader(appContext.contentResolver)
         )
     }
 
@@ -108,7 +105,6 @@ class AppContainer(context: Context) {
     val observeReviews by lazy { ObserveReviewsUseCase(analysisRepository) }
     val getReview by lazy { GetReviewUseCase(analysisRepository) }
     val getBacklogItem by lazy { GetBacklogItemUseCase(analysisRepository) }
-    val loadDemo by lazy { LoadDemoUseCase(analysisRepository) }
     val clearLocalData by lazy { ClearLocalDataUseCase(analysisRepository) }
     val draftReply by lazy { DraftReplyUseCase(replyRepository) }
     val buildMarkdown by lazy { BuildMarkdownUseCase() }

@@ -144,10 +144,10 @@ class DraftReplyUseCaseTest {
     )
 
     @Test
-    fun `sample reviews cannot be replied to`() = runTest {
+    fun `reviews without a backend id cannot be replied to`() = runTest {
         val repository = FakeReplyRepository()
         val error = DraftReplyUseCase(repository)(review(null), ReplyTone.FORMAL).exceptionOrNull()
-        assertEquals(InvalidReason.REPLY_UNAVAILABLE_FOR_SAMPLE, (error as AppError.Invalid).reason)
+        assertEquals(InvalidReason.REPLY_UNAVAILABLE, (error as AppError.Invalid).reason)
         assertTrue(repository.calls.isEmpty())
     }
 

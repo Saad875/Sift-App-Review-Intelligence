@@ -33,7 +33,7 @@ enum class InvalidReason {
     TOO_MANY_COMPETITORS,
     COMPETITOR_NAME_INVALID,
     BACKEND_URL_INVALID,
-    REPLY_UNAVAILABLE_FOR_SAMPLE
+    REPLY_UNAVAILABLE
 }
 
 /** Wraps any throwable into an [AppError]. */

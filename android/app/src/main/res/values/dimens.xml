@@ -11,8 +11,6 @@
     <dimen name="space_5">20dp</dimen>
     <dimen name="space_6">24dp</dimen>
     <dimen name="space_8">32dp</dimen>
-    <dimen name="space_10">40dp</dimen>
-    <dimen name="space_12">48dp</dimen>
     <dimen name="space_16">64dp</dimen>
     <dimen name="screen_margin">16dp</dimen>
     <dimen name="content_max_width">640dp</dimen>
@@ -28,9 +26,6 @@
 
     <!-- Elevation -->
     <dimen name="elevation_0">0dp</dimen>
-    <dimen name="elevation_1">1dp</dimen>
-    <dimen name="elevation_2">3dp</dimen>
-    <dimen name="elevation_3">6dp</dimen>
     <dimen name="elevation_4">12dp</dimen>
 
     <!-- Strokes -->
@@ -79,6 +74,9 @@
     <dimen name="bottom_action_clearance">120dp</dimen>
     <dimen name="bottom_fade_height">140dp</dimen>
     <dimen name="status_scrim_fade">24dp</dimen>
+    <!-- Animated logo drop, in vector viewport units -->
+    <item name="logo_drop_distance" format="float" type="dimen">12</item>
+    <item name="logo_drop_distance_middle" format="float" type="dimen">16</item>
 
     <!-- Charts -->
     <dimen name="donut_size">144dp</dimen>
@@ -93,9 +91,7 @@
 
     <!-- Timeline -->
     <dimen name="timeline_indicator">32dp</dimen>
-    <dimen name="timeline_indicator_icon">18dp</dimen>
     <dimen name="timeline_connector_width">2dp</dimen>
-    <dimen name="timeline_connector_min_height">24dp</dimen>
 
     <!-- Skeletons -->
     <dimen name="skeleton_line_height">12dp</dimen>
@@ -105,7 +101,6 @@
 
     <!-- Motion -->
     <dimen name="stagger_offset">24dp</dimen>
-    <dimen name="press_translation">2dp</dimen>
     <item name="press_scale_button" format="float" type="dimen">0.95</item>
     <item name="press_scale_card" format="float" type="dimen">0.98</item>
     <item name="overshoot_tension" format="float" type="dimen">2.2</item>

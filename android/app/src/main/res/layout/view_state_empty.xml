@@ -59,6 +59,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/emptyMessage"
-        tools:text="@string/home_try_demo"
+        tools:text="@string/home_import_csv"
         tools:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

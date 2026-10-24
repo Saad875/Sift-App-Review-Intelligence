@@ -12,7 +12,6 @@ object MarkdownLabelsFactory {
     fun create(context: Context): MarkdownLabels = with(context) {
         MarkdownLabels(
             reportTitle = getString(R.string.md_report_title),
-            sampleNotice = getString(R.string.sample_data_banner),
             sourceLine = getString(R.string.md_source_line),
             countryLine = getString(R.string.md_country_line),
             overviewHeading = getString(R.string.report_tab_overview),

@@ -20,26 +20,6 @@
         app:title="@string/report_title"
         tools:subtitle="284 reviews · App Store" />
 
-    <TextView
-        android:id="@+id/sampleBanner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/screen_margin"
-        android:layout_marginEnd="@dimen/screen_margin"
-        android:background="@drawable/bg_sample_banner"
-        android:drawablePadding="@dimen/space_2"
-        android:gravity="center_vertical"
-        android:padding="@dimen/space_3"
-        android:text="@string/sample_data_banner"
-        android:textAppearance="@style/TextAppearance.Sift.BodySmall"
-        android:textColor="@color/sift_text_primary"
-        android:visibility="gone"
-        app:drawableStartCompat="@drawable/ic_info"
-        app:drawableTint="@color/sift_neutral"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        tools:visibility="visible" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
@@ -51,7 +31,7 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sampleBanner"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:tabMode="scrollable" />
 
     <View

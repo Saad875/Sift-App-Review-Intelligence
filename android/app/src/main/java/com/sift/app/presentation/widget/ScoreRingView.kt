@@ -31,7 +31,7 @@ class ScoreRingView @JvmOverloads constructor(
     }
     private val trackPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { style = Paint.Style.STROKE }
     private val textPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
-        typeface = context.appTypeface(R.font.manrope_bold)
+        typeface = context.appTypeface(R.font.poppins_bold)
         textAlign = Paint.Align.CENTER
         isFakeBoldText = true
     }

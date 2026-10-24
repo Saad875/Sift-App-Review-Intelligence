@@ -85,7 +85,6 @@ class ReportFragment : BaseFragment<FragmentReportBinding>(FragmentReportBinding
             getString(analysis.source.labelRes)
         )
         binding.toolbar.subtitle = parts.joinToString(getString(R.string.meta_separator))
-        binding.sampleBanner.isVisible = analysis.isDemo
     }
 
     private fun share() {

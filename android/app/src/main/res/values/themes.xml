@@ -66,5 +66,8 @@
         <item name="android:windowBackground">@drawable/bg_screen</item>
     </style>
 
-    <style name="Theme.Sift" parent="Base.Theme.Sift" />
+    <!-- Light theme: dark status bar icons on the light background. -->
+    <style name="Theme.Sift" parent="Base.Theme.Sift">
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
 </resources>

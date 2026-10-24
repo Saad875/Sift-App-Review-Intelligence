@@ -140,7 +140,8 @@ fun View.startFloat(distancePx: Float, startFraction: Float = 0f) {
  * screen transitions). Does nothing when animations are off; stops on detach.
  */
 private fun View.startAmbient(durationRes: Int, startFraction: Float = 0f, onFrame: View.(Float) -> Unit) {
-    (getTag(R.id.tag_ambient_animator) as? ValueAnimator)?.cancel()
+    // Re-binding the same view keeps the loop that is already running.
+    if ((getTag(R.id.tag_ambient_animator) as? ValueAnimator)?.isRunning == true) return
     if (!Motion.enabled(context)) return
     val animator = ValueAnimator.ofFloat(0f, 1f).apply {
         duration = Motion.duration(context, durationRes)

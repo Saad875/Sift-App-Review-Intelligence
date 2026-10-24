@@ -31,10 +31,10 @@ class BarChartView @JvmOverloads constructor(
 
     private val barPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val trackPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-    private val labelPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply { typeface = context.appTypeface(R.font.manrope_medium) }
+    private val labelPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply { typeface = context.appTypeface(R.font.poppins_medium) }
     private val valuePaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
         textAlign = Paint.Align.RIGHT
-        typeface = context.appTypeface(R.font.manrope_semibold)
+        typeface = context.appTypeface(R.font.poppins_semibold)
     }
     private val rect = RectF()
 

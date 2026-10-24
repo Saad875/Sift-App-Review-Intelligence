@@ -25,7 +25,7 @@ import kotlinx.coroutines.flow.flowOf
 fun analysis(status: AnalysisStatus = AnalysisStatus.RUNNING, id: String = "a1") = Analysis(
     id = id, appName = "Notes", appId = "1", developer = "Dev", iconUrl = "", source = AnalysisSource.APP_STORE,
     country = "us", competitors = emptyList(), status = status, currentStep = null, progress = 0, error = "",
-    warnings = emptyList(), createdAtMillis = 0L, steps = emptyList(), stats = AnalysisStats.EMPTY, isDemo = false
+    warnings = emptyList(), createdAtMillis = 0L, steps = emptyList(), stats = AnalysisStats.EMPTY
 )
 
 val sampleApp = AppSummary("1", "Notes", "Dev", "", 4.5, 10, "Productivity")
@@ -100,7 +100,6 @@ class FakeAnalysisRepository(
     override fun observeReviews(analysisId: String, filter: ReviewFilter): Flow<List<Review>> = flowOf(emptyList())
     override suspend fun getReview(reviewId: Long): Review? = null
     override suspend fun getBacklogItem(itemId: Long): BacklogItem? = null
-    override suspend fun loadDemo(): String = "demo"
     override suspend fun clearAll() = Unit
 }
 

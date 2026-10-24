@@ -53,7 +53,6 @@ class NemotronVariantTest {
 class MarkdownBuilderTest {
     private val labels = MarkdownLabels(
         reportTitle = "Sift report: %1\$s",
-        sampleNotice = "Sample data",
         sourceLine = "Source: %1\$s",
         countryLine = "Country: %1\$s",
         overviewHeading = "Overview",
@@ -95,9 +94,8 @@ class MarkdownBuilderTest {
         effort = Effort.M, themeTitle = "Sync crashes", evidenceQuotes = listOf("It crashes\nevery time")
     )
 
-    private fun report(isDemo: Boolean) = Report(
+    private fun report() = Report(
         analysis = analysis().copy(
-            isDemo = isDemo,
             stats = AnalysisStats.EMPTY.copy(
                 totalReviews = 4,
                 averageRating = 3.25,
@@ -117,7 +115,7 @@ class MarkdownBuilderTest {
 
     @Test
     fun `report contains every section with real numbers`() {
-        val markdown = MarkdownBuilder(labels).report(report(isDemo = false))
+        val markdown = MarkdownBuilder(labels).report(report())
         assertTrue(markdown.startsWith("# Sift report: Notes"))
         assertTrue(markdown.contains("- Reviews analysed: 4"))
         assertTrue(markdown.contains("50% positive, 25% neutral, 25% negative"))
@@ -129,12 +127,6 @@ class MarkdownBuilderTest {
         assertTrue(markdown.contains("> It crashes every time"))
         assertTrue(markdown.contains("- [https://bear.app](https://bear.app)"))
         assertFalse(markdown.contains("Broken"))
-        assertFalse(markdown.contains("Sample data"))
-    }
-
-    @Test
-    fun `sample report is labelled`() {
-        assertTrue(MarkdownBuilder(labels).report(report(isDemo = true)).contains("> Sample data"))
     }
 
     @Test

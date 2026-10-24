@@ -14,11 +14,11 @@ import com.sift.app.domain.repository.ReplyRepository
 import com.sift.app.domain.repository.SettingsRepository
 import com.sift.app.domain.util.BackendUrlRules
 
-/** Drafts a reply for a review. Sample reviews have no backend id and cannot be replied to. */
+/** Drafts a reply for a review. Reviews without a backend id cannot be replied to. */
 class DraftReplyUseCase(private val repository: ReplyRepository) {
     suspend operator fun invoke(review: Review, tone: ReplyTone): Result<ReplyDraft> {
         val remoteId = review.remoteId
-            ?: return Result.failure(AppError.Invalid(InvalidReason.REPLY_UNAVAILABLE_FOR_SAMPLE))
+            ?: return Result.failure(AppError.Invalid(InvalidReason.REPLY_UNAVAILABLE))
         return runCatchingApp { repository.draftReply(remoteId, tone) }
     }
 }

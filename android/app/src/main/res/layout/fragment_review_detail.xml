@@ -204,14 +204,14 @@
                 app:layout_constraintTop_toBottomOf="@id/replyLabel" />
 
             <TextView
-                android:id="@+id/sampleNote"
+                android:id="@+id/replyUnavailableNote"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_3"
-                android:background="@drawable/bg_sample_banner"
+                android:background="@drawable/bg_notice"
                 android:drawablePadding="@dimen/space_2"
                 android:padding="@dimen/space_3"
-                android:text="@string/error_reply_sample"
+                android:text="@string/error_reply_unavailable"
                 android:textAppearance="@style/TextAppearance.Sift.BodySmall"
                 android:textColor="@color/sift_text_primary"
                 android:visibility="gone"
@@ -230,7 +230,7 @@
                 android:contentDescription="@string/cd_reply_tone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/sampleNote"
+                app:layout_constraintTop_toBottomOf="@id/replyUnavailableNote"
                 app:selectionRequired="true"
                 app:singleSelection="true">
 

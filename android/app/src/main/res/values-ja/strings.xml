@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_tagline">アプリレビュー・インテリジェンス</string>
     <string name="action_retry">再試行</string>
     <string name="action_back">戻る</string>
     <string name="action_cancel">キャンセル</string>
     <string name="action_close">閉じる</string>
     <string name="action_done">完了</string>
     <string name="action_copy">コピー</string>
-    <string name="action_share">共有</string>
+    <string name="action_copied">コピーしました</string>
     <string name="action_settings">設定</string>
     <string name="percent_value">%1$d%%</string>
     <string name="copied_to_clipboard">クリップボードにコピーしました</string>
-    <string name="sample_data_label">サンプルデータ</string>
-    <string name="sample_data_banner">サンプルの分析を表示しています。数値や引用は説明用で、実際のレビューではありません。</string>
     <string name="sentiment_positive">ポジティブ</string>
     <string name="sentiment_neutral">ニュートラル</string>
     <string name="sentiment_negative">ネガティブ</string>
@@ -34,7 +31,6 @@
     <string name="tone_formal">フォーマル</string>
     <string name="tone_apologetic">お詫び</string>
     <string name="source_csv">CSV アップロード</string>
-    <string name="source_demo">サンプル</string>
     <string name="step_fetching_title">レビューを収集</string>
     <string name="step_classifying_title">すべてのレビューを分類</string>
     <string name="step_clustering_title">テーマを抽出</string>
@@ -60,7 +56,7 @@
     <string name="error_offline_title">オフラインです</string>
     <string name="error_offline_message">接続を確認してもう一度お試しください。開いたことのあるレポートは引き続き閲覧できます。</string>
     <string name="error_backend_title">Sift サーバーに接続できません</string>
-    <string name="error_backend_message">サーバーから応答がありません。設定でバックエンド URL を確認するか、しばらくしてからもう一度お試しください。</string>
+    <string name="error_backend_message">サーバーから応答がありません。接続を確認して、しばらくしてからもう一度お試しください。</string>
     <string name="error_server_title">サーバーで問題が発生しました</string>
     <string name="error_rate_limited_title">少しお待ちください</string>
     <string name="error_rate_limited_message">このデバイスからのリクエストが多すぎます。1 分ほど待ってからもう一度お試しください。</string>
@@ -75,7 +71,7 @@
     <string name="error_too_many_competitors">比較できる競合は最大 3 つです。</string>
     <string name="error_competitor_name">競合の名前は 1〜60 文字で入力してください。</string>
     <string name="error_backend_url">http または https から始まる完全な URL を入力してください（例: https://sift.example.com/）</string>
-    <string name="error_reply_sample">返信の下書きには実際の分析が必要です。サンプルのレビューはサーバーに保存されていません。</string>
+    <string name="error_reply_unavailable">このレビューはサーバーに保存されていないため、返信を下書きできません。</string>
     <string name="action_search">検索</string>
     <string name="powered_by_short">Nebius Token Factory 上の NVIDIA Nemotron を活用</string>
     <string name="splash_tagline">レビューをロードマップに</string>
@@ -136,17 +132,12 @@
     <string name="home_import_csv">CSV を読み込む</string>
     <string name="home_import_csv_caption">Play Console やその他のレビュー書き出し</string>
     <string name="home_import_csv_cd">CSV ファイルからレビューを読み込む</string>
-    <string name="home_try_demo">デモを試す</string>
-    <string name="home_try_demo_caption">オフラインで見られるサンプルレポート</string>
-    <string name="home_try_demo_cd">オフラインで使えるサンプルレポートを開く</string>
     <string name="home_recent">最近の分析</string>
-    <string name="home_pro">Pro</string>
-    <string name="cd_home_pro">Sift Pro を開く</string>
     <string name="status_failed">失敗</string>
     <string name="status_in_progress">進行中 · %1$d%%</string>
     <string name="cd_recent_analysis">%1$s. %2$s. %3$s</string>
     <string name="empty_recent_title">まだ分析はありません</string>
-    <string name="empty_recent_message">上でアプリを検索するか、CSV を読み込むか、サンプルレポートを開いて Sift でできることを確かめてください。</string>
+    <string name="empty_recent_message">上でアプリを検索するか CSV を読み込むと、最初のレポートが作成されます。</string>
     <string name="empty_search_prompt_title">アプリを探す</string>
     <string name="empty_search_prompt_message">App Store を検索するには 2 文字以上入力してください。</string>
     <string name="empty_search_title">アプリが見つかりません</string>
@@ -278,18 +269,6 @@
     <string name="settings_language">言語</string>
     <string name="settings_pro_caption">Pro で追加される機能を見る</string>
     <string name="cd_settings_language">言語: %1$s。変更するにはダブルタップします。</string>
-    <string name="settings_backend_label">バックエンド</string>
-    <string name="settings_backend_caption">Sift はすべての AI リクエストをあなたのバックエンド経由で送信するため、このデバイスに API キーは保存されません。エミュレーターを動かしているパソコン上のバックエンドには http://10.0.2.2:8000/ を使用してください。</string>
-    <string name="settings_backend_hint">バックエンド URL</string>
-    <string name="settings_save">保存</string>
-    <string name="settings_reset">デフォルトに戻す</string>
-    <string name="settings_test_connection">接続をテスト</string>
-    <string name="settings_saved">バックエンド URL を保存しました</string>
-    <string name="settings_reset_done">バックエンド URL をデフォルトに戻しました</string>
-    <string name="settings_checking">接続を確認しています…</string>
-    <string name="settings_connected_all">接続しました。Nemotron と Tavily は設定済みです。</string>
-    <string name="settings_connected_no_tavily">接続しました。Nemotron は設定済みです。競合調査にはバックエンドに Tavily のキーが必要です。</string>
-    <string name="settings_connected_no_nebius">接続しましたが、バックエンドに Nebius Token Factory のキーまたはモデル ID がないため、分析は失敗します。</string>
     <string name="settings_appearance_label">外観</string>
     <string name="settings_theme_dark">ダーク</string>
     <string name="settings_theme_light">ライト</string>
@@ -305,9 +284,6 @@
     <string name="powered_by_title">Nebius Token Factory 上の NVIDIA Nemotron を活用</string>
     <string name="powered_by_body">高速な Nemotron モデルがすべてのレビューを分類し、より大きな Nemotron 推論モデルが不満をテーマにまとめ、バックログを順位付けし、競合を調査し、返信を下書きします。どちらも Sift のバックエンドを通じて Nebius Token Factory 上で動作します。</string>
     <string name="powered_by_search">ウェブ調査: Tavily 検索</string>
-    <string name="settings_models_unknown">接続をテストすると、バックエンドが使っている Nemotron モデルを確認できます。</string>
-    <string name="settings_fast_model">高速モデル: %1$s</string>
-    <string name="settings_reasoning_model">推論モデル: %1$s</string>
     <string name="settings_privacy_note">レビューは App Store の公開フィード、またはあなたが選んだファイルからのみ取得します。Sift が Google Play からデータを収集することはありません。</string>
     <string name="settings_version">バージョン %1$s</string>
     <string name="settings_license">オープンソースライセンス（MIT）</string>

@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_tagline">Uygulama Yorumu Zekâsı</string>
     <string name="action_retry">Tekrar dene</string>
     <string name="action_back">Geri</string>
     <string name="action_cancel">İptal</string>
     <string name="action_close">Kapat</string>
     <string name="action_done">Bitti</string>
     <string name="action_copy">Kopyala</string>
-    <string name="action_share">Paylaş</string>
+    <string name="action_copied">Kopyalandı</string>
     <string name="action_settings">Ayarlar</string>
     <string name="percent_value">%%%1$d</string>
     <string name="copied_to_clipboard">Panoya kopyalandı</string>
-    <string name="sample_data_label">Örnek veri</string>
-    <string name="sample_data_banner">Örnek bir analiz görüntülüyorsunuz. Rakamlar ve alıntılar gerçek yorumlar değil, açıklama amaçlıdır.</string>
     <string name="sentiment_positive">Olumlu</string>
     <string name="sentiment_neutral">Nötr</string>
     <string name="sentiment_negative">Olumsuz</string>
@@ -34,7 +31,6 @@
     <string name="tone_formal">Resmî</string>
     <string name="tone_apologetic">Özür dileyen</string>
     <string name="source_csv">CSV yükleme</string>
-    <string name="source_demo">Örnek</string>
     <string name="step_fetching_title">Yorumları topla</string>
     <string name="step_classifying_title">Her yorumu sınıflandır</string>
     <string name="step_clustering_title">Temaları bul</string>
@@ -60,7 +56,7 @@
     <string name="error_offline_title">Çevrimdışısınız</string>
     <string name="error_offline_message">Bağlantınızı kontrol edip tekrar deneyin. Daha önce açtığınız raporlar kullanılabilir durumda.</string>
     <string name="error_backend_title">Sift sunucusuna ulaşılamıyor</string>
-    <string name="error_backend_message">Sunucu yanıt vermedi. Ayarlar’daki arka uç URL’sini kontrol edin veya birazdan tekrar deneyin.</string>
+    <string name="error_backend_message">Sunucu yanıt vermedi. Bağlantınızı kontrol edip birazdan tekrar deneyin.</string>
     <string name="error_server_title">Sunucu bir sorun bildirdi</string>
     <string name="error_rate_limited_title">Biraz yavaşlayın</string>
     <string name="error_rate_limited_message">Bu cihazdan çok fazla istek geldi. Lütfen bir dakika bekleyip tekrar deneyin.</string>
@@ -75,7 +71,7 @@
     <string name="error_too_many_competitors">En fazla üç rakiple karşılaştırabilirsiniz.</string>
     <string name="error_competitor_name">Rakip adları 1 ile 60 karakter arasında olmalıdır.</string>
     <string name="error_backend_url">Tam bir http veya https URL’si girin, örneğin https://sift.example.com/</string>
-    <string name="error_reply_sample">Yanıt taslakları için canlı bir analiz gerekir. Örnek yorumlar sunucuda saklanmaz.</string>
+    <string name="error_reply_unavailable">Bu yorum sunucuda saklanmadığı için yanıt hazırlanamıyor.</string>
     <string name="action_search">Ara</string>
     <string name="powered_by_short">Nebius Token Factory üzerinde NVIDIA Nemotron ile güçlendirilmiştir</string>
     <string name="splash_tagline">Yorumları yol haritanıza dönüştürün</string>
@@ -136,17 +132,12 @@
     <string name="home_import_csv">CSV içe aktar</string>
     <string name="home_import_csv_caption">Play Console veya herhangi bir yorum dışa aktarımı</string>
     <string name="home_import_csv_cd">Yorumları bir CSV dosyasından içe aktar</string>
-    <string name="home_try_demo">Demoyu dene</string>
-    <string name="home_try_demo_caption">Eksiksiz bir örnek rapor, çevrimdışı</string>
-    <string name="home_try_demo_cd">Çevrimdışı çalışan bir örnek raporu aç</string>
     <string name="home_recent">Son analizler</string>
-    <string name="home_pro">Pro</string>
-    <string name="cd_home_pro">Sift Pro’yu aç</string>
     <string name="status_failed">Başarısız</string>
     <string name="status_in_progress">Sürüyor · %%%1$d</string>
     <string name="cd_recent_analysis">%1$s. %2$s. %3$s</string>
     <string name="empty_recent_title">Henüz analiz yok</string>
-    <string name="empty_recent_message">Sift’in neler yapabildiğini görmek için yukarıdan bir uygulama arayın, bir CSV içe aktarın veya örnek raporu açın.</string>
+    <string name="empty_recent_message">İlk raporunuzu almak için yukarıdan bir uygulama arayın veya bir CSV içe aktarın.</string>
     <string name="empty_search_prompt_title">Bir uygulama bulun</string>
     <string name="empty_search_prompt_message">App Store’da aramak için en az iki karakter yazın.</string>
     <string name="empty_search_title">Uygulama bulunamadı</string>
@@ -278,18 +269,6 @@
     <string name="settings_language">Dil</string>
     <string name="settings_pro_caption">Pro ile neler geleceğini görün</string>
     <string name="cd_settings_language">Dil: %1$s. Değiştirmek için iki kez dokunun.</string>
-    <string name="settings_backend_label">Arka uç</string>
-    <string name="settings_backend_caption">Sift her yapay zekâ isteğini arka ucunuz üzerinden gönderir, bu nedenle bu cihazda hiçbir API anahtarı saklanmaz. Emülatörü çalıştıran bilgisayardaki bir arka uç için http://10.0.2.2:8000/ adresini kullanın.</string>
-    <string name="settings_backend_hint">Arka uç URL’si</string>
-    <string name="settings_save">Kaydet</string>
-    <string name="settings_reset">Varsayılana sıfırla</string>
-    <string name="settings_test_connection">Bağlantıyı test et</string>
-    <string name="settings_saved">Arka uç URL’si kaydedildi</string>
-    <string name="settings_reset_done">Arka uç URL’si varsayılana sıfırlandı</string>
-    <string name="settings_checking">Bağlantı kontrol ediliyor…</string>
-    <string name="settings_connected_all">Bağlandı. Nemotron ve Tavily yapılandırıldı.</string>
-    <string name="settings_connected_no_tavily">Bağlandı. Nemotron yapılandırıldı; rakip araştırması için arka uçta bir Tavily anahtarı gerekir.</string>
-    <string name="settings_connected_no_nebius">Bağlandı, ancak arka uçta Nebius Token Factory anahtarı veya model kimlikleri yok; bu yüzden analizler başarısız olur.</string>
     <string name="settings_appearance_label">Görünüm</string>
     <string name="settings_theme_dark">Koyu</string>
     <string name="settings_theme_light">Açık</string>
@@ -305,9 +284,6 @@
     <string name="powered_by_title">Nebius Token Factory üzerinde NVIDIA Nemotron ile güçlendirilmiştir</string>
     <string name="powered_by_body">Hızlı bir Nemotron modeli her yorumu sınıflandırır. Daha büyük bir Nemotron akıl yürütme modeli şikâyetleri temalara ayırır, iş listesini sıralar, rakipleri araştırır ve yanıt taslakları hazırlar. İkisi de Sift arka ucu üzerinden Nebius Token Factory’de çalışır.</string>
     <string name="powered_by_search">Web araştırması: Tavily araması</string>
-    <string name="settings_models_unknown">Arka ucunuzun hangi Nemotron modellerini kullandığını görmek için bağlantıyı test edin.</string>
-    <string name="settings_fast_model">Hızlı model: %1$s</string>
-    <string name="settings_reasoning_model">Akıl yürütme modeli: %1$s</string>
     <string name="settings_privacy_note">Yorumlar yalnızca herkese açık App Store akışından veya seçtiğiniz dosyalardan gelir. Sift, Google Play’den asla veri kazımaz.</string>
     <string name="settings_version">Sürüm %1$s</string>
     <string name="settings_license">Açık kaynak lisansı (MIT)</string>

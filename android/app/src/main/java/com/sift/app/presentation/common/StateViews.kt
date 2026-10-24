@@ -49,6 +49,7 @@ val EmptyKind.content: EmptyContent
 fun ViewStateEmptyBinding.bind(kind: EmptyKind, @StringRes actionText: Int? = null, onAction: (() -> Unit)? = null) {
     val content = kind.content
     emptyIcon.setImageResource(content.icon)
+    emptyIcon.startFloat(root.resources.getDimension(R.dimen.welcome_float_distance))
     emptyTitle.setText(content.title)
     emptyMessage.setText(content.message)
     emptyAction.isVisible = actionText != null && onAction != null

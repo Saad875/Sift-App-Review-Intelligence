@@ -60,7 +60,7 @@ The generator escapes text for Android resources, fails if any key is missing, a
 
 ## Design
 
-- **Type**: Manrope (SIL Open Font License, see `android/third_party/manrope/OFL.txt`). Scripts it does not cover fall back to the system Noto fonts.
+- **Type**: Poppins (SIL Open Font License, see `android/third_party/poppins/OFL.txt`). Scripts it does not cover fall back to the system Noto fonts.
 - **Look**: a deep navy gradient backdrop, translucent glass cards and NVIDIA green (#76B900) accents.
 - **Motion**: drifting ambient glows with scroll parallax, staggered entrances, count-up numbers, chart draw-ins, shared-axis and fade-through screen transitions, and springy press feedback on every button. Transitions and press feedback run for 200 to 350 ms.
 - **Remove animations**: every animation respects the system setting.

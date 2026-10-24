@@ -79,15 +79,12 @@ class MapperTest {
         assertEquals(mapOf(ReviewCategory.BUG to 3), domain.stats.categories)
         assertEquals(2, domain.stats.sentiment.negative)
         assertTrue(domain.warnings.isEmpty())
-        assertEquals(false, domain.isDemo)
     }
 
     @Test
-    fun `demo analyses are marked and keep local fields`() {
+    fun `refreshing an analysis keeps local fields`() {
         val previous = analysisDto.toEntity().copy(reportSynced = true)
-        val entity = analysisDto.copy(createdAt = null).toEntity(previous = previous, isDemo = true)
-        assertEquals(AnalysisSource.DEMO.key, entity.source)
-        assertTrue(entity.isDemo)
+        val entity = analysisDto.copy(createdAt = null).toEntity(previous = previous)
         assertTrue(entity.reportSynced)
         assertEquals(previous.createdAtMillis, entity.createdAtMillis)
     }
@@ -100,7 +97,7 @@ class MapperTest {
     }
 
     @Test
-    fun `review dto validates ranges and drops remote id for samples`() {
+    fun `review dto validates ranges and keeps the backend id`() {
         val dto = ReviewDto(
             id = 7, author = null, title = "t", text = "Crashes", rating = 9, reviewDate = "2024-05-02",
             appVersion = null, sentiment = "negative", category = "bug", severity = 0, summary = null,
@@ -113,7 +110,6 @@ class MapperTest {
         assertEquals(Sentiment.NEGATIVE, review.sentiment)
         assertEquals(ReviewCategory.BUG, review.category)
         assertEquals("", review.author)
-        assertNull(dto.toEntity("a1", keepRemoteId = false).remoteId)
     }
 
     @Test

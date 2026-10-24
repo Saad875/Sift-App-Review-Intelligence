@@ -142,7 +142,6 @@ val AnalysisSource.labelRes: Int
     get() = when (this) {
         AnalysisSource.APP_STORE -> R.string.source_app_store
         AnalysisSource.CSV -> R.string.source_csv
-        AnalysisSource.DEMO -> R.string.source_demo
     }
 
 /** Colour for a 0 to 100 priority score. */

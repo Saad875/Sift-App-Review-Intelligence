@@ -27,6 +27,7 @@ import com.sift.app.presentation.common.fadeInUp
 import com.sift.app.presentation.common.iconRes
 import com.sift.app.presentation.common.labelRes
 import com.sift.app.presentation.common.priorityColorRes
+import com.sift.app.presentation.common.showSuccess
 
 /** A backlog item with its reasoning, impact, fix and evidence, and "Copy as ticket". */
 class BacklogDetailFragment : BaseFragment<FragmentBacklogDetailBinding>(FragmentBacklogDetailBinding::inflate) {
@@ -103,6 +104,7 @@ class BacklogDetailFragment : BaseFragment<FragmentBacklogDetailBinding>(Fragmen
         val context = requireContext()
         val ticket = viewModel.ticket(MarkdownLabelsFactory.create(context)) ?: return
         context.copyToClipboard(getString(R.string.backlog_ticket_clip_label), ticket, R.string.backlog_ticket_copied)
+        binding.copyTicket.showSuccess(R.string.action_copied)
     }
 
     override fun onDestroyView() {

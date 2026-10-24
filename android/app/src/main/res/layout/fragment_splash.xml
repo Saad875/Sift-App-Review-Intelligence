@@ -39,11 +39,12 @@
         app:layout_constraintVertical_chainStyle="packed">
 
         <ImageView
+            android:id="@+id/logoMark"
             android:layout_width="@dimen/splash_logo_icon"
             android:layout_height="@dimen/splash_logo_icon"
             android:layout_gravity="center"
             android:importantForAccessibility="no"
-            android:src="@drawable/ic_splash_logo" />
+            android:src="@drawable/avd_logo" />
     </FrameLayout>
 
     <TextView

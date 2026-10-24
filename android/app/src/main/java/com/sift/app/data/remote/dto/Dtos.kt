@@ -159,12 +159,3 @@ data class ReplyDraftDto(
     @SerializedName("tone") val tone: String?,
     @SerializedName("text") val text: String?
 )
-
-/** Shape of the bundled sample analysis in assets/demo/demo_analysis.json. */
-data class DemoBundleDto(
-    @SerializedName("analysis") val analysis: AnalysisDto?,
-    @SerializedName("themes") val themes: List<ThemeDto>?,
-    @SerializedName("backlog") val backlog: List<BacklogItemDto>?,
-    @SerializedName("competitors") val competitors: List<CompetitorDto>?,
-    @SerializedName("reviews") val reviews: List<ReviewDto>?
-)

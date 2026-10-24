@@ -40,8 +40,6 @@ interface AnalysisRepository {
     suspend fun getReview(reviewId: Long): Review?
     suspend fun getBacklogItem(itemId: Long): BacklogItem?
 
-    /** Loads the bundled sample analysis into the cache and returns its id. */
-    suspend fun loadDemo(): String
 
     suspend fun clearAll()
 }

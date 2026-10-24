@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_tagline">App-Review-Intelligenz</string>
     <string name="action_retry">Erneut versuchen</string>
     <string name="action_back">Zurück</string>
     <string name="action_cancel">Abbrechen</string>
     <string name="action_close">Schließen</string>
     <string name="action_done">Fertig</string>
     <string name="action_copy">Kopieren</string>
-    <string name="action_share">Teilen</string>
+    <string name="action_copied">Kopiert</string>
     <string name="action_settings">Einstellungen</string>
     <string name="percent_value">%1$d %%</string>
     <string name="copied_to_clipboard">In die Zwischenablage kopiert</string>
-    <string name="sample_data_label">Beispieldaten</string>
-    <string name="sample_data_banner">Du siehst eine Beispielanalyse. Zahlen und Zitate dienen nur zur Veranschaulichung und stammen nicht aus echten Bewertungen.</string>
     <string name="sentiment_positive">Positiv</string>
     <string name="sentiment_neutral">Neutral</string>
     <string name="sentiment_negative">Negativ</string>
@@ -34,7 +31,6 @@
     <string name="tone_formal">Förmlich</string>
     <string name="tone_apologetic">Entschuldigend</string>
     <string name="source_csv">CSV-Upload</string>
-    <string name="source_demo">Beispiel</string>
     <string name="step_fetching_title">Bewertungen sammeln</string>
     <string name="step_classifying_title">Jede Bewertung einordnen</string>
     <string name="step_clustering_title">Themen finden</string>
@@ -60,7 +56,7 @@
     <string name="error_offline_title">Du bist offline</string>
     <string name="error_offline_message">Prüfe deine Verbindung und versuche es erneut. Bereits geöffnete Berichte sind weiterhin verfügbar.</string>
     <string name="error_backend_title">Sift-Server nicht erreichbar</string>
-    <string name="error_backend_message">Der Server hat nicht geantwortet. Prüfe die Backend-URL in den Einstellungen oder versuche es gleich noch einmal.</string>
+    <string name="error_backend_message">Der Server hat nicht geantwortet. Prüfe deine Verbindung und versuche es gleich noch einmal.</string>
     <string name="error_server_title">Der Server hat ein Problem gemeldet</string>
     <string name="error_rate_limited_title">Etwas langsamer, bitte</string>
     <string name="error_rate_limited_message">Zu viele Anfragen von diesem Gerät. Bitte warte eine Minute und versuche es erneut.</string>
@@ -75,7 +71,7 @@
     <string name="error_too_many_competitors">Du kannst mit bis zu drei Wettbewerbern vergleichen.</string>
     <string name="error_competitor_name">Namen von Wettbewerbern müssen 1 bis 60 Zeichen lang sein.</string>
     <string name="error_backend_url">Gib eine vollständige http- oder https-URL ein, zum Beispiel https://sift.example.com/</string>
-    <string name="error_reply_sample">Antwortentwürfe brauchen eine Live-Analyse. Beispielbewertungen sind nicht auf dem Server gespeichert.</string>
+    <string name="error_reply_unavailable">Diese Bewertung ist nicht auf dem Server gespeichert, daher kann keine Antwort entworfen werden.</string>
     <string name="action_search">Suchen</string>
     <string name="powered_by_short">Mit NVIDIA Nemotron auf Nebius Token Factory</string>
     <string name="splash_tagline">Mach aus Bewertungen deine Roadmap</string>
@@ -136,17 +132,12 @@
     <string name="home_import_csv">CSV importieren</string>
     <string name="home_import_csv_caption">Play Console oder jeder Bewertungsexport</string>
     <string name="home_import_csv_cd">Bewertungen aus einer CSV-Datei importieren</string>
-    <string name="home_try_demo">Demo ansehen</string>
-    <string name="home_try_demo_caption">Ein vollständiger Beispielbericht, offline</string>
-    <string name="home_try_demo_cd">Einen Beispielbericht öffnen, der offline funktioniert</string>
     <string name="home_recent">Letzte Analysen</string>
-    <string name="home_pro">Pro</string>
-    <string name="cd_home_pro">Sift Pro öffnen</string>
     <string name="status_failed">Fehlgeschlagen</string>
     <string name="status_in_progress">Läuft · %1$d %%</string>
     <string name="cd_recent_analysis">%1$s. %2$s. %3$s</string>
     <string name="empty_recent_title">Noch keine Analysen</string>
-    <string name="empty_recent_message">Suche oben nach einer App, importiere eine CSV oder öffne den Beispielbericht, um zu sehen, was Sift kann.</string>
+    <string name="empty_recent_message">Suche oben nach einer App oder importiere eine CSV, um deinen ersten Bericht zu erhalten.</string>
     <string name="empty_search_prompt_title">App finden</string>
     <string name="empty_search_prompt_message">Gib mindestens zwei Zeichen ein, um im App Store zu suchen.</string>
     <string name="empty_search_title">Keine Apps gefunden</string>
@@ -278,18 +269,6 @@
     <string name="settings_language">Sprache</string>
     <string name="settings_pro_caption">Sieh dir an, was Pro bringt</string>
     <string name="cd_settings_language">Sprache: %1$s. Zum Ändern doppeltippen.</string>
-    <string name="settings_backend_label">Backend</string>
-    <string name="settings_backend_caption">Sift leitet jede KI-Anfrage über dein Backend, daher werden auf diesem Gerät keine API-Schlüssel gespeichert. Nutze http://10.0.2.2:8000/ für ein Backend auf dem Computer, auf dem der Emulator läuft.</string>
-    <string name="settings_backend_hint">Backend-URL</string>
-    <string name="settings_save">Speichern</string>
-    <string name="settings_reset">Auf Standard zurücksetzen</string>
-    <string name="settings_test_connection">Verbindung testen</string>
-    <string name="settings_saved">Backend-URL gespeichert</string>
-    <string name="settings_reset_done">Backend-URL auf Standard zurückgesetzt</string>
-    <string name="settings_checking">Verbindung wird geprüft…</string>
-    <string name="settings_connected_all">Verbunden. Nemotron und Tavily sind eingerichtet.</string>
-    <string name="settings_connected_no_tavily">Verbunden. Nemotron ist eingerichtet; die Wettbewerbsrecherche braucht einen Tavily-Schlüssel im Backend.</string>
-    <string name="settings_connected_no_nebius">Verbunden, aber dem Backend fehlen ein Nebius-Token-Factory-Schlüssel oder Modell-IDs, daher schlagen Analysen fehl.</string>
     <string name="settings_appearance_label">Darstellung</string>
     <string name="settings_theme_dark">Dunkel</string>
     <string name="settings_theme_light">Hell</string>
@@ -305,9 +284,6 @@
     <string name="powered_by_title">Mit NVIDIA Nemotron auf Nebius Token Factory</string>
     <string name="powered_by_body">Ein schnelles Nemotron-Modell ordnet jede Bewertung ein. Ein größeres Nemotron-Reasoning-Modell gruppiert Beschwerden zu Themen, priorisiert den Backlog, recherchiert Wettbewerber und entwirft Antworten. Beide laufen über das Sift-Backend auf Nebius Token Factory.</string>
     <string name="powered_by_search">Webrecherche: Tavily-Suche</string>
-    <string name="settings_models_unknown">Teste die Verbindung, um zu sehen, welche Nemotron-Modelle dein Backend nutzt.</string>
-    <string name="settings_fast_model">Schnelles Modell: %1$s</string>
-    <string name="settings_reasoning_model">Reasoning-Modell: %1$s</string>
     <string name="settings_privacy_note">Bewertungen stammen nur aus dem öffentlichen App-Store-Feed oder aus Dateien, die du auswählst. Sift liest Google Play nie automatisiert aus.</string>
     <string name="settings_version">Version %1$s</string>
     <string name="settings_license">Open-Source-Lizenz (MIT)</string>

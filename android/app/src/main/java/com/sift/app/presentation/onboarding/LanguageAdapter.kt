@@ -12,6 +12,7 @@ import com.sift.app.domain.model.AppLanguage
 import com.sift.app.presentation.common.ItemEntrance
 import com.sift.app.presentation.common.LanguageLabels
 import com.sift.app.presentation.common.Motion
+import com.sift.app.presentation.common.hapticTap
 
 /** One row per supported language; the selected row gets a green outline and check. */
 class LanguageAdapter(
@@ -47,7 +48,10 @@ class LanguageAdapter(
             binding.mark.setText(LanguageLabels.mark(language))
             binding.nativeName.setText(LanguageLabels.nativeName(language))
             binding.localName.text = LanguageLabels.localizedName(context, language)
-            binding.root.setOnClickListener { onSelect(language) }
+            binding.root.setOnClickListener {
+                it.hapticTap()
+                onSelect(language)
+            }
             bindSelection(language, animate = false)
         }
 

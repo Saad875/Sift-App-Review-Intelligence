@@ -57,7 +57,7 @@ fun AppDto.toDomain(): AppSummary? {
  * Maps an analysis response to a cache row. [previous] keeps local-only fields
  * (creation time fallback, sync flag) when the row already exists.
  */
-fun AnalysisDto.toEntity(previous: AnalysisEntity? = null, isDemo: Boolean = false): AnalysisEntity {
+fun AnalysisDto.toEntity(previous: AnalysisEntity? = null): AnalysisEntity {
     val analysisId = requireNotNull(id) { "Analysis id missing" }
     return AnalysisEntity(
         id = analysisId,
@@ -65,7 +65,7 @@ fun AnalysisDto.toEntity(previous: AnalysisEntity? = null, isDemo: Boolean = fal
         appId = appId.orEmpty(),
         developer = developer.orEmpty(),
         iconUrl = iconUrl.orEmpty(),
-        source = if (isDemo) AnalysisSource.DEMO.key else source.orEmpty(),
+        source = source.orEmpty(),
         country = country.orEmpty(),
         competitors = competitors.orEmpty(),
         status = status.orEmpty(),
@@ -78,7 +78,6 @@ fun AnalysisDto.toEntity(previous: AnalysisEntity? = null, isDemo: Boolean = fal
             step.key?.let { StoredStep(it, step.state.orEmpty(), step.modelRole, step.model) }
         },
         stats = stats.toStored(),
-        isDemo = isDemo,
         reportSynced = previous?.reportSynced ?: false
     )
 }
@@ -95,9 +94,9 @@ fun StatsDto?.toStored(): StoredStats = StoredStats(
     competitorCount = this?.competitorCount ?: 0
 )
 
-fun ReviewDto.toEntity(analysisId: String, keepRemoteId: Boolean = true): ReviewEntity = ReviewEntity(
+fun ReviewDto.toEntity(analysisId: String): ReviewEntity = ReviewEntity(
     analysisId = analysisId,
-    remoteId = if (keepRemoteId) id else null,
+    remoteId = id,
     author = author.orEmpty(),
     title = title.orEmpty(),
     text = text.orEmpty(),
@@ -166,8 +165,7 @@ fun AnalysisEntity.toDomain(): Analysis = Analysis(
     warnings = warnings,
     createdAtMillis = createdAtMillis,
     steps = steps.mapNotNull { it.toDomain() },
-    stats = stats.toDomain(),
-    isDemo = isDemo
+    stats = stats.toDomain()
 )
 
 fun StoredStep.toDomain(): PipelineStep? {

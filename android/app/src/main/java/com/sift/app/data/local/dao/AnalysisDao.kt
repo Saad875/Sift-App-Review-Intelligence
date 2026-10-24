@@ -24,7 +24,7 @@ interface AnalysisDao {
     @Query("SELECT * FROM analyses WHERE id = :id")
     fun observeAnalysis(id: String): Flow<AnalysisEntity?>
 
-    @Query("SELECT * FROM analyses ORDER BY isDemo ASC, createdAtMillis DESC LIMIT :limit")
+    @Query("SELECT * FROM analyses ORDER BY createdAtMillis DESC LIMIT :limit")
     fun observeRecent(limit: Int): Flow<List<AnalysisEntity>>
 
     @Query("SELECT * FROM themes WHERE analysisId = :analysisId ORDER BY position ASC")

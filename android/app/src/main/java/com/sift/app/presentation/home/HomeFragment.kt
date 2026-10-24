@@ -22,18 +22,19 @@ import com.sift.app.presentation.common.bind
 import com.sift.app.presentation.common.collectWhileStarted
 import com.sift.app.presentation.common.errorMessage
 import com.sift.app.presentation.common.fadeInUp
-import com.sift.app.presentation.common.matchStatusBarHeight
+import com.sift.app.presentation.common.hapticTap
 import com.sift.app.presentation.common.hideKeyboard
+import com.sift.app.presentation.common.matchStatusBarHeight
+import com.sift.app.presentation.common.playLogo
 import com.sift.app.presentation.common.snackbar
-import com.sift.app.presentation.navigation.Transition
-import com.sift.app.presentation.onboarding.PremiumFragment
+import com.sift.app.presentation.common.spinOnce
 import com.sift.app.presentation.progress.ProgressFragment
 import com.sift.app.presentation.report.ReportFragment
 import com.sift.app.presentation.search.SearchFragment
 import com.sift.app.presentation.settings.SettingsFragment
 import com.sift.app.presentation.setup.SetupFragment
 
-/** Home: search, CSV import, the demo and recent analyses. */
+/** Home: search, CSV import and recent analyses. */
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 
     private val viewModel: HomeViewModel by viewModels { HomeViewModel.factory(container) }
@@ -51,16 +52,17 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         adapter = RecentAnalysisAdapter(viewModel::onAnalysisClicked)
         binding.recentList.adapter = adapter
 
-        binding.settingsButton.setOnClickListener { navigator.push(SettingsFragment.newInstance()) }
-        binding.proButton.setOnClickListener {
-            navigator.push(PremiumFragment.newInstance(PremiumFragment.Mode.SETTINGS), Transition.FORWARD)
+        binding.brandMark.playLogo()
+        binding.settingsButton.setOnClickListener {
+            binding.settingsButton.spinOnce()
+            navigator.push(SettingsFragment.newInstance())
         }
         binding.scroll.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, _ ->
             binding.aurora.setScrollOffset(scrollY)
         })
         if (savedInstanceState == null) {
             val step = resources.getInteger(R.integer.motion_stagger_step).toLong()
-            listOf(binding.headline, binding.subtitle, binding.searchLayout, binding.importCard, binding.demoCard)
+            listOf(binding.headline, binding.subtitle, binding.searchLayout, binding.importCard)
                 .forEachIndexed { index, target -> target.fadeInUp(delayMillis = step * (index + 1)) }
         }
         binding.searchInput.setOnEditorActionListener { _, actionId, _ ->
@@ -72,10 +74,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             }
         }
         binding.searchLayout.setEndIconOnClickListener { submitSearch() }
-        binding.importCard.setOnClickListener { pickCsv.launch(CSV_MIME_TYPES) }
-        binding.demoCard.setOnClickListener {
-            binding.demoCard.isEnabled = false
-            viewModel.onDemoClicked()
+        binding.importCard.setOnClickListener {
+            it.hapticTap()
+            pickCsv.launch(CSV_MIME_TYPES)
         }
 
         collectWhileStarted(viewModel.state, ::render)
@@ -108,9 +109,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         binding.recentError.root.isVisible = state is UiState.Error
         when (state) {
             is UiState.Content -> adapter.submitList(state.data)
-            is UiState.Empty -> binding.recentEmpty.bind(EmptyKind.NO_RECENT, R.string.home_try_demo) {
-                binding.demoCard.isEnabled = false
-                viewModel.onDemoClicked()
+            is UiState.Empty -> binding.recentEmpty.bind(EmptyKind.NO_RECENT, R.string.home_import_csv) {
+                pickCsv.launch(CSV_MIME_TYPES)
             }
             is UiState.Error -> binding.recentError.bind(state.error, viewModel::retry)
             UiState.Loading -> Unit
@@ -118,7 +118,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     }
 
     private fun handle(event: HomeEvent) {
-        binding.demoCard.isEnabled = true
         when (event) {
             is HomeEvent.OpenReport -> navigator.push(ReportFragment.newInstance(event.analysisId))
             is HomeEvent.OpenProgress -> navigator.push(ProgressFragment.newInstance(event.analysisId))

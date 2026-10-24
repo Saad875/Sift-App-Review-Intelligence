@@ -48,5 +48,5 @@ fun InvalidReason.messageRes(): Int = when (this) {
     InvalidReason.TOO_MANY_COMPETITORS -> R.string.error_too_many_competitors
     InvalidReason.COMPETITOR_NAME_INVALID -> R.string.error_competitor_name
     InvalidReason.BACKEND_URL_INVALID -> R.string.error_backend_url
-    InvalidReason.REPLY_UNAVAILABLE_FOR_SAMPLE -> R.string.error_reply_sample
+    InvalidReason.REPLY_UNAVAILABLE -> R.string.error_reply_unavailable
 }

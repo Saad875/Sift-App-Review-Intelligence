@@ -14,10 +14,6 @@ class MarkdownBuilder(private val labels: MarkdownLabels) {
         val stats = analysis.stats
         appendLine("# ${labels.reportTitle.format(analysis.appName)}")
         appendLine()
-        if (analysis.isDemo) {
-            appendLine("> ${labels.sampleNotice}")
-            appendLine()
-        }
         val meta = mutableListOf(labels.sourceLine.format(labels.sourceNames[analysis.source].orEmpty()))
         if (analysis.country.isNotBlank()) meta += labels.countryLine.format(analysis.country.uppercase())
         appendLine(meta.joinToString(" · "))

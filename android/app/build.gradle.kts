@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.ksp)
 }
 
-val backendUrl: String = (project.findProperty("sift.backendUrl") as String?) ?: "http://10.0.2.2:8000/"
+val backendUrl: String = (project.findProperty("sift.backendUrl") as String?) ?: "http://localhost:8000/"
 
 android {
     namespace = "com.sift.app"

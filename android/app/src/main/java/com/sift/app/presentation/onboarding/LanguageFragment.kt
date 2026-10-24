@@ -15,6 +15,7 @@ import com.sift.app.presentation.common.applySystemBarBottomMargin
 import com.sift.app.presentation.common.applySystemBarPadding
 import com.sift.app.presentation.common.collectWhileStarted
 import com.sift.app.presentation.common.fadeInUp
+import com.sift.app.presentation.common.hapticTap
 import com.sift.app.presentation.navigation.Transition
 
 /**
@@ -32,7 +33,7 @@ class LanguageFragment : BaseFragment<FragmentLanguageBinding>(FragmentLanguageB
         super.onViewCreated(view, savedInstanceState)
         binding.header.applySystemBarPadding(top = true)
         binding.list.applySystemBarPadding(bottom = true, horizontal = false)
-        binding.continueButton.applySystemBarBottomMargin()
+        binding.continueButtonContainer.applySystemBarBottomMargin()
 
         val adapter = LanguageAdapter(viewModel::select)
         binding.list.layoutManager = LinearLayoutManager(requireContext())
@@ -47,6 +48,7 @@ class LanguageFragment : BaseFragment<FragmentLanguageBinding>(FragmentLanguageB
             binding.continueButton.iconGravity = MaterialButton.ICON_GRAVITY_TEXT_START
         }
         binding.continueButton.setOnClickListener {
+            it.hapticTap()
             if (fromSettings) navigator.back()
             else navigator.push(WelcomeFragment.newInstance(), Transition.FORWARD)
         }

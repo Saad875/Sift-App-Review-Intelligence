@@ -24,7 +24,6 @@ data class AnalysisEntity(
     val createdAtMillis: Long,
     val steps: List<StoredStep>,
     val stats: StoredStats,
-    val isDemo: Boolean,
     val reportSynced: Boolean
 )
 

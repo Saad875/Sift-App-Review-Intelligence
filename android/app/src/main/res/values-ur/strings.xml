@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_tagline">ایپ ریویو انٹیلیجنس</string>
     <string name="action_retry">دوبارہ کوشش کریں</string>
     <string name="action_back">واپس</string>
     <string name="action_cancel">منسوخ کریں</string>
     <string name="action_close">بند کریں</string>
     <string name="action_done">ہو گیا</string>
     <string name="action_copy">کاپی کریں</string>
-    <string name="action_share">شیئر کریں</string>
+    <string name="action_copied">کاپی ہو گیا</string>
     <string name="action_settings">ترتیبات</string>
     <string name="percent_value">%1$d%%</string>
     <string name="copied_to_clipboard">کلپ بورڈ پر کاپی ہو گیا</string>
-    <string name="sample_data_label">نمونہ ڈیٹا</string>
-    <string name="sample_data_banner">آپ ایک نمونہ تجزیہ دیکھ رہے ہیں۔ اعداد و شمار اور اقتباسات صرف مثال کے لیے ہیں، اصل ریویوز نہیں۔</string>
     <string name="sentiment_positive">مثبت</string>
     <string name="sentiment_neutral">غیر جانبدار</string>
     <string name="sentiment_negative">منفی</string>
@@ -34,7 +31,6 @@
     <string name="tone_formal">رسمی</string>
     <string name="tone_apologetic">معذرت خواہانہ</string>
     <string name="source_csv">CSV اپ لوڈ</string>
-    <string name="source_demo">نمونہ</string>
     <string name="step_fetching_title">ریویوز جمع کریں</string>
     <string name="step_classifying_title">ہر ریویو کی درجہ بندی کریں</string>
     <string name="step_clustering_title">موضوعات تلاش کریں</string>
@@ -60,7 +56,7 @@
     <string name="error_offline_title">آپ آف لائن ہیں</string>
     <string name="error_offline_message">اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔ پہلے سے کھولی گئی رپورٹس اب بھی دستیاب ہیں۔</string>
     <string name="error_backend_title">Sift سرور تک رسائی نہیں ہو سکی</string>
-    <string name="error_backend_message">سرور نے جواب نہیں دیا۔ ترتیبات میں بیک اینڈ URL چیک کریں یا تھوڑی دیر بعد دوبارہ کوشش کریں۔</string>
+    <string name="error_backend_message">سرور نے جواب نہیں دیا۔ اپنا کنکشن چیک کریں اور تھوڑی دیر بعد دوبارہ کوشش کریں۔</string>
     <string name="error_server_title">سرور نے ایک مسئلے کی اطلاع دی</string>
     <string name="error_rate_limited_title">ذرا آہستہ</string>
     <string name="error_rate_limited_message">اس ڈیوائس سے بہت زیادہ درخواستیں آئی ہیں۔ براہ کرم ایک منٹ انتظار کر کے دوبارہ کوشش کریں۔</string>
@@ -75,7 +71,7 @@
     <string name="error_too_many_competitors">آپ زیادہ سے زیادہ تین حریفوں سے موازنہ کر سکتے ہیں۔</string>
     <string name="error_competitor_name">حریف کا نام 1 سے 60 حروف کا ہونا چاہیے۔</string>
     <string name="error_backend_url">مکمل http یا https URL درج کریں، مثلاً https://sift.example.com/</string>
-    <string name="error_reply_sample">جواب کے مسودوں کے لیے لائیو تجزیہ ضروری ہے۔ نمونہ ریویوز سرور پر محفوظ نہیں ہوتے۔</string>
+    <string name="error_reply_unavailable">یہ ریویو سرور پر محفوظ نہیں ہے، اس لیے جواب تیار نہیں کیا جا سکتا۔</string>
     <string name="action_search">تلاش کریں</string>
     <string name="powered_by_short">Nebius Token Factory پر NVIDIA Nemotron کی مدد سے</string>
     <string name="splash_tagline">ریویوز کو اپنے روڈ میپ میں بدلیں</string>
@@ -136,17 +132,12 @@
     <string name="home_import_csv">CSV امپورٹ کریں</string>
     <string name="home_import_csv_caption">Play Console یا کوئی بھی ریویو ایکسپورٹ</string>
     <string name="home_import_csv_cd">CSV فائل سے ریویوز امپورٹ کریں</string>
-    <string name="home_try_demo">ڈیمو دیکھیں</string>
-    <string name="home_try_demo_caption">مکمل نمونہ رپورٹ، آف لائن</string>
-    <string name="home_try_demo_cd">آف لائن چلنے والی نمونہ رپورٹ کھولیں</string>
     <string name="home_recent">حالیہ تجزیے</string>
-    <string name="home_pro">Pro</string>
-    <string name="cd_home_pro">Sift Pro کھولیں</string>
     <string name="status_failed">ناکام</string>
     <string name="status_in_progress">جاری · %1$d%%</string>
     <string name="cd_recent_analysis">%1$s. %2$s. %3$s</string>
     <string name="empty_recent_title">ابھی کوئی تجزیہ نہیں</string>
-    <string name="empty_recent_message">اوپر کوئی ایپ تلاش کریں، CSV امپورٹ کریں یا نمونہ رپورٹ کھول کر دیکھیں کہ Sift کیا کر سکتا ہے۔</string>
+    <string name="empty_recent_message">اپنی پہلی رپورٹ کے لیے اوپر کوئی ایپ تلاش کریں یا CSV امپورٹ کریں۔</string>
     <string name="empty_search_prompt_title">کوئی ایپ تلاش کریں</string>
     <string name="empty_search_prompt_message">App Store میں تلاش کے لیے کم از کم دو حروف لکھیں۔</string>
     <string name="empty_search_title">کوئی ایپ نہیں ملی</string>
@@ -278,18 +269,6 @@
     <string name="settings_language">زبان</string>
     <string name="settings_pro_caption">دیکھیں Pro میں کیا آ رہا ہے</string>
     <string name="cd_settings_language">زبان: %1$s۔ بدلنے کے لیے دو بار تھپتھپائیں۔</string>
-    <string name="settings_backend_label">بیک اینڈ</string>
-    <string name="settings_backend_caption">Sift ہر AI درخواست آپ کے بیک اینڈ کے ذریعے بھیجتا ہے، اس لیے اس ڈیوائس پر کوئی API کلید محفوظ نہیں ہوتی۔ ایمولیٹر چلانے والے کمپیوٹر پر چلنے والے بیک اینڈ کے لیے http://10.0.2.2:8000/ استعمال کریں۔</string>
-    <string name="settings_backend_hint">بیک اینڈ URL</string>
-    <string name="settings_save">محفوظ کریں</string>
-    <string name="settings_reset">ڈیفالٹ پر واپس</string>
-    <string name="settings_test_connection">کنکشن ٹیسٹ کریں</string>
-    <string name="settings_saved">بیک اینڈ URL محفوظ ہو گیا</string>
-    <string name="settings_reset_done">بیک اینڈ URL ڈیفالٹ پر واپس آ گیا</string>
-    <string name="settings_checking">کنکشن چیک ہو رہا ہے…</string>
-    <string name="settings_connected_all">منسلک۔ Nemotron اور Tavily ترتیب دیے گئے ہیں۔</string>
-    <string name="settings_connected_no_tavily">منسلک۔ Nemotron ترتیب دیا گیا ہے؛ حریفوں پر تحقیق کے لیے بیک اینڈ پر Tavily کلید درکار ہے۔</string>
-    <string name="settings_connected_no_nebius">منسلک، لیکن بیک اینڈ میں Nebius Token Factory کلید یا ماڈل IDs نہیں ہیں، اس لیے تجزیے ناکام ہوں گے۔</string>
     <string name="settings_appearance_label">ظاہری شکل</string>
     <string name="settings_theme_dark">گہرا</string>
     <string name="settings_theme_light">ہلکا</string>
@@ -305,9 +284,6 @@
     <string name="powered_by_title">Nebius Token Factory پر NVIDIA Nemotron کی مدد سے</string>
     <string name="powered_by_body">ایک تیز Nemotron ماڈل ہر ریویو کی درجہ بندی کرتا ہے۔ ایک بڑا Nemotron ریزننگ ماڈل شکایات کو موضوعات میں تقسیم کرتا ہے، بیک لاگ ترتیب دیتا ہے، حریفوں پر تحقیق کرتا ہے اور جواب کے مسودے تیار کرتا ہے۔ دونوں Sift بیک اینڈ کے ذریعے Nebius Token Factory پر چلتے ہیں۔</string>
     <string name="powered_by_search">ویب تحقیق: Tavily سرچ</string>
-    <string name="settings_models_unknown">یہ دیکھنے کے لیے کنکشن ٹیسٹ کریں کہ آپ کا بیک اینڈ کون سے Nemotron ماڈل استعمال کرتا ہے۔</string>
-    <string name="settings_fast_model">تیز ماڈل: %1$s</string>
-    <string name="settings_reasoning_model">ریزننگ ماڈل: %1$s</string>
     <string name="settings_privacy_note">ریویوز صرف App Store کی عوامی فیڈ یا آپ کی منتخب کردہ فائلوں سے آتے ہیں۔ Sift کبھی بھی Google Play سے ڈیٹا اسکریپ نہیں کرتا۔</string>
     <string name="settings_version">ورژن %1$s</string>
     <string name="settings_license">اوپن سورس لائسنس (MIT)</string>

@@ -23,7 +23,6 @@
     <color name="sift_status_scrim">#F20F2650</color>
     <color name="sift_status_scrim_end">#000F2650</color>
     <color name="sift_shine">#59FFFFFF</color>
-    <color name="sift_accent_blue">#5B8CFF</color>
 
     <!-- Accent -->
     <color name="sift_primary">#76B900</color>

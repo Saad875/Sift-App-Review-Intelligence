@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Glass notice with a warm amber edge: marks sample data without shouting. -->
+<!-- Glass notice with a warm amber edge for informational messages. -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
     <gradient
         android:angle="0"

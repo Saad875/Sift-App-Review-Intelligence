@@ -1,7 +1,6 @@
 package com.sift.app.data.repository
 
 import com.sift.app.data.csv.CsvDocumentReader
-import com.sift.app.data.demo.DemoDataSource
 import com.sift.app.data.local.dao.AnalysisDao
 import com.sift.app.data.mapper.toDomain
 import com.sift.app.data.mapper.toEntity
@@ -32,8 +31,7 @@ class AnalysisRepositoryImpl(
     private val api: SiftApi,
     private val caller: ApiCaller,
     private val dao: AnalysisDao,
-    private val csvReader: CsvDocumentReader,
-    private val demo: DemoDataSource
+    private val csvReader: CsvDocumentReader
 ) : AnalysisRepository {
 
     override suspend fun startAppStoreAnalysis(request: AnalysisRequest): Analysis {
@@ -80,7 +78,6 @@ class AnalysisRepositoryImpl(
 
     override suspend fun syncReport(analysisId: String) {
         val existing = dao.getAnalysis(analysisId)
-        if (existing?.isDemo == true) return
         val analysis = caller.call { api.getAnalysis(analysisId) }
         val themes = caller.call { api.getThemes(analysisId) }.results.orEmpty()
         val backlog = caller.call { api.getBacklog(analysisId) }.results.orEmpty()
@@ -138,21 +135,6 @@ class AnalysisRepositoryImpl(
     override suspend fun getReview(reviewId: Long): Review? = dao.getReview(reviewId)?.toDomain()
 
     override suspend fun getBacklogItem(itemId: Long): BacklogItem? = dao.getBacklogItem(itemId)?.toDomain()
-
-    override suspend fun loadDemo(): String {
-        val bundle = demo.load()
-        val analysisDto = bundle.analysis?.copy(id = DemoDataSource.DEMO_ANALYSIS_ID)
-            ?: throw AppError.Unexpected()
-        val id = DemoDataSource.DEMO_ANALYSIS_ID
-        dao.replaceReport(
-            analysis = analysisDto.toEntity(isDemo = true).copy(reportSynced = true),
-            themes = bundle.themes.orEmpty().mapIndexed { index, dto -> dto.toEntity(id, index) },
-            backlog = bundle.backlog.orEmpty().mapIndexed { index, dto -> dto.toEntity(id, index) },
-            competitors = bundle.competitors.orEmpty().map { it.toEntity(id) },
-            reviews = bundle.reviews.orEmpty().map { it.toEntity(id, keepRemoteId = false) }
-        )
-        return id
-    }
 
     override suspend fun clearAll() = dao.deleteAll()
 

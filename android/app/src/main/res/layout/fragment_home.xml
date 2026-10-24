@@ -39,7 +39,7 @@
                 android:layout_width="@dimen/icon_lg"
                 android:layout_height="@dimen/icon_lg"
                 android:importantForAccessibility="no"
-                android:src="@drawable/ic_launcher_foreground"
+                android:src="@drawable/avd_logo"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="@id/settingsButton"
                 app:layout_constraintStart_toStartOf="parent"
@@ -54,19 +54,6 @@
                 android:textAppearance="@style/TextAppearance.Sift.Title"
                 app:layout_constraintBottom_toBottomOf="@id/settingsButton"
                 app:layout_constraintStart_toEndOf="@id/brandMark"
-                app:layout_constraintTop_toTopOf="@id/settingsButton" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/proButton"
-                style="@style/Widget.Sift.Button.Hero.Small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/space_2"
-                android:contentDescription="@string/cd_home_pro"
-                android:text="@string/home_pro"
-                app:icon="@drawable/ic_workspace_premium"
-                app:layout_constraintBottom_toBottomOf="@id/settingsButton"
-                app:layout_constraintEnd_toStartOf="@id/settingsButton"
                 app:layout_constraintTop_toTopOf="@id/settingsButton" />
 
             <com.google.android.material.button.MaterialButton
@@ -134,72 +121,14 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/importCard"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_4"
-                android:layout_marginEnd="@dimen/space_2"
                 android:clickable="true"
                 android:contentDescription="@string/home_import_csv_cd"
                 android:focusable="true"
                 android:stateListAnimator="@animator/press_scale"
-                app:layout_constraintBottom_toBottomOf="@id/demoCard"
-                app:layout_constraintEnd_toStartOf="@id/demoCard"
-                app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/searchLayout">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="@dimen/space_4">
-
-                    <ImageView
-                        android:id="@+id/importIcon"
-                        android:layout_width="@dimen/touch_target"
-                        android:layout_height="@dimen/touch_target"
-                        android:background="@drawable/bg_icon_tile"
-                        android:importantForAccessibility="no"
-                        android:padding="@dimen/space_3"
-                        android:src="@drawable/ic_upload_file"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:tint="@color/sift_primary_text" />
-
-                    <TextView
-                        android:id="@+id/importTitle"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/space_3"
-                        android:text="@string/home_import_csv"
-                        android:textAppearance="@style/TextAppearance.Sift.Subtitle"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/importIcon" />
-
-                    <TextView
-                        android:id="@+id/importCaption"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/space_1"
-                        android:text="@string/home_import_csv_caption"
-                        android:textAppearance="@style/TextAppearance.Sift.Caption"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/importTitle" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/demoCard"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/space_2"
-                android:layout_marginTop="@dimen/space_4"
-                android:clickable="true"
-                android:contentDescription="@string/home_try_demo_cd"
-                android:focusable="true"
-                android:stateListAnimator="@animator/press_scale"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/importCard"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/searchLayout">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -208,38 +137,54 @@
                     android:padding="@dimen/space_4">
 
                     <ImageView
-                        android:id="@+id/demoIcon"
-                        android:layout_width="@dimen/touch_target"
-                        android:layout_height="@dimen/touch_target"
+                        android:id="@+id/importIcon"
+                        android:layout_width="@dimen/app_icon_sm"
+                        android:layout_height="@dimen/app_icon_sm"
                         android:background="@drawable/bg_icon_tile"
                         android:importantForAccessibility="no"
                         android:padding="@dimen/space_3"
-                        android:src="@drawable/ic_play"
+                        android:src="@drawable/ic_upload_file"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:tint="@color/sift_primary_text" />
 
                     <TextView
-                        android:id="@+id/demoTitle"
+                        android:id="@+id/importTitle"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/space_3"
-                        android:text="@string/home_try_demo"
+                        android:layout_marginStart="@dimen/space_4"
+                        android:layout_marginEnd="@dimen/space_2"
+                        android:text="@string/home_import_csv"
                         android:textAppearance="@style/TextAppearance.Sift.Subtitle"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/demoIcon" />
+                        app:layout_constraintBottom_toTopOf="@id/importCaption"
+                        app:layout_constraintEnd_toStartOf="@id/importChevron"
+                        app:layout_constraintStart_toEndOf="@id/importIcon"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
 
                     <TextView
-                        android:id="@+id/demoCaption"
+                        android:id="@+id/importCaption"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/space_1"
-                        android:text="@string/home_try_demo_caption"
+                        android:layout_marginTop="@dimen/space_0_5"
+                        android:text="@string/home_import_csv_caption"
                         android:textAppearance="@style/TextAppearance.Sift.Caption"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/importTitle"
+                        app:layout_constraintStart_toStartOf="@id/importTitle"
+                        app:layout_constraintTop_toBottomOf="@id/importTitle" />
+
+                    <ImageView
+                        android:id="@+id/importChevron"
+                        android:layout_width="@dimen/icon_md"
+                        android:layout_height="@dimen/icon_md"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_chevron_right"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/demoTitle" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/sift_text_tertiary" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -249,7 +194,7 @@
                 android:layout_marginTop="@dimen/space_8"
                 android:text="@string/home_recent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/demoCard" />
+                app:layout_constraintTop_toBottomOf="@id/importCard" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recentList"

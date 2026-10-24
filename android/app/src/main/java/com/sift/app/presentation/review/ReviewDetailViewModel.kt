@@ -30,7 +30,7 @@ sealed interface ReplyState {
     data class Failed(val error: UiError) : ReplyState
 }
 
-/** Everything the review detail screen shows. [canReply] is false for sample reviews. */
+/** Everything the review detail screen shows. [canReply] is false for reviews without a backend id. */
 data class ReviewDetailContent(
     val review: Review,
     val tone: ReplyTone,

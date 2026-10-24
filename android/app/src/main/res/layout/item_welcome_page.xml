@@ -43,6 +43,7 @@
                 android:layout_width="@dimen/welcome_icon_size"
                 android:layout_height="@dimen/welcome_icon_size"
                 android:layout_gravity="center"
+                android:importantForAccessibility="no"
                 app:tint="@color/sift_primary_text"
                 tools:src="@drawable/ic_search" />
         </FrameLayout>

@@ -35,7 +35,7 @@ class RecentAnalysisAdapter(
         fun bind(item: Analysis) {
             val context = binding.root.context
             binding.appName.text = item.appName
-            binding.appIcon.loadAppIcon(item.iconUrl.takeIf { item.source == AnalysisSource.APP_STORE || item.isDemo })
+            binding.appIcon.loadAppIcon(item.iconUrl.takeIf { item.source == AnalysisSource.APP_STORE })
 
             val parts = mutableListOf(context.getString(item.source.labelRes))
             if (item.source == AnalysisSource.APP_STORE && item.country.isNotBlank()) {
@@ -45,7 +45,6 @@ class RecentAnalysisAdapter(
             binding.meta.text = parts.joinToString(context.getString(R.string.meta_separator))
 
             val (label, color) = when {
-                item.isDemo -> context.getString(R.string.sample_data_label) to R.color.sift_neutral
                 item.status == AnalysisStatus.COMPLETED -> context.resources.getQuantityString(
                     R.plurals.review_count, item.stats.totalReviews, Formatters.count(item.stats.totalReviews)
                 ) to R.color.sift_text_secondary
