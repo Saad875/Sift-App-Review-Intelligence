@@ -53,7 +53,11 @@ Only the AI-written text (theme names, backlog reasoning, the reply draft, the c
 | 19 | Arabic (RTL): language switch, mirrored Home and Settings, translated About card | Pass |
 | 20 | Back navigation from every screen | Pass |
 
-Japanese and German were checked on Home, Settings and the Pro screen in the previous round. Every string changed since then was regenerated through `tools/i18n`, which checks every key and placeholder in all 15 languages.
+| 21 | German (long words): Settings About card and report Backlog tab, hyphenated, nothing cut off | Pass |
+| 22 | Japanese (CJK): Home, recent analyses and report Backlog tab | Pass |
+| 23 | Accessibility spot-check: no tappable control without a label on Settings and the report tabs (one Settings row fixed) | Pass |
+
+Every string in all 15 languages is generated through `tools/i18n`, which checks every key and placeholder against English.
 
 ## Bugs found and fixed in this round
 
@@ -62,12 +66,13 @@ Japanese and German were checked on Home, Settings and the Pro screen in the pre
 3. **No App Store reviews were collected.** Apple's JSON review feed now returns no entries, and Apple returns an empty feed to non-browser user agents. The backend now reads the Atom XML feed with a browser-compatible user agent; a new backend test covers the parser.
 4. **The button shine stretched its container to full screen**, which pushed the language screen's Continue button to the top. The shine view no longer drives its parent's size.
 5. **Progress card text clipped.** The store and country line now stays on one line.
+6. **Settings: the Sift Pro row had no spoken label of its own.** It now has one, like the Language row.
 
 ## Not tested, and why
 
 - **Real AI output** (actual model-written themes, backlog reasoning, replies and competitor research). This needs real `NEBIUS_API_KEY` and `TAVILY_API_KEY` values in `backend/.env`.
 - **Airplane mode, forced rotation and "Remove animations".** This phone blocks changing those system settings over adb (WRITE_SETTINGS / WRITE_SECURE_SETTINGS are denied). The code paths exist: every animation checks the system animator scale, and the screens use ViewModels and saved state for rotation. They need a manual check.
-- **TalkBack and very large font sizes.** Not checked in this round. Screens use content descriptions, headings and sp-based text.
+- **TalkBack itself and very large font sizes.** Labels were checked through the accessibility tree, but TalkBack was not run end to end, and this phone blocks changing the font scale over adb. Screens use content descriptions, headings and sp-based text.
 
 ## Known limitations
 

@@ -57,6 +57,8 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding>(FragmentSettingsB
         binding.proRow.rowIcon.setImageResource(R.drawable.ic_workspace_premium)
         binding.proRow.rowTitle.setText(R.string.settings_pro)
         binding.proRow.rowValue.setText(R.string.settings_pro_caption)
+        binding.proRow.root.contentDescription =
+            getString(R.string.cd_language_option, getString(R.string.settings_pro), getString(R.string.settings_pro_caption))
         binding.proRow.root.setOnClickListener {
             navigator.push(PremiumFragment.newInstance(PremiumFragment.Mode.SETTINGS), Transition.FORWARD)
         }
