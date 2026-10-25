@@ -9,7 +9,7 @@ from analyses.models import Analysis
 from analyses.services.competitors import CompetitorResearcher
 from analyses.services.llm import LLMClient
 from analyses.services.pipeline import Pipeline
-from analyses.services.sources.itunes import RawReview, parse_feed_page
+from analyses.services.sources.itunes import RawReview, parse_feed_page, parse_feed_xml
 
 from .fakes import FakeOpenAI, message, tool_call
 
@@ -151,6 +151,28 @@ class PipelineTests(TestCase):
 
 
 class FeedParsingTests(TestCase):
+    def test_parse_feed_xml_reads_text_reviews(self):
+        document = b"""<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns:im="http://itunes.apple.com/rss" xmlns="http://www.w3.org/2005/Atom">
+  <entry>
+    <id>101</id><title>Lost my notes</title>
+    <content type="text">Sync deleted my work.</content>
+    <im:rating>1</im:rating><updated>2026-10-23T16:50:28-07:00</updated><im:version>4.2</im:version>
+    <author><name>maria</name></author>
+    <content type="html">&lt;b&gt;ignored&lt;/b&gt;</content>
+  </entry>
+  <entry><id>102</id><title>No rating</title><content type="text">Skipped</content></entry>
+</feed>"""
+        reviews = parse_feed_xml(document)
+        self.assertEqual(len(reviews), 1)
+        review = reviews[0]
+        self.assertEqual(review.text, "Sync deleted my work.")
+        self.assertEqual(review.rating, 1)
+        self.assertEqual(review.author, "maria")
+        self.assertEqual(review.app_version, "4.2")
+        self.assertEqual(review.external_id, "101")
+        self.assertIsNotNone(review.review_date)
+
     def test_parse_feed_page_skips_app_entry(self):
         payload = {
             "feed": {

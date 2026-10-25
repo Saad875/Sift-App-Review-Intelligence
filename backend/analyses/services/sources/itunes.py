@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import logging
+import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Any
@@ -13,13 +14,16 @@ logger = logging.getLogger(__name__)
 
 SEARCH_URL = "https://itunes.apple.com/search"
 LOOKUP_URL = "https://itunes.apple.com/lookup"
+# The XML (Atom) flavour of the feed: since 2026 the JSON flavour returns no entries.
 REVIEWS_URL = (
     "https://itunes.apple.com/{country}/rss/customerreviews/"
-    "page={page}/id={app_id}/sortby=mostrecent/json"
+    "page={page}/id={app_id}/sortby=mostrecent/xml"
 )
+ATOM = "{http://www.w3.org/2005/Atom}"
+ITUNES = "{http://itunes.apple.com/rss}"
 MAX_PAGES = 10
 MAX_REVIEWS = 300
-USER_AGENT = "Sift-ReviewIntelligence/1.0"
+USER_AGENT = "Mozilla/5.0 (compatible; Sift/1.0)"  # Apple returns an empty feed for non-browser agents.
 
 
 class SourceError(RuntimeError):
@@ -153,6 +157,36 @@ def parse_feed_page(payload: dict[str, Any]) -> list[RawReview]:
     return reviews
 
 
+def parse_feed_xml(document: bytes) -> list[RawReview]:
+    """Convert one Atom XML page of the reviews feed into RawReview objects."""
+    root = ET.fromstring(document)
+    reviews: list[RawReview] = []
+    for entry in root.findall(f"{ATOM}entry"):
+        text = next(
+            ((node.text or "").strip() for node in entry.findall(f"{ATOM}content") if node.get("type") == "text"),
+            "",
+        )
+        rating_text = (entry.findtext(f"{ITUNES}rating") or "").strip()
+        if not text or not rating_text:
+            continue  # Skips any entry that describes the app itself rather than a review.
+        try:
+            rating: int | None = int(rating_text)
+        except ValueError:
+            rating = None
+        reviews.append(
+            RawReview(
+                text=text,
+                rating=rating,
+                review_date=_parse_date((entry.findtext(f"{ATOM}updated") or "").strip()),
+                title=(entry.findtext(f"{ATOM}title") or "").strip(),
+                author=(entry.findtext(f"{ATOM}author/{ATOM}name") or "").strip(),
+                external_id=(entry.findtext(f"{ATOM}id") or "").strip(),
+                app_version=(entry.findtext(f"{ITUNES}version") or "").strip(),
+            )
+        )
+    return reviews
+
+
 def fetch_reviews(app_id: str, country: str, max_reviews: int = MAX_REVIEWS) -> list[RawReview]:
     """Fetch up to ``max_reviews`` of the most recent reviews (pages 1 to 10)."""
     collected: list[RawReview] = []
@@ -166,8 +200,8 @@ def fetch_reviews(app_id: str, country: str, max_reviews: int = MAX_REVIEWS) -> 
                 break
             raise SourceError(f"The App Store reviews feed failed with HTTP {response.status_code}.")
         try:
-            page_reviews = parse_feed_page(response.json())
-        except ValueError:
+            page_reviews = parse_feed_xml(response.content)
+        except ET.ParseError:
             break
         if not page_reviews:
             break
