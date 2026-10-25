@@ -39,7 +39,7 @@ data class ReviewDetailContent(
 )
 
 /**
- * A single review and an on-demand developer reply drafted by Nemotron through
+ * A single review and an on-demand developer reply drafted by AI through
  * the backend. The chosen tone and the edited reply survive process death.
  */
 class ReviewDetailViewModel(

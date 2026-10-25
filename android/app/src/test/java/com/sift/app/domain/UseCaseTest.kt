@@ -237,8 +237,8 @@ class LanguageUseCaseTest {
 class CheckBackendUseCaseTest {
     private val health = BackendHealth(
         version = "1.0.0",
-        fastModel = "nvidia/nemotron-nano",
-        reasoningModel = "nvidia/nemotron-super",
+        fastModel = "provider/fast-model",
+        reasoningModel = "provider/reasoning-model",
         nebiusConfigured = true,
         tavilyConfigured = false
     )

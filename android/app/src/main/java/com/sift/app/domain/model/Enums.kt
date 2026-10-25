@@ -116,29 +116,6 @@ enum class ReplyTone(val key: String) {
     APOLOGETIC("apologetic")
 }
 
-/** Model family shown in the UI, derived from the configured model id. */
-enum class NemotronVariant {
-    NANO,
-    SUPER,
-    ULTRA,
-    UNKNOWN;
-
-    companion object {
-        /** Infers the Nemotron family from a Token Factory model id. */
-        fun fromModelId(modelId: String?, role: ModelRole?): NemotronVariant {
-            val id = modelId.orEmpty().lowercase()
-            return when {
-                "ultra" in id -> ULTRA
-                "super" in id -> SUPER
-                "nano" in id -> NANO
-                role == ModelRole.FAST -> NANO
-                role == ModelRole.REASONING -> SUPER
-                else -> UNKNOWN
-            }
-        }
-    }
-}
-
 /**
  * Languages the app is translated into, in order of total speakers.
  * [tag] is the BCP 47 tag used for resources and per-app locale storage.

@@ -47,12 +47,6 @@
     <string name="source_app_store" translatable="false">App Store</string>
     <string name="source_csv">CSV upload</string>
 
-    <!-- Models -->
-    <string name="model_nemotron_nano" translatable="false">NVIDIA Nemotron Nano</string>
-    <string name="model_nemotron_super" translatable="false">NVIDIA Nemotron Super</string>
-    <string name="model_nemotron_ultra" translatable="false">NVIDIA Nemotron Ultra</string>
-    <string name="model_nemotron" translatable="false">NVIDIA Nemotron</string>
-
     <!-- Pipeline steps -->
     <string name="step_fetching_title">Collect reviews</string>
     <string name="step_classifying_title">Classify every review</string>
@@ -65,10 +59,10 @@
     <string name="step_prioritizing_waiting">What to fix or build next</string>
     <string name="step_researching_waiting">Strengths, weaknesses and opportunities</string>
     <string name="step_fetching_running">Downloading and de-duplicating reviews</string>
-    <string name="step_classifying_running">Classifying reviews with %1$s</string>
-    <string name="step_clustering_running">Clustering themes with %1$s</string>
-    <string name="step_prioritizing_running">Ranking the backlog with %1$s</string>
-    <string name="step_researching_running">Researching the web with %1$s and Tavily</string>
+    <string name="step_classifying_running">Classifying every review with AI</string>
+    <string name="step_clustering_running">Grouping complaints into themes with AI</string>
+    <string name="step_prioritizing_running">Ranking the backlog with AI</string>
+    <string name="step_researching_running">Researching competitors on the web with Tavily</string>
     <string name="step_skipped_message">Skipped because no competitors were added</string>
     <string name="step_state_waiting">Waiting</string>
     <string name="step_state_running">Running</string>
@@ -101,7 +95,7 @@
     <string name="meta_separator" translatable="false">" · "</string>
     <string name="error_reply_unavailable">This review is not stored on the server, so a reply cannot be drafted.</string>
     <string name="action_search">Search</string>
-    <string name="powered_by_short">Powered by NVIDIA Nemotron on Nebius Token Factory</string>
+    <string name="powered_by_short">Powered by AI on Nebius Token Factory</string>
 
     <!-- Onboarding: splash -->
     <string name="splash_tagline">Turn reviews into your roadmap</string>
@@ -123,7 +117,7 @@
     <string name="welcome_collect_chip_primary">300 reviews collected</string>
     <string name="welcome_collect_chip_secondary">CSV import</string>
     <string name="welcome_understand_title">Know what users feel</string>
-    <string name="welcome_understand_body">NVIDIA Nemotron classifies sentiment, category and severity in any language, then finds the themes.</string>
+    <string name="welcome_understand_body">AI classifies sentiment, category and severity in any language, then finds the themes.</string>
     <string name="welcome_understand_chip_primary">Sync bug · Severity 5</string>
     <string name="welcome_understand_chip_secondary">72% positive</string>
     <string name="welcome_act_title">Ship what matters next</string>
@@ -218,7 +212,7 @@
     <string name="setup_competitor_count">%1$d of %2$d</string>
     <string name="cd_remove_competitor">Remove %1$s</string>
     <string name="setup_how_title">How it works</string>
-    <string name="setup_how_body">Sift reads up to 300 recent reviews. NVIDIA Nemotron Nano classifies each one, then NVIDIA Nemotron Super finds themes, ranks a backlog and researches competitors. It usually takes one to three minutes.</string>
+    <string name="setup_how_body">Sift reads up to 300 recent reviews. A fast AI model classifies each one, then a reasoning model finds themes, ranks a backlog and researches competitors. It usually takes one to three minutes.</string>
     <string name="setup_start">Start analysis</string>
     <string name="setup_starting">Starting…</string>
     <string name="setup_csv_default_name">Uploaded reviews</string>
@@ -270,7 +264,7 @@
     <string name="cd_rating_bar">%1$s: %2$s</string>
 
     <!-- Backlog -->
-    <string name="backlog_header">Ranked by Nemotron from frequency, severity and user impact. Tap an item for the full reasoning.</string>
+    <string name="backlog_header">Ranked by AI from frequency, severity and user impact. Tap an item for the full reasoning.</string>
     <string name="backlog_rank">#%1$d</string>
     <string name="backlog_effort">Effort: %1$s</string>
     <string name="backlog_theme">Theme: %1$s</string>
@@ -293,9 +287,9 @@
     <string name="review_version" translatable="false">v%1$s</string>
     <string name="review_severity">Severity %1$d/5</string>
     <string name="review_detail_title">Review</string>
-    <string name="review_summary_label">Nemotron summary</string>
+    <string name="review_summary_label">AI summary</string>
     <string name="review_reply_label">Developer reply</string>
-    <string name="review_reply_caption">Pick a tone and Nemotron drafts a public reply you can edit and paste into your store console.</string>
+    <string name="review_reply_caption">Pick a tone and AI drafts a public reply you can edit and paste into your store console.</string>
     <string name="review_draft_reply">Draft reply</string>
     <string name="review_redraft_reply">Draft again</string>
     <string name="review_drafting">Drafting reply…</string>
@@ -304,7 +298,7 @@
     <string name="cd_reply_tone">Reply tone</string>
 
     <!-- Competitors -->
-    <string name="competitors_header">Researched on the web with Tavily and summarised by Nemotron. Tap a source to open it.</string>
+    <string name="competitors_header">Researched on the web with Tavily and summarised by AI. Tap a source to open it.</string>
     <string name="competitor_strengths">Strengths</string>
     <string name="competitor_weaknesses">Weaknesses</string>
     <string name="competitor_opportunities">Opportunities for you</string>
@@ -329,7 +323,7 @@
     <string name="md_why_ranks">Why it ranks here:</string>
     <string name="md_user_impact">User impact:</string>
     <string name="md_suggested_fix">Suggested fix:</string>
-    <string name="md_footer">Generated by Sift with NVIDIA Nemotron on Nebius Token Factory.</string>
+    <string name="md_footer">Generated by Sift with AI on Nebius Token Factory.</string>
     <string name="md_ticket_type">Type: %1$s</string>
     <string name="md_ticket_priority">Priority: %1$d / 100</string>
     <string name="md_ticket_effort">Effort: %1$s</string>
@@ -353,8 +347,8 @@
     <string name="settings_clear_confirm">Clear</string>
     <string name="settings_cleared">Local data cleared</string>
     <string name="settings_about_label">About</string>
-    <string name="powered_by_title">Powered by NVIDIA Nemotron on Nebius Token Factory</string>
-    <string name="powered_by_body">A fast Nemotron model classifies every review. A larger Nemotron reasoning model groups complaints into themes, ranks the backlog, researches competitors and drafts replies. Both run on Nebius Token Factory through the Sift backend.</string>
+    <string name="powered_by_title">AI-powered insights</string>
+    <string name="powered_by_body">A fast AI model classifies every review. A larger reasoning model groups complaints into themes, ranks the backlog, researches competitors and drafts replies. Both run on Nebius Token Factory through the Sift backend.</string>
     <string name="powered_by_search">Web research: Tavily search</string>
     <string name="settings_privacy_note">Reviews come only from the public App Store feed or files you choose. Sift never scrapes Google Play.</string>
     <string name="settings_version">Version %1$s</string>

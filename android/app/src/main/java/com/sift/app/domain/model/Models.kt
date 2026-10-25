@@ -17,9 +17,7 @@ data class PipelineStep(
     val state: StepState,
     val modelRole: ModelRole?,
     val modelId: String?
-) {
-    val variant: NemotronVariant get() = NemotronVariant.fromModelId(modelId, modelRole)
-}
+)
 
 /** Counts of reviews per sentiment. */
 data class SentimentBreakdown(val positive: Int, val neutral: Int, val negative: Int) {

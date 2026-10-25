@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Hero call-to-action: NVIDIA green into a bright lime, with a ripple. -->
+<!-- Hero call-to-action: brand green into a bright lime, with a ripple. -->
 <ripple xmlns:android="http://schemas.android.com/apk/res/android" android:color="@color/ripple_on_primary">
     <item>
         <selector>

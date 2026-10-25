@@ -7,7 +7,6 @@ import com.sift.app.R
 import com.sift.app.domain.model.AnalysisSource
 import com.sift.app.domain.model.BacklogType
 import com.sift.app.domain.model.Effort
-import com.sift.app.domain.model.NemotronVariant
 import com.sift.app.domain.model.ReplyTone
 import com.sift.app.domain.model.ReviewCategory
 import com.sift.app.domain.model.Sentiment
@@ -82,15 +81,6 @@ val StepKey.waitingRes: Int
         StepKey.CLUSTERING -> R.string.step_clustering_waiting
         StepKey.PRIORITIZING -> R.string.step_prioritizing_waiting
         StepKey.RESEARCHING -> R.string.step_researching_waiting
-    }
-
-@get:StringRes
-val NemotronVariant.nameRes: Int
-    get() = when (this) {
-        NemotronVariant.NANO -> R.string.model_nemotron_nano
-        NemotronVariant.SUPER -> R.string.model_nemotron_super
-        NemotronVariant.ULTRA -> R.string.model_nemotron_ultra
-        NemotronVariant.UNKNOWN -> R.string.model_nemotron
     }
 
 @get:StringRes

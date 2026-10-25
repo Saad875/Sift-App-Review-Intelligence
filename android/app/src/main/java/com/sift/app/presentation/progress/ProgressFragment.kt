@@ -25,7 +25,6 @@ import com.sift.app.presentation.common.errorMessage
 import com.sift.app.presentation.common.fadeVisible
 import com.sift.app.presentation.common.labelRes
 import com.sift.app.presentation.common.loadAppIcon
-import com.sift.app.presentation.common.nameRes
 import com.sift.app.presentation.common.runningRes
 import com.sift.app.presentation.common.titleRes
 import com.sift.app.presentation.common.waitingRes
@@ -36,7 +35,7 @@ import com.sift.app.presentation.widget.TimelineStepView
 
 /**
  * Live progress: a vertical timeline of the five pipeline steps showing which
- * Nemotron model is working. Survives rotation and can be left and resumed.
+ * AI model is working. Survives rotation and can be left and resumed.
  */
 class ProgressFragment : BaseFragment<FragmentProgressBinding>(FragmentProgressBinding::inflate) {
 
@@ -138,7 +137,7 @@ class ProgressFragment : BaseFragment<FragmentProgressBinding>(FragmentProgressB
         val stats = analysis.stats
         return when (step.state) {
             StepState.WAITING -> getString(step.key.waitingRes)
-            StepState.RUNNING -> getString(step.key.runningRes, getString(step.variant.nameRes))
+            StepState.RUNNING -> getString(step.key.runningRes)
             StepState.SKIPPED -> getString(R.string.step_skipped_message)
             StepState.FAILED -> getString(R.string.step_failed_message)
             StepState.DONE -> when (step.key) {

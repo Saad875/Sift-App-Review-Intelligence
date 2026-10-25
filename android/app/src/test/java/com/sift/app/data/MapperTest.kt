@@ -53,7 +53,7 @@ class MapperTest {
         progress = 140, error = null, warnings = null, createdAt = "2024-05-02T10:15:00Z",
         steps = listOf(
             StepDto("fetching", "done", null, null),
-            StepDto("classifying", "running", "fast", "nvidia/Nemotron-Nano"),
+            StepDto("classifying", "running", "fast", "provider/fast-model"),
             StepDto("unknown", "running", null, null)
         ),
         stats = StatsDto(

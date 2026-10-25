@@ -7,7 +7,6 @@ import com.sift.app.domain.model.BacklogType
 import com.sift.app.domain.model.CompetitorInsight
 import com.sift.app.domain.model.Effort
 import com.sift.app.domain.model.ModelRole
-import com.sift.app.domain.model.NemotronVariant
 import com.sift.app.domain.model.Report
 import com.sift.app.domain.model.ReviewCategory
 import com.sift.app.domain.model.SentimentBreakdown
@@ -32,17 +31,7 @@ class CompetitorRulesTest {
     }
 }
 
-class NemotronVariantTest {
-    @Test
-    fun `variant is inferred from the model id with role fallback`() {
-        assertEquals(NemotronVariant.NANO, NemotronVariant.fromModelId("nvidia/NVIDIA-Nemotron-Nano-9B-v2", null))
-        assertEquals(NemotronVariant.SUPER, NemotronVariant.fromModelId("nvidia/Llama-3_3-Nemotron-Super-49B", null))
-        assertEquals(NemotronVariant.ULTRA, NemotronVariant.fromModelId("nvidia/Nemotron-Ultra-253B", null))
-        assertEquals(NemotronVariant.NANO, NemotronVariant.fromModelId("custom", ModelRole.FAST))
-        assertEquals(NemotronVariant.SUPER, NemotronVariant.fromModelId(null, ModelRole.REASONING))
-        assertEquals(NemotronVariant.UNKNOWN, NemotronVariant.fromModelId(null, null))
-    }
-
+class SentimentShareTest {
     @Test
     fun `sentiment share handles zero total`() {
         assertEquals(0f, SentimentBreakdown.EMPTY.share(com.sift.app.domain.model.Sentiment.POSITIVE))

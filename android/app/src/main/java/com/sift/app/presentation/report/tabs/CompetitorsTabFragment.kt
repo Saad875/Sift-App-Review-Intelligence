@@ -16,7 +16,7 @@ import com.sift.app.presentation.common.contentOrNull
 import com.sift.app.presentation.common.snackbar
 import com.sift.app.presentation.report.ReportViewModel
 
-/** Competitors tab: web research by Nemotron with Tavily search, with the sources it used. */
+/** Competitors tab: AI web research with Tavily search, with the sources it used. */
 class CompetitorsTabFragment : BaseFragment<FragmentReportListBinding>(FragmentReportListBinding::inflate) {
 
     private val viewModel: ReportViewModel by viewModels(ownerProducer = { requireParentFragment() }) {
