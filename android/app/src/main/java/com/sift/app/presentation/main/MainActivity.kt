@@ -1,5 +1,6 @@
 package com.sift.app.presentation.main
 
+import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.os.Bundle
@@ -49,14 +50,16 @@ class MainActivity : AppCompatActivity(), NavigatorHost {
     /** The splash icon grows slightly while the whole splash fades away. */
     private fun animateSplashExit(provider: SplashScreenViewProvider) {
         val duration = Motion.duration(this, R.integer.motion_long)
-        val icon = provider.iconView
+        // When the app is restored after process death the system splash has no icon view and the getter throws.
+        val icon = runCatching { provider.iconView }.getOrNull()
         val root = provider.view
+        val animators = mutableListOf<Animator>(ObjectAnimator.ofFloat(root, View.ALPHA, 1f, 0f))
+        if (icon != null) {
+            animators += ObjectAnimator.ofFloat(icon, View.SCALE_X, 1f, SPLASH_EXIT_SCALE)
+            animators += ObjectAnimator.ofFloat(icon, View.SCALE_Y, 1f, SPLASH_EXIT_SCALE)
+        }
         AnimatorSet().apply {
-            playTogether(
-                ObjectAnimator.ofFloat(icon, View.SCALE_X, 1f, SPLASH_EXIT_SCALE),
-                ObjectAnimator.ofFloat(icon, View.SCALE_Y, 1f, SPLASH_EXIT_SCALE),
-                ObjectAnimator.ofFloat(root, View.ALPHA, 1f, 0f)
-            )
+            playTogether(animators)
             this.duration = duration
             interpolator = Motion.standard
             doOnEnd { provider.remove() }
