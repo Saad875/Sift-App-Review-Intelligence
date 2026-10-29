@@ -53,7 +53,12 @@ There is deliberately **no demo mode and no fake data**: the report only ever sh
 
 - **Apple's public review feed has gaps.** WhatsApp in the US returns reviews. Some apps (for example Notion in the US) currently return none, and Sift then says "No reviews yet". If that happens, try another app or country, or use the CSV import.
 - **The app holds no keys.** Every AI and search call goes through the backend.
-- **The AI runs on Nebius Token Factory** (OpenAI-compatible API), with a fast model for classification and a reasoning model for themes, the backlog, replies and Tavily-powered competitor research. See the [README](../README.md#the-ai-pipeline-step-by-step).
+- **The AI is NVIDIA Nemotron on Nebius Token Factory** (OpenAI-compatible API):
+  - a Nemotron Nano model classifies every review;
+  - a Nemotron Super reasoning model finds themes, ranks the backlog and drafts replies;
+  - for competitor research, it calls Tavily web search as a tool.
+
+  Outputs are validated against a JSON Schema, with one retry. See [How we use NVIDIA Nemotron, Nebius Token Factory and Tavily](../README.md#how-we-use-nvidia-nemotron-nebius-token-factory-and-tavily).
 - **More detail:** the [QA report](QA_REPORT.md) lists every check run on a real phone, and the [user guide](USER_GUIDE.md) explains every screen.
 
 ## If something goes wrong

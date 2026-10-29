@@ -58,6 +58,43 @@ adb install -r dist\Sift-debug.apk
 - **Full setup:** the [detailed quick start](#detailed-quick-start) below.
 - **What works without keys:** the [judges' guide](docs/JUDGES_GUIDE.md).
 
+## How we use NVIDIA Nemotron, Nebius Token Factory and Tavily
+
+Sift's intelligence is two **NVIDIA Nemotron** models served on **Nebius Token Factory**, plus **Tavily** web search used as a tool by the reasoning model. Every call is made by the Django backend; the Android app only talks to the backend.
+
+| Pipeline step | Model (default id in `backend/.env.example`) | Provider | What it does |
+|---|---|---|---|
+| Collect reviews | none | Apple App Store / CSV | Fetches up to 300 recent reviews and removes duplicates |
+| Classify every review | **Nemotron Nano** (fast): `nvidia/NVIDIA-Nemotron-Nano-9B-v2` via `MODEL_FAST` | Nebius Token Factory | Batches of 20 reviews. Each gets a sentiment, category, severity (1–5) and a one-line summary, in any language. Temperature 0. |
+| Find themes | **Nemotron Super** (reasoning): `nvidia/Llama-3_3-Nemotron-Super-49B-v1_5` via `MODEL_REASONING` | Nebius Token Factory | Groups complaints and requests into themes, with counts and real quotes |
+| Rank the backlog | **Nemotron Super** | Nebius Token Factory | A prioritised backlog: priority 0–100, reasoning, user impact, suggested fix, effort and the review ids that support each item |
+| Research competitors | **Nemotron Super** + `tavily_search` tool | Nebius Token Factory + Tavily | Tool-calling agent: the model decides which web searches to run, reads the results and writes strengths, weaknesses and opportunities with source URLs |
+| Draft a reply (on demand) | **Nemotron Super** | Nebius Token Factory | A public developer reply in a Friendly, Formal or Apologetic tone |
+
+**Why two models:**
+- Classification is high-volume and simple per item, so the small, fast Nano-class model keeps an analysis of 300 reviews quick and cheap.
+- Themes, ranking, research and replies need judgement across many reviews, so they go to the larger Super-class reasoning model.
+
+**How requests go through Nebius Token Factory:**
+- The backend uses the official `openai` Python SDK, pointed at Token Factory's OpenAI-compatible endpoint (`NEBIUS_BASE_URL`, default `https://api.tokenfactory.nebius.com/v1/`) with `NEBIUS_API_KEY`.
+- Model ids come from `MODEL_FAST` and `MODEL_REASONING` in `backend/.env`, so any Token Factory model can be swapped in without code changes (`backend/analyses/services/llm.py`).
+- Structured steps request JSON mode. The reply is parsed and validated against a JSON Schema (`services/schemas.py`, `services/validation.py`).
+- If the output is invalid, the validation error is sent back to the model for **one retry**. If that also fails, the step records a warning instead of saving bad data.
+- Calls have a timeout (`LLM_TIMEOUT_SECONDS`). If a model rejects JSON mode, the backend retries without it.
+- Statistics (counts, average rating, sentiment split, rating distribution) are computed in code, never written by the model.
+
+**How Tavily is used:**
+- During competitor research, the Nemotron reasoning model receives one function tool, `tavily_search(query, max_results ≤ 5)`.
+- The backend runs each requested search with the Tavily API and returns titles, URLs and snippets. The model can search for up to 4 rounds, then writes a JSON summary.
+- Only URLs that Tavily actually returned are kept as sources, so the model cannot invent links.
+- If a model does not support tool calls, the backend runs two focused searches itself and passes the results in (`backend/analyses/services/competitors.py`).
+
+**Why the keys stay on the server:**
+- `NEBIUS_API_KEY` and `TAVILY_API_KEY` live only in `backend/.env`, which is git-ignored.
+- The APK contains no keys and cannot be mined for them, and keys can be rotated without shipping a new app.
+- The health endpoint reports only whether each key is set.
+- Without a Nebius key, Sift still collects reviews and then stops with a clear message. It never fakes AI output or falls back to another provider.
+
 ## See it in action
 
 <p align="center">
@@ -83,6 +120,7 @@ The report screenshots come from a QA run with real App Store reviews. The model
 
 ## Contents
 
+- [How we use NVIDIA Nemotron, Nebius Token Factory and Tavily](#how-we-use-nvidia-nemotron-nebius-token-factory-and-tavily)
 - [The problem](#the-problem)
 - [Features](#features)
 - [Architecture](#architecture)
