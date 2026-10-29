@@ -24,3 +24,6 @@ captures/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Devpost upload bundle (built locally)
+docs/Sift-submission.zip
