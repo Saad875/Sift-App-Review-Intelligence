@@ -72,9 +72,13 @@ The backend now has a real `TAVILY_API_KEY` but no `NEBIUS_API_KEY` (health repo
 | Reply draft without the AI key | Pass: `503` with the same clear message |
 | Classification, themes, backlog, replies, competitor research | **Not run**: needs `NEBIUS_API_KEY`. No other AI provider and no demo mode are used. |
 
+Two fixes came out of this run:
+- The Progress screen now marks **Collect reviews** as done (for example "300 unique reviews collected") and **Classify every review** as the step that stopped. Before, it showed collection as failed.
+- On the failure card, the **Start again** and **Back to home** buttons now wrap onto two lines when they do not fit side by side. Before, "Back to home" was cut off.
+
 A new backend test covers this path (`test_missing_key_keeps_reviews_and_fails_with_a_clear_message`).
 
-**Demo video.** This phone blocks `adb shell screenrecord`, so `docs/demo.mp4` (when present) is made from continuous screenshots stitched into an MP4. See `docs/VIDEO_SCRIPT.md`.
+**Demo video.** This phone blocks `adb shell screenrecord`, so `docs/demo.mp4` (3 min 29 s) is made from continuous screenshots stitched into an MP4, with captions. See `docs/VIDEO_SCRIPT.md`.
 
 ## Bugs found and fixed in this round
 

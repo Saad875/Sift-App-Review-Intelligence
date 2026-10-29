@@ -258,22 +258,30 @@
                         style="@style/Widget.Sift.Button.Tonal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/space_4"
                         android:text="@string/progress_start_again"
-                        app:icon="@drawable/ic_refresh"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/failureMessage" />
+                        app:icon="@drawable/ic_refresh" />
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/homeButton"
                         style="@style/Widget.Sift.Button.Text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/space_2"
-                        android:text="@string/progress_back_home"
-                        app:layout_constraintBottom_toBottomOf="@id/restartButton"
-                        app:layout_constraintStart_toEndOf="@id/restartButton"
-                        app:layout_constraintTop_toTopOf="@id/restartButton" />
+                        android:text="@string/progress_back_home" />
+
+                    <!-- Wraps the two actions onto two lines when they do not fit side by side. -->
+                    <androidx.constraintlayout.helper.widget.Flow
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_4"
+                        app:constraint_referenced_ids="restartButton,homeButton"
+                        app:flow_horizontalBias="0"
+                        app:flow_horizontalGap="@dimen/space_2"
+                        app:flow_horizontalStyle="packed"
+                        app:flow_verticalGap="@dimen/space_1"
+                        app:flow_wrapMode="chain"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/failureMessage" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 

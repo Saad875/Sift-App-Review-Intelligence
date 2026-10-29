@@ -150,6 +150,7 @@ class PipelineTests(TestCase):
         self.assertIn("AI key is not configured", analysis.error)
         self.assertIn("NEBIUS_API_KEY", analysis.error)
         self.assertTrue(analysis.reviews.exists())
+        self.assertEqual(analysis.current_step, Analysis.Step.CLASSIFYING)
 
 
 class FeedParsingTests(TestCase):

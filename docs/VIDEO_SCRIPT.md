@@ -1,28 +1,32 @@
 # Sift demo video script
 
-**File:** `docs/demo.mp4`, recorded on an OPPO CPH2333 (Android 13) against the local backend.
+**File:** `docs/demo.mp4`: 3 min 29 s, 540×1250, H.264, about 21 MB.
 
 **How it was recorded:**
-- This phone blocks `adb shell screenrecord`, so the clip was made from continuous screenshots (about 2–3 per second) stitched into an H.264 MP4. It plays like a fast slideshow, not 60 fps.
-- For a smooth recording, use Android Studio's **Logcat → Screen Record** on a phone that allows it, or scrcpy (`scrcpy --record demo.mp4`).
-- The server had a Tavily key but **no Nebius key**, so the video stops honestly at the "AI key is not configured" message. No results are faked.
-- Re-record the report part once `NEBIUS_API_KEY` is set. The segment list below marks what to add.
+- Recorded live on an OPPO CPH2333 (Android 13) against the local backend on 29 October 2026.
+- This phone blocks `adb shell screenrecord`, so the clip was made from continuous screenshots (about 2–3 per second), stitched into an MP4 with Windows' built-in encoder. It plays like a fast slideshow, not 60 fps.
+- The phone's status bar is cropped out. In the system file picker, other file names and the Google account are blurred.
+- Each scene has an on-screen caption.
+- The server had a Tavily key but **no Nebius key**. The video therefore shows reviews being collected and then the honest "AI key is not configured" message. No results are faked.
+- Re-record the report part once `NEBIUS_API_KEY` is set; the last row below marks what to add.
+- For a smooth recording on a phone that allows it, use Android Studio's **Logcat → Screen Record** or `scrcpy --record demo.mp4`.
 
 ## Segments
 
 | # | Time | Screen | What happens |
 |---|---|---|---|
-| 1 | 0:00–0:04 | Launcher → splash | Tap Sift; the logo animates in |
-| 2 | 0:04–0:12 | Language picker | 15 languages in their own scripts; scroll, keep English, **Continue** |
-| 3 | 0:12–0:20 | Welcome pages | Collect → understand → act; **Next**, **Get started** |
-| 4 | 0:20–0:28 | Sift Pro preview | Plan comparison, Yearly selected; **Maybe later** (preview only, no billing) |
-| 5 | 0:28–0:34 | Home | Animated logo, search, Import CSV, empty Recent analyses |
-| 6 | 0:34–0:42 | Search | Type "whatsapp"; live App Store results |
-| 7 | 0:42–0:52 | Setup | Add competitor "Telegram"; **Start analysis** |
-| 8 | 0:52–1:08 | Progress | Reviews are collected, then the clear message: "The server's AI key is not configured…" |
-| 9 | 1:08–1:20 | CSV import | Import CSV → `sample_reviews.csv` → setup shows "CSV file" → Start analysis → same clear message |
-| 10 | 1:20–1:40 | Settings | Language → العربية: the whole app mirrors right to left. Back to English. |
-| 11 | 1:40–1:50 | About | AI-powered insights, privacy note, licence |
+| 1 | 0:00–0:03 | Title card | Sift, App Review Intelligence |
+| 2 | 0:03–0:13 | Splash → language picker | The logo animates in; 15 languages in their own scripts; **Continue** |
+| 3 | 0:13–0:22 | Welcome pages | Collect → understand → act; **Next**, **Get started** |
+| 4 | 0:22–0:30 | Sift Pro preview | Plan comparison; **Maybe later** (preview only, no billing) |
+| 5 | 0:30–0:42 | Home → search | Type "whatsapp"; live App Store results |
+| 6 | 0:42–1:01 | Setup | WhatsApp Messenger, United States; add competitor "Telegram"; **Start analysis** |
+| 7 | 1:01–1:19 | Progress | "300 unique reviews collected: Done". Then "Classify every review: Failed", with "The server's AI key is not configured… Add NEBIUS_API_KEY to backend/.env and restart the server." |
+| 8 | 1:19–2:01 | CSV import | **Import CSV** → `sample_reviews.csv` → setup shows "CSV file" → **Start analysis** → 12 reviews collected, then the same clear message |
+| 9 | 2:01–2:57 | Settings | Language → العربية: the whole app mirrors right to left |
+| 10 | 2:57–3:12 | Settings | Back to English |
+| 11 | 3:12–3:24 | About | AI-powered insights on Nebius Token Factory, Tavily web search, privacy note, licence |
+| 12 | 3:24–3:29 | End card | What works without the key, and what the key unlocks |
 | *(with key)* | *add* | Report | Overview charts, Backlog → Copy as ticket, Reviews → Draft reply, Competitors with sources, Share |
 
 ## 90-second narration (about 220 words)

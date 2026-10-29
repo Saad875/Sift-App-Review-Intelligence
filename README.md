@@ -1,10 +1,32 @@
-# Sift: App Review Intelligence
+<p align="center">
+  <img src="docs/assets/banner.png" alt="Sift: App Review Intelligence" width="100%">
+</p>
 
-**Sift turns what users write in app reviews into a ranked product backlog.**
+<p align="center">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-a3e635?style=flat-square"></a>
+  <img alt="Android 7.0+" src="https://img.shields.io/badge/Android-7.0%2B-3DDC84?style=flat-square&logo=android&logoColor=white">
+  <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-XML%20%2B%20ViewBinding-7F52FF?style=flat-square&logo=kotlin&logoColor=white">
+  <img alt="Django REST" src="https://img.shields.io/badge/Django-REST-092E20?style=flat-square&logo=django&logoColor=white">
+  <img alt="Python 3.11+" src="https://img.shields.io/badge/Python-3.11%2B-3776AB?style=flat-square&logo=python&logoColor=white">
+  <img alt="AI: Nebius Token Factory" src="https://img.shields.io/badge/AI-Nebius%20Token%20Factory-0b1226?style=flat-square">
+  <img alt="Search: Tavily" src="https://img.shields.io/badge/search-Tavily-0b1226?style=flat-square">
+  <img alt="Status: hackathon MVP" src="https://img.shields.io/badge/status-hackathon%20MVP-a3e635?style=flat-square">
+</p>
+
+<p align="center"><b>Turn thousands of app reviews into a ranked product backlog, with evidence, in minutes.</b></p>
+
+<p align="center">
+  <a href="docs/demo.mp4">🎬 Demo video</a> ·
+  <a href="docs/JUDGES_GUIDE.md">🧑‍⚖️ Judges' guide (5 min)</a> ·
+  <a href="docs/USER_GUIDE.md">📖 User guide</a> ·
+  <a href="docs/QA_REPORT.md">✅ QA report</a> ·
+  <a href="dist/Sift-debug.apk">📦 Download APK</a>
+</p>
+
+---
 
 Search any App Store app, or import a CSV of reviews from Google Play Console. Sift then:
-- reads up to 300 recent reviews;
-- classifies each one;
+- reads up to 300 recent reviews and classifies each one;
 - groups complaints into themes;
 - ranks what to fix or build next, with evidence;
 - drafts replies to reviewers;
@@ -14,28 +36,66 @@ Sift has two parts:
 - an Android app (Kotlin, XML layouts, 15 languages);
 - a small Django backend that holds every API key and runs the AI models on **Nebius Token Factory**, with **Tavily** for web research.
 
-<p>
-  <img src="docs/screenshots/01-splash.png" width="160" alt="Splash">
-  <img src="docs/screenshots/02-language.png" width="160" alt="Language picker">
-  <img src="docs/screenshots/03-welcome.png" width="160" alt="Welcome">
-  <img src="docs/screenshots/04b-pro-plans.png" width="160" alt="Sift Pro preview">
-  <img src="docs/screenshots/05-home.png" width="160" alt="Home">
-</p>
-<p>
-  <img src="docs/screenshots/06-search.png" width="160" alt="Search">
-  <img src="docs/screenshots/07-setup.png" width="160" alt="Set up analysis">
-  <img src="docs/screenshots/08-progress.png" width="160" alt="Progress">
-  <img src="docs/screenshots/09-overview.png" width="160" alt="Report overview">
-  <img src="docs/screenshots/12-reviews.png" width="160" alt="Reviews">
+## Quick start
+
+```bat
+:: 1. Backend (Windows; on macOS or Linux use .venv/bin and cp)
+cd backend
+python -m venv .venv
+.venv\Scripts\pip install -r requirements.txt
+copy .env.example .env
+:: edit .env: NEBIUS_API_KEY, MODEL_FAST, MODEL_REASONING, TAVILY_API_KEY
+.venv\Scripts\python manage.py migrate
+.venv\Scripts\python manage.py runserver 0.0.0.0:8000
+
+:: 2. Phone (USB debugging on), from the repository root
+adb reverse tcp:8000 tcp:8000
+adb install -r dist\Sift-debug.apk
+```
+
+- **Nebius key:** create one at **<https://tokenfactory.nebius.com>**.
+- **Tavily key:** create one at <https://tavily.com>.
+- **Full setup:** the [detailed quick start](#detailed-quick-start) below.
+- **What works without keys:** the [judges' guide](docs/JUDGES_GUIDE.md).
+
+## See it in action
+
+<p align="center">
+  <img src="docs/assets/preview.gif" width="300" alt="Animated preview: onboarding, search, setup, progress, CSV import, Arabic and Settings">
+  <br><sub>Recorded live on an Android phone. The full captioned video is <a href="docs/demo.mp4"><code>docs/demo.mp4</code></a> (3½ min). This server had no Nebius key, so the analysis stops at the AI step with a clear message.</sub>
 </p>
 
-**Documents:**
-- [Judges' guide (5 minutes)](docs/JUDGES_GUIDE.md)
-- [User guide](docs/USER_GUIDE.md)
-- [QA report](docs/QA_REPORT.md)
-- [Demo video script](docs/VIDEO_SCRIPT.md)
-- Demo video: `docs/demo.mp4` (when present)
-- Ready-made APK: [`dist/Sift-debug.apk`](dist/Sift-debug.apk)
+| Onboarding | Home | Search | Setup | Progress | Report |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| <img src="docs/screenshots/02-language.png" width="130" alt="Language picker"> | <img src="docs/screenshots/05-home.png" width="130" alt="Home"> | <img src="docs/screenshots/06-search.png" width="130" alt="Search"> | <img src="docs/screenshots/07-setup.png" width="130" alt="Setup"> | <img src="docs/screenshots/08-progress.png" width="130" alt="Progress"> | <img src="docs/screenshots/09-overview.png" width="130" alt="Report overview"> |
+
+<details>
+<summary>More screenshots</summary>
+<br>
+
+| Splash | Welcome | Sift Pro preview | Reviews | CSV import | Settings |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| <img src="docs/screenshots/01-splash.png" width="130" alt="Splash"> | <img src="docs/screenshots/03-welcome.png" width="130" alt="Welcome"> | <img src="docs/screenshots/04b-pro-plans.png" width="130" alt="Sift Pro preview"> | <img src="docs/screenshots/12-reviews.png" width="130" alt="Reviews"> | <img src="docs/screenshots/16-csv-setup.png" width="130" alt="CSV import"> | <img src="docs/screenshots/15-settings-about.png" width="130" alt="Settings"> |
+
+The report screenshots come from a QA run with real App Store reviews. The model and search calls in that run were scripted stubs, and none of their text appears in these screenshots. See [docs/QA_REPORT.md](docs/QA_REPORT.md).
+
+</details>
+
+## Contents
+
+- [The problem](#the-problem)
+- [Features](#features)
+- [Architecture](#architecture)
+- [The AI pipeline, step by step](#the-ai-pipeline-step-by-step)
+- [Tech stack](#tech-stack)
+- [Detailed quick start](#detailed-quick-start)
+- [Configuration](#configuration-backendenv)
+- [API reference](#api-reference)
+- [Testing and QA](#testing-and-qa)
+- [Project structure](#project-structure)
+- [Limitations](#limitations)
+- [Roadmap](#roadmap)
+- [Licence](#licence)
 
 ---
 
@@ -148,7 +208,7 @@ Statistics in the report (counts, average rating, sentiment split, rating distri
 | Search | Tavily web search API |
 | Data source | Apple iTunes Search API and the public customer reviews feed; CSV upload |
 
-## Quick start
+## Detailed quick start
 
 ### What you need to provide
 
@@ -248,6 +308,9 @@ docker run --env-file .env -p 8000:8000 sift-backend
 
 ## API reference
 
+<details>
+<summary>Show all endpoints</summary>
+
 Base URL: `/api/v1/`. All responses are JSON. Errors look like `{"detail": "..."}`, or field errors such as `{"q": ["..."]}`.
 
 | Method | Path | Purpose |
@@ -265,6 +328,8 @@ Base URL: `/api/v1/`. All responses are JSON. Errors look like `{"detail": "..."
 
 Creating analyses and reply drafts is rate-limited per client.
 
+</details>
+
 ## Testing and QA
 
 ```bash
@@ -281,6 +346,9 @@ cd backend
 - Full results and known gaps: [docs/QA_REPORT.md](docs/QA_REPORT.md).
 
 ## Project structure
+
+<details>
+<summary>Show the folder layout</summary>
 
 ```
 android/                     Android app (Kotlin)
@@ -308,7 +376,12 @@ test-data/sample_reviews.csv fictional reviews for the CSV import
 tools/                       translation generator and resource checks
 ```
 
+</details>
+
 ## Translations
+
+<details>
+<summary>How the 15 languages are generated</summary>
 
 All 15 languages are generated from the tables in `tools/i18n`:
 
@@ -318,6 +391,8 @@ python -I gen.py de fr es pt ru tr id_ sw hi bn ar ur zh ja
 ```
 
 The generator escapes text for Android, fails on any missing key and checks that every placeholder matches English. Brand names (Sift, Nebius Token Factory, Tavily) stay untranslated.
+
+</details>
 
 ## Limitations
 

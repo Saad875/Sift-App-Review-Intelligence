@@ -82,6 +82,8 @@ class Pipeline:
             if not self.analysis.reviews.exists():
                 self._complete()
                 return
+            # A missing key stops the run at the first AI step, so the app shows collection as done.
+            self._enter(Analysis.Step.CLASSIFYING)
             self._check_configuration()
             self._classify()
             themes = self._themes()
