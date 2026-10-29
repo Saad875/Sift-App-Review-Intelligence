@@ -35,7 +35,9 @@ class ModelRole:
     def model(self) -> str:
         value = getattr(settings, self.setting_name, "")
         if not value:
-            raise LLMConfigurationError(f"{self.setting_name} is not configured on the server.")
+            raise LLMConfigurationError(
+                f"The server's AI model is not configured ({self.setting_name} is empty), so this analysis cannot run."
+            )
         return value
 
 
@@ -59,7 +61,10 @@ class LLMClient:
     def client(self) -> Any:
         if self._client is None:
             if not settings.NEBIUS_API_KEY:
-                raise LLMConfigurationError("NEBIUS_API_KEY is not configured on the server.")
+                raise LLMConfigurationError(
+                    "The server's AI key is not configured, so this analysis cannot run. "
+                    "Add NEBIUS_API_KEY to backend/.env and restart the server."
+                )
             from openai import OpenAI
 
             self._client = OpenAI(

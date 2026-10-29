@@ -142,12 +142,14 @@ class PipelineTests(TestCase):
         self.assertIn("could not classify", analysis.error)
 
     @override_settings(NEBIUS_API_KEY="")
-    def test_missing_key_fails_fast(self):
+    def test_missing_key_keeps_reviews_and_fails_with_a_clear_message(self):
         analysis = Analysis.objects.create(app_name="Demo", source="csv")
         Pipeline(analysis.pk, self._reviews()).run()
         analysis.refresh_from_db()
         self.assertEqual(analysis.status, Analysis.Status.FAILED)
+        self.assertIn("AI key is not configured", analysis.error)
         self.assertIn("NEBIUS_API_KEY", analysis.error)
+        self.assertTrue(analysis.reviews.exists())
 
 
 class FeedParsingTests(TestCase):

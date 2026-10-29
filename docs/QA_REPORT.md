@@ -59,6 +59,23 @@ Only the AI-written text (theme names, backlog reasoning, the reply draft, the c
 
 Every string in all 15 languages is generated through `tools/i18n`, which checks every key and placeholder against English.
 
+## Update, 29 October 2026: running without a Nebius key
+
+The backend now has a real `TAVILY_API_KEY` but no `NEBIUS_API_KEY` (health reports `"nebius": false, "tavily": true`). Results, live:
+
+| Check | Result |
+|---|---|
+| Health endpoint | Pass: reports which keys are set, never the keys themselves |
+| App Store search ("whatsapp") | Pass, live |
+| Review collection (WhatsApp, US) | Pass: 300 real reviews fetched and stored (rating distribution computed without AI) |
+| Analysis without the AI key | Pass: reviews are collected first, then the analysis stops with "The server's AI key is not configured, so this analysis cannot run. Add NEBIUS_API_KEY to backend/.env and restart the server." (previously it failed before collecting, with a terse message) |
+| Reply draft without the AI key | Pass: `503` with the same clear message |
+| Classification, themes, backlog, replies, competitor research | **Not run**: needs `NEBIUS_API_KEY`. No other AI provider and no demo mode are used. |
+
+A new backend test covers this path (`test_missing_key_keeps_reviews_and_fails_with_a_clear_message`).
+
+**Demo video.** This phone blocks `adb shell screenrecord`, so `docs/demo.mp4` (when present) is made from continuous screenshots stitched into an MP4. See `docs/VIDEO_SCRIPT.md`.
+
 ## Bugs found and fixed in this round
 
 1. **Crash after process death.** On restore, the Android 12+ system splash has no icon view, so `SplashScreenViewProvider.iconView` threw a NullPointerException in the exit animation. The animation now falls back to a plain fade.

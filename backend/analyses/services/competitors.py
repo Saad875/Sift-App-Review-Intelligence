@@ -74,7 +74,7 @@ SearchFn = Callable[[str, int], list[dict[str, str]]]
 def tavily_search(query: str, max_results: int = MAX_RESULTS_PER_SEARCH) -> list[dict[str, str]]:
     """Run a Tavily search and return compact results."""
     if not settings.TAVILY_API_KEY:
-        raise LLMError("TAVILY_API_KEY is not configured on the server.")
+        raise LLMError("The server's web search key is not configured. Add TAVILY_API_KEY to backend/.env.")
     from tavily import TavilyClient
 
     client = TavilyClient(api_key=settings.TAVILY_API_KEY)

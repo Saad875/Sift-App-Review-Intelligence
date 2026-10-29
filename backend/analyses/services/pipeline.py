@@ -77,11 +77,12 @@ class Pipeline:
 
     def run(self) -> None:
         try:
-            self._check_configuration()
+            # Reviews are collected first (no AI needed), so a missing AI key still shows what was fetched.
             self._fetch()
             if not self.analysis.reviews.exists():
                 self._complete()
                 return
+            self._check_configuration()
             self._classify()
             themes = self._themes()
             self._backlog(themes)

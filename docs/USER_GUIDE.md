@@ -75,6 +75,7 @@ Open Settings with the gear icon on Home.
 |---|---|
 | "Can't reach the Sift server" | Make sure the backend is running and run `adb reverse tcp:8000 tcp:8000` again (it resets when the phone reconnects), then tap **Try again**. |
 | "You are offline" | Check the phone's internet connection. Reports you already opened still work. |
-| Analysis failed with "NEBIUS_API_KEY is not configured" | Add your key to `backend/.env` and restart the backend. |
+| "The server's AI key is not configured" | Sift collected the reviews, but the backend has no `NEBIUS_API_KEY`. Create a key at <https://tokenfactory.nebius.com>, add it to `backend/.env` and restart the backend. |
 | "No reviews yet" | Apple's public feed has no reviews for that app in that country. Try another country or app, or import a CSV. |
 | Competitor research skipped or failed | Add `TAVILY_API_KEY` to `backend/.env`. |
+| "You are offline" on search | The phone itself needs Wi-Fi or mobile data, even with `adb reverse`. |
